@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu glitch.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="menu glitch0000" x="0" y="0" width="4350" height="1784" frameX="-707" frameY="-69" frameWidth="6846" frameHeight="2515"/>
+	<SubTexture name="menu glitch0001" x="0" y="1784" width="4032" height="1975" frameX="-151" frameY="-241" frameWidth="6846" frameHeight="2515"/>
+	<SubTexture name="menu glitch0002" x="4032" y="1784" width="2140" height="1265" frameX="-1950" frameY="-363" frameWidth="6846" frameHeight="2515"/>
+	<SubTexture name="menu glitch0003" x="0" y="3759" width="4626" height="1387" frameX="-38" frameY="-348" frameWidth="6846" frameHeight="2515"/>
+	<SubTexture name="menu glitch0004" x="0" y="5146" width="4353" height="1386" frameX="-1540" frameY="-272" frameWidth="6846" frameHeight="2515"/>
+	<SubTexture name="menu glitch0005" x="0" y="6532" width="4498" height="1387" frameX="0" frameY="-306" frameWidth="6846" frameHeight="2515"/>
+	<SubTexture name="menu glitch0008" x="4498" y="6532" width="2913" height="1363" frameX="-1431" frameY="-345" frameWidth="6846" frameHeight="2515"/>
+</TextureAtlas>

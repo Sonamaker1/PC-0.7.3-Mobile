@@ -28,7 +28,7 @@ import objects.NoteSplash;
 import objects.Character;
 
 import states.MainMenuState;
-import states.StoryMenuState;
+import states.PibbyStoryState;
 import states.FreeplayState;
 
 import substates.PauseSubState;
@@ -784,7 +784,7 @@ class FunkinLua {
 				CustomFadeTransition.nextCamera = null;
 
 			if(PlayState.isStoryMode)
-				MusicBeatState.switchState(new StoryMenuState());
+				MusicBeatState.switchState(new states.PibbyStoryState());
 			else
 				MusicBeatState.switchState(new FreeplayState());
 			

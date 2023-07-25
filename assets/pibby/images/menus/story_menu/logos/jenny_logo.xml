@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jenny_logo.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="logo final0000" x="0" y="0" width="760" height="467" frameX="-9" frameY="-18" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0001" x="0" y="0" width="760" height="467" frameX="-9" frameY="-18" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0002" x="760" y="0" width="764" height="478" frameX="0" frameY="-12" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0003" x="760" y="0" width="764" height="478" frameX="0" frameY="-12" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0004" x="0" y="478" width="758" height="479" frameX="-6" frameY="-6" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0005" x="0" y="478" width="758" height="479" frameX="-6" frameY="-6" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0006" x="758" y="478" width="750" height="485" frameX="-14" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0007" x="758" y="478" width="750" height="485" frameX="-14" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0008" x="0" y="963" width="743" height="487" frameX="-21" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0009" x="0" y="963" width="743" height="487" frameX="-21" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0010" x="743" y="963" width="760" height="485" frameX="-4" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0011" x="743" y="963" width="760" height="485" frameX="-4" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0012" x="0" y="1450" width="757" height="485" frameX="-8" frameY="0" frameWidth="769" frameHeight="490"/>
+	<SubTexture name="logo final0013" x="0" y="1450" width="757" height="485" frameX="-8" frameY="0" frameWidth="769" frameHeight="490"/>
+</TextureAtlas>

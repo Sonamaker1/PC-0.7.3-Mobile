@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="steamboat willie logo.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="logo final0000" x="0" y="0" width="852" height="572" frameX="0" frameY="-19" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0001" x="0" y="0" width="852" height="572" frameX="0" frameY="-19" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0002" x="852" y="0" width="852" height="574" frameX="0" frameY="-17" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0003" x="852" y="0" width="852" height="574" frameX="0" frameY="-17" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0004" x="1704" y="0" width="852" height="580" frameX="0" frameY="-11" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0005" x="1704" y="0" width="852" height="580" frameX="0" frameY="-11" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0006" x="2556" y="0" width="852" height="584" frameX="0" frameY="-7" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0007" x="2556" y="0" width="852" height="584" frameX="0" frameY="-7" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0008" x="0" y="584" width="852" height="590" frameX="0" frameY="-1" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0009" x="0" y="584" width="852" height="590" frameX="0" frameY="-1" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0010" x="852" y="584" width="852" height="588" frameX="0" frameY="-3" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0011" x="852" y="584" width="852" height="588" frameX="0" frameY="-3" frameWidth="852" frameHeight="591"/>
+	<SubTexture name="logo final0012" x="1704" y="584" width="852" height="591"/>
+	<SubTexture name="logo final0013" x="1704" y="584" width="852" height="591"/>
+</TextureAtlas>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="covers.png">
+        <SubTexture name="covers at0000" x="0" y="0" width="539" height="478" frameX="0" frameY="0" frameWidth="539" frameHeight="478" />
+        <SubTexture name="covers su0000" x="539" y="0" width="539" height="478" frameX="0" frameY="0" frameWidth="539" frameHeight="478" />
+        <SubTexture name="covers fnf0000" x="1078" y="0" width="539" height="478" frameX="0" frameY="0" frameWidth="539" frameHeight="478" />
+        <SubTexture name="covers rs0000" x="1617" y="0" width="539" height="478" frameX="0" frameY="0" frameWidth="539" frameHeight="478" />
+</TextureAtlas>

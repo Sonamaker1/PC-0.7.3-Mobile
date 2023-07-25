@@ -17,7 +17,7 @@ import openfl.display.BitmapData;
 
 import shaders.ColorSwap;
 
-import states.StoryMenuState;
+import states.PibbyStoryState;
 import states.OutdatedState;
 import states.MainMenuState;
 
@@ -155,11 +155,6 @@ class TitleState extends MusicBeatState
 			persistentDraw = true;
 		}
 
-		if (FlxG.save.data.weekCompleted != null)
-		{
-			StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
-		}
-
 		FlxG.mouse.visible = false;
 		#if FREEPLAY
 		MusicBeatState.switchState(new FreeplayState());
@@ -203,26 +198,22 @@ class TitleState extends MusicBeatState
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite();
+		bg.frames = Paths.getSparrowAtlas('menus/titlescreen/menuInterference', 'pibby');
+		bg.animation.addByPrefix('idle', 'thing', 24);
+		bg.animation.play('idle');
+		bg.setGraphicSize(Std.int(bg.width * 3));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
-
-		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
-			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
-		}else{
-			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		}
-
-		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
+		bg.screenCenter();
 		add(bg);
 
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl.frames = Paths.getSparrowAtlas('menus/titlescreen/logobumpin', 'pibby');
 		logoBl.antialiasing = ClientPrefs.data.antialiasing;
 
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
-		// logoBl.screenCenter();
+		logoBl.screenCenter().y -= 50;
 		// logoBl.color = FlxColor.BLACK;
 
 		if(ClientPrefs.data.shaders) swagShader = new ColorSwap();
@@ -263,6 +254,7 @@ class TitleState extends MusicBeatState
 				gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}
 
+		gfDance.alpha = 0.001;
 		add(gfDance);
 		add(logoBl);
 		if(swagShader != null)
@@ -271,7 +263,7 @@ class TitleState extends MusicBeatState
 			logoBl.shader = swagShader.shader;
 		}
 
-		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
+		titleText = new FlxSprite(titleJSON.startx + 50, titleJSON.starty);
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
 		var animFrames:Array<FlxFrame> = [];
 		@:privateAccess {
@@ -418,6 +410,8 @@ class TitleState extends MusicBeatState
 				titleText.color = FlxColor.WHITE;
 				titleText.alpha = 1;
 				
+				FlxTween.tween(logoBl, {y: 2000}, 2.5, {ease: FlxEase.expoInOut});
+				FlxTween.tween(titleText, {y: 2000}, 2, {ease: FlxEase.expoInOut});
 				if(titleText != null) titleText.animation.play('press');
 
 				FlxG.camera.flash(ClientPrefs.data.flashing ? FlxColor.WHITE : 0x4CFFFFFF, 1);

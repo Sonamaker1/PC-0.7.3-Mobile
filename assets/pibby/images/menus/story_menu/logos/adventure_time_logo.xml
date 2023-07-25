@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="adventure time logo.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="logo final0000" x="0" y="0" width="996" height="588"/>
+	<SubTexture name="logo final0001" x="0" y="0" width="996" height="588"/>
+	<SubTexture name="logo final0002" x="996" y="0" width="974" height="576" frameX="-20" frameY="-12" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0003" x="996" y="0" width="974" height="576" frameX="-20" frameY="-12" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0004" x="1970" y="0" width="965" height="554" frameX="-31" frameY="-34" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0005" x="1970" y="0" width="965" height="554" frameX="-31" frameY="-34" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0006" x="2935" y="0" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0007" x="2935" y="0" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0008" x="0" y="588" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0009" x="0" y="588" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0010" x="959" y="588" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0011" x="959" y="588" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0012" x="1918" y="588" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+	<SubTexture name="logo final0013" x="1918" y="588" width="959" height="532" frameX="-37" frameY="-56" frameWidth="996" frameHeight="588"/>
+</TextureAtlas>

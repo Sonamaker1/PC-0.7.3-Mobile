@@ -13,9 +13,8 @@ import objects.MenuCharacter;
 import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
 
-class StoryMenuState extends MusicBeatState
+class PibbyStoryState extends MusicBeatState
 {
-	public static var weekCompleted:Map<String, Bool> = new Map<String, Bool>();
 
 	var scoreText:FlxText;
 
@@ -431,7 +430,7 @@ class StoryMenuState extends MusicBeatState
 
 	function weekIsLocked(name:String):Bool {
 		var leWeek:WeekData = WeekData.weeksLoaded.get(name);
-		return (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!weekCompleted.exists(leWeek.weekBefore) || !weekCompleted.get(leWeek.weekBefore)));
+		return false;
 	}
 
 	function updateText()
