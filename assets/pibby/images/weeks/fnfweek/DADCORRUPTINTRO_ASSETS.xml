@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="DADCORRUPTINTRO_ASSETS.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="0DDPINTRO0000" x="0" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0001" x="776" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0002" x="1552" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0003" x="2328" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0004" x="3104" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0005" x="3880" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0006" x="4656" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0007" x="5432" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0008" x="6208" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0009" x="6984" y="0" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0010" x="0" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0011" x="776" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0012" x="1552" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0013" x="2328" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0014" x="3104" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0015" x="3880" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0016" x="4656" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0017" x="5432" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0018" x="6208" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0019" x="6984" y="1064" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0020" x="0" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0021" x="776" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0022" x="1552" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0023" x="2328" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0024" x="3104" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0025" x="3880" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0026" x="4656" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0027" x="5432" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0028" x="6208" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0029" x="6984" y="2128" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0030" x="0" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0031" x="776" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0032" x="1552" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0033" x="2328" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0034" x="3104" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0035" x="3880" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0036" x="4656" y="3192" width="776" height="1064"/>
+	<SubTexture name="0DDPINTRO0037" x="5432" y="3192" width="776" height="1064"/>
+</TextureAtlas>

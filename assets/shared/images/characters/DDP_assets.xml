@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="DDP_assets.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DDPD0000" x="3822" y="5035" width="713" height="810"/>
+	<SubTexture name="DDPD0001" x="4535" y="5035" width="713" height="810"/>
+	<SubTexture name="DDPD0002" x="5248" y="5121" width="713" height="810"/>
+	<SubTexture name="DDPD0003" x="5961" y="5121" width="713" height="810"/>
+	<SubTexture name="DDPD0004" x="6674" y="5121" width="713" height="810"/>
+	<SubTexture name="DDPD0005" x="7387" y="5121" width="713" height="810"/>
+	<SubTexture name="DDPD0006" x="0" y="5299" width="713" height="810"/>
+	<SubTexture name="DDPD0007" x="713" y="5299" width="713" height="810"/>
+	<SubTexture name="DDPD0008" x="1426" y="5299" width="713" height="810"/>
+	<SubTexture name="DDPIDLE0000" x="3440" y="2202" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0001" x="4138" y="2202" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0002" x="4836" y="2947" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0003" x="5534" y="2947" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0004" x="6232" y="2947" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0005" x="6930" y="2947" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0006" x="0" y="3125" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0007" x="698" y="3125" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0008" x="1396" y="3125" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0009" x="2094" y="3125" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0010" x="2792" y="3246" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0011" x="3490" y="3246" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0012" x="4188" y="3991" width="698" height="1044"/>
+	<SubTexture name="DDPIDLE0013" x="4886" y="3991" width="698" height="1044"/>
+	<SubTexture name="DDPL0000" x="5420" y="1101" width="860" height="923"/>
+	<SubTexture name="DDPL0001" x="6280" y="1101" width="860" height="923"/>
+	<SubTexture name="DDPL0002" x="7140" y="1101" width="860" height="923"/>
+	<SubTexture name="DDPL0003" x="5420" y="2024" width="860" height="923"/>
+	<SubTexture name="DDPL0004" x="6280" y="2024" width="860" height="923"/>
+	<SubTexture name="DDPL0005" x="7140" y="2024" width="860" height="923"/>
+	<SubTexture name="DDPL0006" x="0" y="2202" width="860" height="923"/>
+	<SubTexture name="DDPL0007" x="860" y="2202" width="860" height="923"/>
+	<SubTexture name="DDPL0008" x="1720" y="2202" width="860" height="923"/>
+	<SubTexture name="DDPL0009" x="2580" y="2202" width="860" height="923"/>
+	<SubTexture name="DDPR0000" x="0" y="0" width="1355" height="1101"/>
+	<SubTexture name="DDPR0001" x="1355" y="0" width="1355" height="1101"/>
+	<SubTexture name="DDPR0002" x="2710" y="0" width="1355" height="1101"/>
+	<SubTexture name="DDPR0003" x="4065" y="0" width="1355" height="1101"/>
+	<SubTexture name="DDPR0004" x="5420" y="0" width="1355" height="1101"/>
+	<SubTexture name="DDPR0005" x="6775" y="0" width="1355" height="1101"/>
+	<SubTexture name="DDPR0006" x="0" y="1101" width="1355" height="1101"/>
+	<SubTexture name="DDPR0007" x="1355" y="1101" width="1355" height="1101"/>
+	<SubTexture name="DDPR0008" x="2710" y="1101" width="1355" height="1101"/>
+	<SubTexture name="DDPR0009" x="4065" y="1101" width="1355" height="1101"/>
+	<SubTexture name="DDPU0000" x="5584" y="3991" width="637" height="1130"/>
+	<SubTexture name="DDPU0001" x="6221" y="3991" width="637" height="1130"/>
+	<SubTexture name="DDPU0002" x="6858" y="3991" width="637" height="1130"/>
+	<SubTexture name="DDPU0003" x="7495" y="3991" width="637" height="1130"/>
+	<SubTexture name="DDPU0004" x="0" y="4169" width="637" height="1130"/>
+	<SubTexture name="DDPU0005" x="637" y="4169" width="637" height="1130"/>
+	<SubTexture name="DDPU0006" x="1274" y="4169" width="637" height="1130"/>
+	<SubTexture name="DDPU0007" x="1911" y="4169" width="637" height="1130"/>
+	<SubTexture name="DDPU0008" x="2548" y="4290" width="637" height="1130"/>
+	<SubTexture name="DDPU0009" x="3185" y="4290" width="637" height="1130"/>
+</TextureAtlas>

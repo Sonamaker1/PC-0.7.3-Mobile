@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Krakus.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="krakus0000" x="0" y="0" width="489" height="333" frameX="-7" frameY="-36" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0001" x="0" y="0" width="489" height="333" frameX="-7" frameY="-36" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0002" x="489" y="0" width="485" height="343" frameX="-3" frameY="-28" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0003" x="489" y="0" width="485" height="343" frameX="-3" frameY="-28" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0004" x="974" y="0" width="478" height="354" frameX="0" frameY="-16" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0005" x="974" y="0" width="478" height="354" frameX="0" frameY="-16" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0006" x="1452" y="0" width="475" height="358" frameX="-4" frameY="-13" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0007" x="1452" y="0" width="475" height="358" frameX="-4" frameY="-13" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0008" x="0" y="358" width="470" height="364" frameX="-6" frameY="-9" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0009" x="0" y="358" width="470" height="364" frameX="-6" frameY="-9" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0010" x="470" y="358" width="468" height="365" frameX="-4" frameY="-6" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0011" x="470" y="358" width="468" height="365" frameX="-4" frameY="-6" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0012" x="938" y="358" width="464" height="376" frameX="-1" frameY="0" frameWidth="496" frameHeight="376"/>
+	<SubTexture name="krakus0013" x="938" y="358" width="464" height="376" frameX="-1" frameY="0" frameWidth="496" frameHeight="376"/>
+</TextureAtlas>

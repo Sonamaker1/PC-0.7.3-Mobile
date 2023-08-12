@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Brit.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Brit0000" x="0" y="0" width="255" height="487" frameX="-2" frameY="-22" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0001" x="0" y="0" width="255" height="487" frameX="-2" frameY="-22" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0002" x="255" y="0" width="254" height="488" frameX="0" frameY="-18" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0003" x="255" y="0" width="254" height="488" frameX="0" frameY="-18" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0004" x="509" y="0" width="248" height="501" frameX="-3" frameY="-6" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0005" x="509" y="0" width="248" height="501" frameX="-3" frameY="-6" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0006" x="757" y="0" width="241" height="505" frameX="-7" frameY="-1" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0007" x="757" y="0" width="241" height="505" frameX="-7" frameY="-1" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0008" x="0" y="505" width="239" height="506" frameX="-9" frameY="0" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0009" x="0" y="505" width="239" height="506" frameX="-9" frameY="0" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0010" x="239" y="505" width="242" height="504" frameX="-8" frameY="-4" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0011" x="239" y="505" width="242" height="504" frameX="-8" frameY="-4" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0012" x="481" y="505" width="249" height="496" frameX="-7" frameY="-13" frameWidth="257" frameHeight="509"/>
+	<SubTexture name="Brit0013" x="481" y="505" width="249" height="496" frameX="-7" frameY="-13" frameWidth="257" frameHeight="509"/>
+</TextureAtlas>

@@ -1,0 +1,96 @@
+{
+    "animations": [{
+            "offsets": [-52,
+                176
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singDOWN",
+            "indices": [],
+            "name": "down"
+        },
+        {
+            "offsets": [-140, -154],
+            "loop": false,
+            "fps": 24,
+            "anim": "singRIGHT",
+            "indices": [],
+            "name": "right"
+        },
+        {
+            "offsets": [
+                244,
+                218
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singLEFT",
+            "indices": [],
+            "name": "left"
+        },
+        {
+            "offsets": [-45,
+                198
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "singUP",
+            "indices": [],
+            "name": "up"
+        },
+        {
+            "offsets": [
+                330,
+                129
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "attack",
+            "indices": [],
+            "name": "melee"
+        },
+        {
+            "offsets": [-77,
+                200
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "shoot",
+            "indices": [],
+            "name": "shoot"
+        },
+        {
+            "offsets": [-142,
+                1
+            ],
+            "loop": false,
+            "fps": 24,
+            "anim": "laugh",
+            "indices": [],
+            "name": "laugh"
+        },
+        {
+            "offsets": [-201, -33],
+            "loop": true,
+            "fps": 24,
+            "anim": "idle",
+            "indices": [],
+            "name": "idle"
+        }
+    ],
+    "no_antialiasing": false,
+    "image": "characters/PibbyJenny",
+    "position": [-100, -20],
+    "healthicon": "jenny",
+    "flip_x": false,
+    "healthbar_colors": [
+        0,
+        175,
+        229
+    ],
+    "camera_position": [
+        50, -85
+    ],
+    "sing_duration": 4,
+    "scale": 1.3
+}

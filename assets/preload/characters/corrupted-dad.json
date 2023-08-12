@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				154,
+				107
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "DDPL"
+		},
+		{
+			"offsets": [
+				180,
+				200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "DDPIDLE"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-16,
+				250
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "DDPU",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				252
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "DDPR",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				110,
+				-4
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "DDPD",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/DDP_assets",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "dad",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		102,
+		206
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 0.8
+}

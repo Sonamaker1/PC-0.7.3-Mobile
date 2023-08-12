@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Killgore.png">
+	<!-- Created with Adobe Animate version 22.0.3.179 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="killgore0000" x="0" y="0" width="233" height="191" frameX="-7" frameY="-14" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0001" x="0" y="0" width="233" height="191" frameX="-7" frameY="-14" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0002" x="233" y="0" width="235" height="189" frameX="-5" frameY="-15" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0003" x="233" y="0" width="235" height="189" frameX="-5" frameY="-15" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0004" x="468" y="0" width="240" height="194" frameX="-1" frameY="-11" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0005" x="468" y="0" width="240" height="194" frameX="-1" frameY="-11" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0006" x="708" y="0" width="238" height="199" frameX="0" frameY="-8" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0007" x="708" y="0" width="238" height="199" frameX="0" frameY="-8" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0008" x="0" y="199" width="237" height="202" frameX="-1" frameY="-4" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0009" x="0" y="199" width="237" height="202" frameX="-1" frameY="-4" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0010" x="237" y="199" width="238" height="207" frameX="-2" frameY="0" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0011" x="237" y="199" width="238" height="207" frameX="-2" frameY="0" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0012" x="475" y="199" width="235" height="205" frameX="-5" frameY="0" frameWidth="241" frameHeight="207"/>
+	<SubTexture name="killgore0013" x="475" y="199" width="235" height="205" frameX="-5" frameY="0" frameWidth="241" frameHeight="207"/>
+</TextureAtlas>
