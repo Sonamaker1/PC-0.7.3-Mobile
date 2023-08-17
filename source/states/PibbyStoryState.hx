@@ -102,23 +102,21 @@ class PibbyStoryState extends MusicBeatState
 
         if (!selectedWeek)
 		{
-			if (controls.UI_LEFT_P)
-			{
-                changeWorld(-1);
-                tweenShit();
-
-                leftArrow.animation.play('press');
-                new FlxTimer().start(0.2, _->leftArrow.animation.play('idle'));
-			}
-
-			if (controls.UI_RIGHT_P)
-			{
+            if (controls.UI_RIGHT_P)
+            {
                 changeWorld(1);
                 tweenShit();
+            }
 
-                rightArrow.animation.play('press');
-                new FlxTimer().start(0.2, _->rightArrow.animation.play('idle'));
-			}
+            if (controls.UI_LEFT_P)
+            {
+                changeWorld(-1);
+                tweenShit();
+            }
+
+			if (controls.UI_LEFT) leftArrow.animation.play('press'); else leftArrow.animation.play('idle');
+
+			if (controls.UI_RIGHT) rightArrow.animation.play('press'); else rightArrow.animation.play('idle');
         }
 
         if(controls.ACCEPT)

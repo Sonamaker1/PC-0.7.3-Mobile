@@ -82,7 +82,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
 				PlayState.finn_slash = new BGSprite('${curDirectory}/Finn_Pibby_Slash', PlayState.DAD_X, PlayState.DAD_Y, 1, 1, ['Finn Slash']);
 				PlayState.finn_slash.visible = false;
 
-            case 'jenny':
+           /* case 'jenny':
                 PlayState.dad_cameraoffset = 30;
                 PlayState.bf_cameraoffset = 10;
 
@@ -189,7 +189,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                     glen.alpha = 0.001;
                     bitch.alpha = 0.001;
                     smytus.alpha = 0.001;
-                }
+                }*/
 
             
             case 'livesey': 
@@ -339,7 +339,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                     PlayState.gf.animation.play("beat");
                 }
             
-            case 'jenny':
+            /*case 'jenny':
                 if (curBeat == 295) {
                     tiger.alpha = 1;
                     glen.alpha = 1;
@@ -347,7 +347,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                     smytus.alpha = 1;
                     bitch.alpha = 1;
                     skinsuit.alpha = 1;
-                }
+                }*/
         }
     }
 
