@@ -63,8 +63,7 @@ class PibbyStoryState extends MusicBeatState
         {
             var logo:FlxSprite = new FlxSprite(275 + (i * 1080), 0);
             logo.frames = Paths.getSparrowAtlas('menus/story_menu/logos/' + logoNames[i] + '_logo', 'pibby');
-            logo.animation.addByPrefix('idle', "logo final", 24);
-            logo.animation.play('idle');
+            logo.animation.addByPrefix('idle', "logo final", 24, false);
             logo.antialiasing = true;
             logo.screenCenter(Y);
             logo.y += 100;
@@ -99,6 +98,8 @@ class PibbyStoryState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new MainMenuState());
 		}
+        
+        Conductor.songPosition = FlxG.sound.music != null ? FlxG.sound.music.time : 0;
 
         if (!selectedWeek)
 		{
@@ -125,6 +126,12 @@ class PibbyStoryState extends MusicBeatState
         }
 
         super.update(elapsed);
+    }
+
+    override function beatHit() {
+        super.beatHit();
+
+        if (curBeat % 2 == 0) logos.forEach(logo -> logo.animation.play('idle')); 
     }
 
     function changeWorld(theChange:Int = 0):Void

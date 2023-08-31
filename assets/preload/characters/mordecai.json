@@ -3,8 +3,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				255,
-				88
+				248,
+				94
 			],
 			"fps": 24,
 			"anim": "singLEFT",
@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				40,
-				-180
+				90,
+				-150
 			],
 			"fps": 24,
 			"anim": "singDOWN",
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-13,
-				426
+				-10,
+				427
 			],
 			"fps": 24,
 			"anim": "singUP",
@@ -62,12 +62,12 @@
 		0,
 		0
 	],
-	"healthicon": "dad",
+	"healthicon": "mordecai",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		9,
+		47,
+		88
 	],
 	"camera_position": [
 		0,

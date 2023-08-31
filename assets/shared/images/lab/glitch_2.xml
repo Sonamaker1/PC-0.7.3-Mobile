@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="glitch 2.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="glitch 20000" x="0" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20001" x="0" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20002" x="340" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20003" x="340" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20004" x="680" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20005" x="680" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20006" x="1020" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20007" x="1020" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20008" x="1360" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20009" x="1360" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20010" x="1700" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20011" x="1700" y="0" width="340" height="511"/>
+	<SubTexture name="glitch 20012" x="0" y="511" width="340" height="511"/>
+	<SubTexture name="glitch 20013" x="0" y="511" width="340" height="511"/>
+</TextureAtlas>

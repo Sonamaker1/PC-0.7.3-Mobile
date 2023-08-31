@@ -49,7 +49,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
         curDirectory = 'weeks/${curStage}';
         // Switch through all of the possible weeks to see which match
         switch(curStage) {
-            case 'at_lab':
+            /*case 'at_lab':
                 PlayState.dad_cameraoffset = 30;
                 PlayState.bf_cameraoffset = 10;
 
@@ -296,12 +296,11 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
 
 
                 for (curIndex in 0 ... 4) {
-                    PlayState.opponentStrums.members[curIndex].visible = false;
+                    PlayState.opponentStrums.members[curIndex].alpha = 0.4;
                     PlayState.opponentStrums.members[curIndex].x = 415 + (115 * curIndex);
                     PlayState.playerStrums.members[curIndex].x = 415 + (115 * curIndex);
-                    PlayState.playerStrums.members[curIndex].visible = false;
+                    // PlayState.playerStrums.members[curIndex].visible = false;
                 }
-                
                 
                 PlayState.dad.alpha = 0.0001;
 
@@ -324,7 +323,20 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                             PlayState.opponentStrums.members[curIndex].alpha = 0;
                             PlayState.playerStrums.members[curIndex].alpha = 0;
                         }
-                        
+                       
+                case 'livesey': 
+                    if (curStep == 352)
+                    {
+                        PlayState.healthBar.alpha = 1;
+                        PlayState.iconP1.alpha = 1;
+                        PlayState.iconP2.alpha = 1;
+                        PlayState.scoreTxt.alpha = 1;
+                        PlayState.timeBar.visible = true;
+                        PlayState.timeTxt.visible = true;
+                        Main.fpsVar.visible = true;
+                        PlayState.Darkness.alpha = 0;
+                        PlayState.dad.alpha = 1;
+                    }
             }
         }
 
