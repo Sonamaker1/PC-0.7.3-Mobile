@@ -1,0 +1,28 @@
+{
+    "songs": [
+        ["Tutorial", "gf", [165, 0, 77]],
+        ["Black Mark", "livesey", [0, 0, 0]],
+        ["Treasure Island", "livesey", [0, 0, 0]],
+        ["Nanovirus", "finn", [0, 0, 0]],
+        ["Malware", "finn", [0, 0, 0]],
+        ["my-monster", "finn", [0, 0, 0]],
+        ["save-the-day", "finn", [0, 0, 0]],
+        ["glitched-gem", "finn", [0, 0, 0]],
+        ["ill-be-fine", "finn", [0, 0, 0]]
+    ],
+
+    "weekCharacters": [
+        "",
+        "bf",
+        "gf"
+    ],
+    "weekBackground": "stage",
+
+    "storyName": "",
+    "weekBefore": "tutorial",
+    "weekName": "Tutorial",
+    "startUnlocked": true,
+
+    "hideStoryMode": false,
+    "hideFreeplay": false
+}

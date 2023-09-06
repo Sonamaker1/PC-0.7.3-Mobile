@@ -1,5 +1,6 @@
 package objects;
 
+import hxcodec.VideoSprite;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.FlxSprite;
@@ -31,6 +32,8 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
 
     public var curStage : String;
     private var curDirectory : String;
+
+    var midSongVideo:VideoSprite;
 
     // We have different variations of groundwork! We have foreground, baseground, and midground
     public var foreground : FlxTypedGroup<FlxBasic>;
@@ -291,7 +294,6 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                 PlayState.scoreTxt.alpha = 0;
                 PlayState.timeBar.visible = false;
                 PlayState.timeTxt.visible = false;
-                PlayState.scoreTxt.y -= 36;
                 Main.fpsVar.visible = false;
 
 
@@ -322,6 +324,10 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                         for (curIndex in 0 ... 4) {
                             PlayState.opponentStrums.members[curIndex].alpha = 0;
                             PlayState.playerStrums.members[curIndex].alpha = 0;
+                            PlayState.timeBar.visible = true;
+                            PlayState.timeTxt.visible = true;
+                            PlayState.timeBar.alpha = 0;
+                            PlayState.timeTxt.alpha = 0;
                         }
                        
                 case 'livesey': 
@@ -330,13 +336,30 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                         PlayState.healthBar.alpha = 1;
                         PlayState.iconP1.alpha = 1;
                         PlayState.iconP2.alpha = 1;
-                        PlayState.scoreTxt.alpha = 1;
-                        PlayState.timeBar.visible = true;
-                        PlayState.timeTxt.visible = true;
+                        // PlayState.scoreTxt.alpha = 1;
                         Main.fpsVar.visible = true;
                         PlayState.Darkness.alpha = 0;
                         PlayState.dad.alpha = 1;
+                        midSongVideo.destroy();
                     }
+
+                if (curStep == 604)
+                {
+                    FlxTween.tween(PlayState.camHUD, {alpha: 0}, 2.3, {ease: FlxEase.smootherStepInOut});
+                }
+
+                if (curStep == 665)
+                {
+                    FlxTween.tween(PlayState.camHUD, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
+
+                    for (objects in [PlayState.timeBar, PlayState.timeTxt, PlayState.scoreTxt])
+                        FlxTween.tween(objects, {alpha: 1}, 1, {ease: FlxEase.sineInOut});
+
+                    PlayState.timeBar.visible = true;
+                    PlayState.timeTxt.visible = true;
+                    PlayState.timeBar.alpha = 1;
+                    PlayState.timeTxt.alpha = 1;
+                }
             }
         }
 

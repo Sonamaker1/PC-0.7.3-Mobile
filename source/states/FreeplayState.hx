@@ -124,7 +124,7 @@ class FreeplayState extends MusicBeatState
 		add(fg);
 		fg.screenCenter();
 
-		weekCovers = new FlxSprite(666, 0);
+		weekCovers = new FlxSprite(666 /**satan reference holy shit**/, 0);
 		weekCovers.frames = Paths.getSparrowAtlas('menus/freeplay/covers', 'pibby');
 		weekCovers.animation.addByPrefix('cover0', 'covers at', 24);
 		weekCovers.animation.addByPrefix('cover1', 'covers su', 24);
@@ -168,7 +168,7 @@ class FreeplayState extends MusicBeatState
 		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
 		pibbyIcons = new FlxSprite(scoreText.x - 15, 5);
-		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons', 'shared');
+		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons', 'pibby');
 		pibbyIcons.animation.addByPrefix('default', 'default', 24);
 		pibbyIcons.animation.addByPrefix('lowAccuracy', 'lowAccuracy', 24);
 		pibbyIcons.animation.addByPrefix('midAccuracy', 'midAccuracy', 24);
@@ -177,7 +177,7 @@ class FreeplayState extends MusicBeatState
 		pibbyIcons.antialiasing = ClientPrefs.data.antialiasing;
 
 
-		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing', 'shared'));
+		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing', 'pibby'));
 		scoreBG.scale.y = 1.5;
 		scoreBG.alpha = 0.6;
 		scoreBG.antialiasing = ClientPrefs.data.antialiasing;
