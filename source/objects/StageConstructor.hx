@@ -195,7 +195,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                 }*/
 
             
-            case 'livesey': 
+            /*case 'livesey': 
                 PlayState.dad_cameraoffset = 30;
                 PlayState.bf_cameraoffset = 10;
 
@@ -206,7 +206,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                 midground.add(table);
 
                 var candle : FlxSprite = new FlxSprite(1550, 1800).loadGraphic(Paths.image('${curDirectory}/candle', 'pibby'));
-                foreground.add(candle);
+                foreground.add(candle); */
             
             case 'livesey-boat': 
                 PlayState.dad_cameraoffset = 20;
@@ -287,7 +287,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
 
     public function getSettings() {
         switch(curStage) {
-            case 'livesey':
+           /* case 'livesey':
                 PlayState.healthBar.alpha = 0;
                 PlayState.iconP1.alpha = 0;
                 PlayState.iconP2.alpha = 0;
@@ -304,7 +304,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                     // PlayState.playerStrums.members[curIndex].visible = false;
                 }
                 
-                PlayState.dad.alpha = 0.0001;
+                PlayState.dad.alpha = 0.0001;*/
 
             case 'livesey-boat':
                 for (curIndex in 0 ... 4) {
@@ -330,7 +330,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                             PlayState.timeTxt.alpha = 0;
                         }
                        
-                case 'livesey': 
+                /*case 'livesey': 
                     if (curStep == 352)
                     {
                         PlayState.healthBar.alpha = 1;
@@ -359,7 +359,7 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                     PlayState.timeTxt.visible = true;
                     PlayState.timeBar.alpha = 1;
                     PlayState.timeTxt.alpha = 1;
-                }
+                }*/
             }
         }
 

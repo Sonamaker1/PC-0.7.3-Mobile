@@ -1,14 +1,9 @@
 {
     "songs": [
-        ["Tutorial", "gf", [165, 0, 77]],
-        ["Black Mark", "livesey", [0, 0, 0]],
-        ["Treasure Island", "livesey", [0, 0, 0]],
-        ["Nanovirus", "finn", [0, 0, 0]],
-        ["Malware", "finn", [0, 0, 0]],
-        ["my-monster", "finn", [0, 0, 0]],
-        ["save-the-day", "finn", [0, 0, 0]],
-        ["glitched-gem", "finn", [0, 0, 0]],
-        ["ill-be-fine", "finn", [0, 0, 0]]
+        ["My-Monster", "gf", [165, 0, 77]],
+        ["Save-the-day", "livesey", [0, 0, 0]],
+        ["Glitched-gem", "livesey", [0, 0, 0]],
+        ["Ill-be-Fine", "finn", [0, 0, 0]]
     ],
 
     "weekCharacters": [

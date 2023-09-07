@@ -10,29 +10,39 @@ class StageWeek1 extends BaseStage
 	var dadbattleFog:DadBattleFog;
 	override function create()
 	{
-		var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
+		var bg:BGSprite = new BGSprite('$curDirectory/stageback', -600, -200, 0.9, 0.9);
 		add(bg);
 
-		var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
+		var stageFront:BGSprite = new BGSprite('$curDirectory/stagefront', -650, 600, 0.9, 0.9);
 		stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 		stageFront.updateHitbox();
+		stageFront.library = 'pibby';
 		add(stageFront);
 		if(!ClientPrefs.data.lowQuality) {
-			var stageLight:BGSprite = new BGSprite('stage_light', -125, -100, 0.9, 0.9);
+			var stageLight:BGSprite = new BGSprite('$curDirectory/stage_light', -125, -100, 0.9, 0.9);
 			stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
 			stageLight.updateHitbox();
+			stageLight.library = 'pibby';
 			add(stageLight);
-			var stageLight:BGSprite = new BGSprite('stage_light', 1225, -100, 0.9, 0.9);
+			var stageLight:BGSprite = new BGSprite('$curDirectory/stage_light', 1225, -100, 0.9, 0.9);
 			stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
 			stageLight.updateHitbox();
 			stageLight.flipX = true;
+			stageLight.library = 'pibby';
 			add(stageLight);
 
-			var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -300, 1.3, 1.3);
+			var stageCurtains:BGSprite = new BGSprite('$curDirectory/stagecurtains', -500, -300, 1.3, 1.3);
+			stageCurtains.library = 'pibby';
 			stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
 			stageCurtains.updateHitbox();
 			add(stageCurtains);
 		}
+
+		var glitch = new FlxSprite(-60, 40);
+		glitch.frames = Paths.getSparrowAtlas('$curDirectory/pibbyglitchwhoa', 'pibby');
+		glitch.animation.addByPrefix('_', 'STAGE');
+		glitch.animation.play('_');
+		add(glitch);
 	}
 	override function eventPushed(event:objects.Note.EventNote)
 	{

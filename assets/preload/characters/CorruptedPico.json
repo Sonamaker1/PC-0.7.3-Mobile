@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-27,
+				-145
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "SHOOT",
+			"indices": [],
+			"name": "pico shoot"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-24,
+				-265
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-33,
+				-295
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				40,
+				-215
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				65,
+				-260
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				-26,
+				-271
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle-loop",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/CorruptedPico",
+	"position": [
+		-70,
+		50
+	],
+	"healthicon": "pico",
+	"flip_x": true,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		20,
+		200
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
