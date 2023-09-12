@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle "
+		},
+		{
+			"offsets": [
+				190,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				0,
+				-110
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				130,
+				130
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				-150,
+				120
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				177,
+				213
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "nuhuh",
+			"indices": [],
+			"name": "Block"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Shield_Steven",
+	"position": [
+		-90,
+		0
+	],
+	"healthicon": "steven",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		49,
+		110
+	],
+	"camera_position": [
+		50,
+		-30
+	],
+	"sing_duration": 6.1,
+	"scale": 0.8
+}

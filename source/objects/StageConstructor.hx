@@ -305,12 +305,6 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                 }
                 
                 PlayState.dad.alpha = 0.0001;*/
-
-            case 'livesey-boat':
-                for (curIndex in 0 ... 4) {
-                    PlayState.opponentStrums.members[curIndex].visible = false;
-                    PlayState.playerStrums.members[curIndex].visible = false;
-                }
         }
     }
 
@@ -319,16 +313,6 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
         {
             switch (curStage)
             {
-                case 'livesey-boat':
-                    if (curStep == 1)
-                        for (curIndex in 0 ... 4) {
-                            PlayState.opponentStrums.members[curIndex].alpha = 0;
-                            PlayState.playerStrums.members[curIndex].alpha = 0;
-                            PlayState.timeBar.visible = true;
-                            PlayState.timeTxt.visible = true;
-                            PlayState.timeBar.alpha = 0;
-                            PlayState.timeTxt.alpha = 0;
-                        }
                        
                 /*case 'livesey': 
                     if (curStep == 352)

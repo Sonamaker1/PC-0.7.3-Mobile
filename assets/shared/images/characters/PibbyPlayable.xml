@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="PibbyPlayable.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Pibby D miss0000" x="0" y="0" width="299" height="444" frameX="0" frameY="0" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0001" x="0" y="0" width="299" height="444" frameX="0" frameY="0" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0002" x="299" y="0" width="280" height="343" frameX="-20" frameY="-8" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0003" x="299" y="0" width="280" height="343" frameX="-20" frameY="-8" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0004" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0005" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0006" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0007" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0008" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0009" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0010" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0011" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0012" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby D miss0013" x="579" y="0" width="278" height="347" frameX="-21" frameY="-4" frameWidth="300" frameHeight="444"/>
+	<SubTexture name="Pibby Dodge0000" x="857" y="0" width="281" height="325" frameX="0" frameY="-14" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0001" x="857" y="0" width="281" height="325" frameX="0" frameY="-14" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0002" x="1138" y="0" width="281" height="335" frameX="0" frameY="-4" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0003" x="1138" y="0" width="281" height="335" frameX="0" frameY="-4" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0004" x="1419" y="0" width="281" height="339" frameX="-8" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0005" x="1419" y="0" width="281" height="339" frameX="-8" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0006" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0007" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0008" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0009" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0010" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0011" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0012" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby Dodge0013" x="1700" y="0" width="281" height="339" frameX="-11" frameY="0" frameWidth="292" frameHeight="339"/>
+	<SubTexture name="Pibby L miss0000" x="1981" y="0" width="280" height="370" frameX="0" frameY="0" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0001" x="1981" y="0" width="280" height="370" frameX="0" frameY="0" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0002" x="2261" y="0" width="281" height="357" frameX="-10" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0003" x="2261" y="0" width="281" height="357" frameX="-10" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0004" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0005" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0006" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0007" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0008" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0009" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0010" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0011" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0012" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby L miss0013" x="2542" y="0" width="281" height="357" frameX="-3" frameY="-11" frameWidth="291" frameHeight="370"/>
+	<SubTexture name="Pibby R miss0000" x="2823" y="0" width="280" height="623" frameX="-18" frameY="0" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0001" x="2823" y="0" width="280" height="623" frameX="-18" frameY="0" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0002" x="3103" y="0" width="281" height="357" frameX="0" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0003" x="3103" y="0" width="281" height="357" frameX="0" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0004" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0005" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0006" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0007" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0008" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0009" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0010" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0011" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0012" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby R miss0013" x="3384" y="0" width="281" height="357" frameX="-13" frameY="-1" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby U miss0000" x="3665" y="0" width="281" height="363" frameX="0" frameY="0" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0001" x="3665" y="0" width="281" height="363" frameX="0" frameY="0" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0002" x="0" y="623" width="282" height="359" frameX="-3" frameY="-3" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0003" x="0" y="623" width="282" height="359" frameX="-3" frameY="-3" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0004" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0005" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0006" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0007" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0008" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0009" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0010" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0011" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0012" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby U miss0013" x="282" y="623" width="282" height="360" frameX="-3" frameY="-2" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby death0000" x="564" y="623" width="287" height="371" frameX="-30" frameY="-13" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0001" x="851" y="623" width="293" height="384" frameX="-45" frameY="0" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0002" x="1144" y="623" width="285" height="371" frameX="-32" frameY="-13" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0003" x="1429" y="623" width="284" height="359" frameX="0" frameY="-25" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0004" x="1713" y="623" width="289" height="356" frameX="-1" frameY="-28" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0005" x="2002" y="623" width="285" height="384" frameX="-40" frameY="0" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0006" x="2287" y="623" width="278" height="357" frameX="-6" frameY="-27" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0007" x="2287" y="623" width="278" height="357" frameX="-6" frameY="-27" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0008" x="2565" y="623" width="278" height="358" frameX="0" frameY="-26" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0009" x="2565" y="623" width="278" height="358" frameX="0" frameY="-26" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0010" x="2843" y="623" width="277" height="356" frameX="-10" frameY="-28" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0011" x="2843" y="623" width="277" height="356" frameX="-10" frameY="-28" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0012" x="3120" y="623" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0013" x="3120" y="623" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0014" x="3398" y="623" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0015" x="3398" y="623" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0016" x="3676" y="623" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0017" x="3676" y="623" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0018" x="0" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0019" x="0" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0020" x="278" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0021" x="278" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0022" x="556" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0023" x="556" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0024" x="834" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0025" x="834" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0026" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0027" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0028" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0029" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0030" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0031" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0032" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0033" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0034" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0035" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0036" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0037" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0038" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0039" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0040" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0041" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0042" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0043" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0044" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0045" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0046" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0047" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0048" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0049" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0050" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0051" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0052" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0053" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0054" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0055" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0056" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death0057" x="1112" y="1007" width="278" height="361" frameX="-18" frameY="-23" frameWidth="338" frameHeight="384"/>
+	<SubTexture name="Pibby death confirm0000" x="1390" y="1007" width="286" height="362" frameX="-7" frameY="-2" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0001" x="1390" y="1007" width="286" height="362" frameX="-7" frameY="-2" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0002" x="1676" y="1007" width="269" height="356" frameX="-14" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0003" x="1676" y="1007" width="269" height="356" frameX="-14" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0004" x="1945" y="1007" width="267" height="364" frameX="0" frameY="0" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0005" x="1945" y="1007" width="267" height="364" frameX="0" frameY="0" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0006" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0007" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0008" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0009" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0010" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0011" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0012" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0013" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0014" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0015" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0016" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0017" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0018" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0019" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0020" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0021" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0022" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0023" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0024" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0025" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0026" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0027" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0028" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0029" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0030" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0031" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0032" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death confirm0033" x="2212" y="1007" width="267" height="356" frameX="-7" frameY="-8" frameWidth="293" frameHeight="364"/>
+	<SubTexture name="Pibby death loop0000" x="2479" y="1007" width="286" height="356" frameX="-10" frameY="-15" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0001" x="2765" y="1007" width="287" height="367" frameX="-36" frameY="-4" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0002" x="3052" y="1007" width="299" height="358" frameX="0" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0003" x="3052" y="1007" width="299" height="358" frameX="0" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0004" x="3351" y="1007" width="300" height="365" frameX="-43" frameY="-6" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0005" x="3351" y="1007" width="300" height="365" frameX="-43" frameY="-6" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0006" x="3651" y="1007" width="285" height="370" frameX="-48" frameY="-1" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0007" x="3651" y="1007" width="285" height="370" frameX="-48" frameY="-1" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0008" x="0" y="1377" width="288" height="371" frameX="-26" frameY="0" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0009" x="0" y="1377" width="288" height="371" frameX="-26" frameY="0" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0010" x="288" y="1377" width="278" height="364" frameX="-29" frameY="-7" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0011" x="288" y="1377" width="278" height="364" frameX="-29" frameY="-7" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0012" x="566" y="1377" width="278" height="358" frameX="-16" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0013" x="566" y="1377" width="278" height="358" frameX="-16" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0014" x="844" y="1377" width="278" height="355" frameX="-10" frameY="-16" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0015" x="844" y="1377" width="278" height="355" frameX="-10" frameY="-16" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0016" x="844" y="1377" width="278" height="355" frameX="-10" frameY="-16" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0017" x="2479" y="1007" width="286" height="356" frameX="-10" frameY="-15" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0018" x="2765" y="1007" width="287" height="367" frameX="-36" frameY="-4" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0019" x="3052" y="1007" width="299" height="358" frameX="0" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0020" x="3052" y="1007" width="299" height="358" frameX="0" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0021" x="3351" y="1007" width="300" height="365" frameX="-43" frameY="-6" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0022" x="3351" y="1007" width="300" height="365" frameX="-43" frameY="-6" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0023" x="3651" y="1007" width="285" height="370" frameX="-48" frameY="-1" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0024" x="3651" y="1007" width="285" height="370" frameX="-48" frameY="-1" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0025" x="0" y="1377" width="288" height="371" frameX="-26" frameY="0" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0026" x="0" y="1377" width="288" height="371" frameX="-26" frameY="0" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0027" x="288" y="1377" width="278" height="364" frameX="-29" frameY="-7" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0028" x="288" y="1377" width="278" height="364" frameX="-29" frameY="-7" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0029" x="566" y="1377" width="278" height="358" frameX="-16" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0030" x="566" y="1377" width="278" height="358" frameX="-16" frameY="-13" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0031" x="844" y="1377" width="278" height="355" frameX="-10" frameY="-16" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0032" x="844" y="1377" width="278" height="355" frameX="-10" frameY="-16" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby death loop0033" x="844" y="1377" width="278" height="355" frameX="-10" frameY="-16" frameWidth="343" frameHeight="371"/>
+	<SubTexture name="Pibby down pose0000" x="1122" y="1377" width="280" height="351" frameX="0" frameY="-3" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0001" x="1122" y="1377" width="280" height="351" frameX="0" frameY="-3" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0002" x="1402" y="1377" width="279" height="353" frameX="-2" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0003" x="1402" y="1377" width="279" height="353" frameX="-2" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0004" x="1681" y="1377" width="280" height="354" frameX="-6" frameY="0" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0005" x="1681" y="1377" width="280" height="354" frameX="-6" frameY="0" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0006" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0007" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0008" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0009" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0010" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0011" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0012" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby down pose0013" x="1961" y="1377" width="281" height="353" frameX="-10" frameY="-1" frameWidth="291" frameHeight="354"/>
+	<SubTexture name="Pibby idle0000" x="2242" y="1377" width="282" height="366" frameX="0" frameY="-13" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0001" x="2242" y="1377" width="282" height="366" frameX="0" frameY="-13" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0002" x="2524" y="1377" width="283" height="374" frameX="-1" frameY="-5" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0003" x="2524" y="1377" width="283" height="374" frameX="-1" frameY="-5" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0004" x="2807" y="1377" width="283" height="376" frameX="-6" frameY="-3" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0005" x="2807" y="1377" width="283" height="376" frameX="-6" frameY="-3" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0006" x="3090" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0007" x="3090" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0008" x="3373" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0009" x="3373" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0010" x="3090" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0011" x="3090" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0012" x="3373" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby idle0013" x="3373" y="1377" width="283" height="379" frameX="-9" frameY="0" frameWidth="292" frameHeight="379"/>
+	<SubTexture name="Pibby left pose0000" x="3656" y="1377" width="281" height="370" frameX="0" frameY="-5" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0001" x="3656" y="1377" width="281" height="370" frameX="0" frameY="-5" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0002" x="0" y="1756" width="281" height="364" frameX="-8" frameY="-11" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0003" x="0" y="1756" width="281" height="364" frameX="-8" frameY="-11" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0004" x="281" y="1756" width="281" height="371" frameX="-18" frameY="-4" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0005" x="281" y="1756" width="281" height="371" frameX="-18" frameY="-4" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0006" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0007" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0008" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0009" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0010" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0011" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0012" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby left pose0013" x="562" y="1756" width="281" height="375" frameX="-28" frameY="0" frameWidth="309" frameHeight="375"/>
+	<SubTexture name="Pibby right pose0000" x="2823" y="0" width="280" height="623" frameX="-20" frameY="0" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby right pose0001" x="2823" y="0" width="280" height="623" frameX="-20" frameY="0" frameWidth="298" frameHeight="623"/>
+	<SubTexture name="Pibby right pose0002" x="843" y="1756" width="280" height="357" frameX="-18" frameY="-1" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0003" x="843" y="1756" width="280" height="357" frameX="-18" frameY="-1" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0004" x="1123" y="1756" width="281" height="355" frameX="-3" frameY="-3" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0005" x="1123" y="1756" width="281" height="355" frameX="-3" frameY="-3" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0006" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0007" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0008" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0009" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0010" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0011" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0012" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby right pose0013" x="1404" y="1756" width="281" height="358" frameX="0" frameY="0" frameWidth="301" frameHeight="358"/>
+	<SubTexture name="Pibby up pose0000" x="3665" y="0" width="281" height="363" frameX="-15" frameY="0" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby up pose0001" x="3665" y="0" width="281" height="363" frameX="-15" frameY="0" frameWidth="285" frameHeight="363"/>
+	<SubTexture name="Pibby up pose0002" x="1685" y="1756" width="281" height="361" frameX="-14" frameY="-3" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0003" x="1685" y="1756" width="281" height="361" frameX="-14" frameY="-3" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0004" x="1966" y="1756" width="282" height="355" frameX="-7" frameY="-9" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0005" x="1966" y="1756" width="282" height="355" frameX="-7" frameY="-9" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0006" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0007" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0008" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0009" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0010" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0011" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0012" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+	<SubTexture name="Pibby up pose0013" x="2248" y="1756" width="282" height="350" frameX="0" frameY="-14" frameWidth="297" frameHeight="364"/>
+</TextureAtlas>

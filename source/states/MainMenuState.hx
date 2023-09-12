@@ -234,7 +234,7 @@ class MainMenuState extends MusicBeatState
 	private function changeItem ( change : Int = 0 )
 	{
 		curSelected += change;
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		FlxG.sound.play(Paths.sound('scrollMenu'), 0.3);
 
 		if ( curSelected >= menuItems.length ) curSelected = 0;
 
@@ -243,10 +243,12 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(txt:FlxText)
 		{
 			txt.alpha = 0.7;
+			txt.color = 0x606060;
 			if (txt.ID == curSelected)
 			{
 				if ( textTween != null ) { textTween.cancel(); textTween = null; }
 				textTween = FlxTween.tween( txt, { alpha : 1 }, 0.4 );
+				txt.color = FlxColor.WHITE;
 			}
 		});
 	}
