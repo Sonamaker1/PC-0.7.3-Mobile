@@ -162,12 +162,13 @@ class FreeplayState extends MusicBeatState
 		WeekData.setDirectoryFromWeek();
 
 		scoreText = new FlxText(FlxG.width * 0.65, 25, 0, "", 44);
+		scoreText.x -= 25;
 		scoreText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
-		percentText = new FlxText(FlxG.width * 0.65, scoreText.y + 45, 0, "", 44);
+		percentText = new FlxText(FlxG.width * 0.6, scoreText.y + 45, 0, "", 44);
 		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
-		pibbyIcons = new FlxSprite(scoreText.x - 15, 5);
+		pibbyIcons = new FlxSprite(scoreText.x - 105, 5);
 		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons', 'pibby');
 		pibbyIcons.animation.addByPrefix('default', 'default', 24);
 		pibbyIcons.animation.addByPrefix('lowAccuracy', 'lowAccuracy', 24);
@@ -179,6 +180,7 @@ class FreeplayState extends MusicBeatState
 
 		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing', 'pibby'));
 		scoreBG.scale.y = 1.5;
+		scoreBG.scale.x = 2.85;
 		scoreBG.alpha = 0.6;
 		scoreBG.antialiasing = ClientPrefs.data.antialiasing;
 		add(scoreBG);

@@ -4,22 +4,19 @@ enum abstract Shaders(String) to String from String
 {
     var invert = 
     "
-        #pragma header
+    #pragma header
         
-        void main()
-        {
-            vec2 p = openfl_TextureCoordv*openfl_TextureSize.xy/openfl_TextureSize.xy;
-            
-            vec4 col = flixel_texture2D(bitmap, p);
-            
-            col = vec4(1.) - col; // invert the color
-            
-            col.a = 1.0 - col.a; // invert the alpha value
-            
-            col.rgb *= col.a; // multiply color by alpha
-            
-            gl_FragColor = col;
-        }
+	void main()
+	{
+		vec2 thisThingOrWhatever = openfl_TextureCoordv*openfl_TextureSize.xy/openfl_TextureSize.xy;
+		vec4 colorShit = flixel_texture2D(bitmap, thisThingOrWhatever);
+
+		colorShit = vec4(1.) - colorShit;
+		colorShit.a = 1.0 - colorShit.a; 
+		colorShit.rgb *= colorShit.a; 
+	
+		gl_FragColor = colorShit;
+	}
     ";   
 
     var pixel = 

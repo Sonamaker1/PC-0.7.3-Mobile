@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				248,
 				94
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Mordecai left"
+			"fps": 24,
+			"name": "Mordecai left",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				90,
 				-150
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Mordecai Down"
+			"fps": 24,
+			"name": "Mordecai Down",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-10,
 				427
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Mordecai up"
+			"fps": 24,
+			"name": "Mordecai up",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				18,
-				27
+				-3
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Mordecai right"
+			"fps": 24,
+			"name": "Mordecai right",
+			"indices": []
 		},
 		{
+			"loop": true,
 			"offsets": [
 				70,
 				192
 			],
-			"loop": true,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Mordecai idle"
+			"fps": 24,
+			"name": "Mordecai idle",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,

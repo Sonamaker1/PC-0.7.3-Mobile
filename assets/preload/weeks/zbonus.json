@@ -3,7 +3,8 @@
         ["Nanovirus", "gf", [165, 0, 77]],
         ["Malware", "livesey", [0, 0, 0]],
         ["Black-mark", "livesey", [0, 0, 0]],
-        ["Treasure-island", "finn", [0, 0, 0]]
+        ["Treasure-island", "finn", [0, 0, 0]],
+        ["Ready-Or-Not", "finn", [0, 0, 0]]
     ],
 
     "weekCharacters": [

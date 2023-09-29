@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="glitch 1.png">
+<TextureAtlas imagePath="glitch_1.png">
 	<!-- Created with Adobe Animate version 21.0.6.41649 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="glitch 10000" x="0" y="0" width="1381" height="1400" frameX="-72" frameY="0" frameWidth="1453" frameHeight="1400"/>
