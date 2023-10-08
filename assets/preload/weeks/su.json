@@ -1,23 +1,61 @@
 {
-    "songs": [
-        ["My-Monster", "gf", [165, 0, 77]],
-        ["Save-the-day", "livesey", [0, 0, 0]],
-        ["Glitched-gem", "livesey", [0, 0, 0]],
-        ["Ill-be-Fine", "finn", [0, 0, 0]]
-    ],
-
-    "weekCharacters": [
-        "",
-        "bf",
-        "gf"
-    ],
-    "weekBackground": "stage",
-
-    "storyName": "",
-    "weekBefore": "tutorial",
-    "weekName": "Tutorial",
-    "startUnlocked": true,
-
-    "hideStoryMode": false,
-    "hideFreeplay": false
+	"storyName": "",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"you'll make the change",
+			"gf",
+			[
+				165,
+				0,
+				77
+			]
+		],
+		[
+			"save the day",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"i'll be fine",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"glitched gem",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"my monster",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Tutorial"
 }
