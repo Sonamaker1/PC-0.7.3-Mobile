@@ -172,11 +172,6 @@ class Jenny extends BaseStage
                         smytus.alpha = 1;
                         bitch.alpha = 1;
                         skinsuit.alpha = 1;
-
-                    case 424: 
-                        FlxTween.tween(game.camGame, {zoom: 2}, 4, {ease: FlxEase.quadInOut});
-                        game.camGame.fade(FlxColor.BLACK, 2.5);
-                        FlxTween.tween(game.camHUD, {alpha: 0}, 3);
                 }
             }
         }

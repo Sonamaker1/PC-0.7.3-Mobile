@@ -16,13 +16,11 @@ class Beach extends BaseStage
 	var goofyAhhDarkness:FlxSprite;
 	var moon:FlxSprite;
 
-	// invert, pixel
 	var yeah = false;
 
 	var shaders:Map<String, FlxRuntimeShader> 
 	=
 	[
-		'invert' => new FlxRuntimeShader(backend.Shaders.invert, null, 120),
 		'pixel' => new FlxRuntimeShader(backend.Shaders.pixel, null, 140)
 	];
 
@@ -142,29 +140,16 @@ class Beach extends BaseStage
 	//    curSection
 	override function stepHit()
 	{
-		switch (PlayState.SONG.song.toLowerCase().replace('-', ' '))
-		{
-			case 'glitched gem':
-				switch (curStep)
-				{
-					case 636, 638: 
-						FlxG.camera.setFilters([new ShaderFilter(shaders['invert'])]);
-					
-					case 637, 639:
-						FlxG.camera.setFilters([]);
-				}
-		}
-
 		if (yeah)
 		{
-			stevensword.shader = FlxG.random.int(1, 50) < 25 ? shaders['invert'] : shaders['pixel'];
-			clusterhand.shader = FlxG.random.int(1, 70) < 35 ? shaders['invert'] : shaders['pixel'];
-			boardwalk.shader = FlxG.random.int(1, 80) < 40 ? shaders['invert'] : shaders['pixel'];
-			sky.shader = FlxG.random.int(1, 100) < 50 ? shaders['invert'] : shaders['pixel'];
-			water.shader = FlxG.random.int(1, 20) < 10 ? shaders['invert'] : shaders['pixel'];
+			stevensword.shader = FlxG.random.int(1, 50) < 25 ? null : shaders['pixel'];
+			clusterhand.shader = FlxG.random.int(1, 70) < 35 ? null : shaders['pixel'];
+			boardwalk.shader = FlxG.random.int(1, 80) < 40 ? null : shaders['pixel'];
+			sky.shader = FlxG.random.int(1, 100) < 50 ? null : shaders['pixel'];
+			water.shader = FlxG.random.int(1, 20) < 10 ? null : shaders['pixel'];
 			skyback.shader = sky.shader;
 			moon.shader = sky.shader;
-			goofyAhhDarkness.shader = FlxG.random.int(1, 40) < 20 ? shaders['invert'] : shaders['pixel'];
+			goofyAhhDarkness.shader = FlxG.random.int(1, 40) < 20 ? null : shaders['pixel'];
 
 			shaders['pixel'].setFloat('size', FlxG.random.int(5, 17));
 		}
@@ -180,9 +165,6 @@ class Beach extends BaseStage
 			case 'glitched gem':
 				switch (curBeat)
 				{
-					case 7: 
-						FlxG.camera.setFilters([new ShaderFilter(shaders['invert'])]);
-
 					case 8: 
 						FlxG.camera.setFilters([]);
 
@@ -193,9 +175,6 @@ class Beach extends BaseStage
 						}
 						game.timeBar.alpha = 1;
 						game.timeBar.visible = true;
-
-					case 278: 
-						FlxG.camera.setFilters([new ShaderFilter(shaders['invert'])]);
 
 					case 280: 
 						FlxG.camera.setFilters([]);
