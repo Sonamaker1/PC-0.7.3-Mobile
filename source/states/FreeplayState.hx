@@ -458,7 +458,7 @@ class FreeplayState extends MusicBeatState
 			for (item in grpSongs.members)
 			{
 				bullShit++;
-				item.alpha = 0.6;
+				item.alpha = 0;
 				if (item.targetY == curSelected)
 					item.alpha = 1;
 			}
