@@ -168,7 +168,7 @@ class FreeplayState extends MusicBeatState
 		percentText = new FlxText(FlxG.width * 0.6, scoreText.y + 45, 0, "", 44);
 		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
-		pibbyIcons = new FlxSprite(scoreText.x - 105, 5);
+		pibbyIcons = new FlxSprite(scoreText.x - 20, 5);
 		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons', 'pibby');
 		pibbyIcons.animation.addByPrefix('default', 'default', 24);
 		pibbyIcons.animation.addByPrefix('lowAccuracy', 'lowAccuracy', 24);

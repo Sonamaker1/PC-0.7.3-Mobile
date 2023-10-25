@@ -209,8 +209,6 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                 foreground.add(candle); */
             
             case 'livesey-boat': 
-                PlayState.dad_cameraoffset = 20;
-                PlayState.bf_cameraoffset = 20;
 
                 var sky : FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('${curDirectory}/8', 'pibby'));
                 add(sky);
@@ -264,8 +262,6 @@ class StageConstructor extends FlxTypedGroup<FlxBasic> {
                 add(pisswater);
             
             case 'regular_show': 
-                PlayState.dad_cameraoffset = 20;
-                PlayState.bf_cameraoffset = 20;
 
                 park = new FlxSprite(0, 400).loadGraphic(Paths.image('${curDirectory}/park', 'pibby'));
                 add(park);
