@@ -60,18 +60,19 @@ class Beach extends BaseStage
         clusterhand.scrollFactor.set(0.3, 0.3);
         add(clusterhand);
 
-        boardwalk = new FlxSprite(-650, -505, Paths.image('$curDirectory/yeah/boardwalk', 'pibby'));
+        boardwalk = new FlxSprite(-650, -460, Paths.image('$curDirectory/yeah/boardwalk', 'pibby'));
         boardwalk.scrollFactor.set(0.34, 0.34);
         add(boardwalk);
 
-        lion = new FlxSprite(1230, 100);
+        lion = new FlxSprite(1230, 145);
         lion.frames = Paths.getSparrowAtlas('$curDirectory/lion', 'pibby');
         lion.animation.addByPrefix('idle', 'lion', 24, false);
         lion.animation.play('idle');
         lion.scrollFactor.set(0.34, 0.34);
         add(lion);
 
-        var sans = new FlxSprite(-650, -505, Paths.image('$curDirectory/yeah/sand', 'pibby'));
+        var sans = new FlxSprite(-1125, -490, Paths.image('$curDirectory/yeah/sand', 'pibby'));
+		sans.scale.set(1.5, 1.5);
         sans.scrollFactor.set(0.4, 0.4);
         add(sans);
 
