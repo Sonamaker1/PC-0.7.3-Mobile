@@ -48,7 +48,6 @@ class FreeplayState extends MusicBeatState
 	var bg:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
-	var weekCovers:FlxSprite;
 	var pibbyIcons:FlxSprite;
 
 	override function create()
@@ -96,9 +95,7 @@ class FreeplayState extends MusicBeatState
 			{
 				var colors:Array<Int> = song[2];
 				if(colors == null || colors.length < 3)
-				{
 					colors = [146, 113, 253];
-				}
 				addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]));
 			}
 		}
@@ -124,17 +121,6 @@ class FreeplayState extends MusicBeatState
 		add(fg);
 		fg.screenCenter();
 
-		weekCovers = new FlxSprite(666 /**satan reference holy shit**/, 0);
-		weekCovers.frames = Paths.getSparrowAtlas('menus/freeplay/covers', 'pibby');
-		weekCovers.animation.addByPrefix('cover0', 'covers at', 24);
-		weekCovers.animation.addByPrefix('cover1', 'covers su', 24);
-		weekCovers.animation.addByPrefix('cover2', 'covers fnf', 24);
-		weekCovers.animation.addByPrefix('cover3', 'covers rs', 24);
-		weekCovers.screenCenter(Y);
-		weekCovers.setGraphicSize(Std.int(weekCovers.width * 0.8));
-		weekCovers.antialiasing = true;
-		add(weekCovers);
-
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
@@ -148,10 +134,7 @@ class FreeplayState extends MusicBeatState
 				songText.snapToPosition();
 	
 				Mods.currentModDirectory = songs[i].folder;
-				var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
-				icon.sprTracker = songText;
-	
-				
+
 				// too laggy with a lot of songs, so i had to recode the logic for it
 				songText.visible = songText.active = songText.isMenuItem = false;
 	
@@ -168,7 +151,7 @@ class FreeplayState extends MusicBeatState
 		percentText = new FlxText(FlxG.width * 0.6, scoreText.y + 45, 0, "", 44);
 		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
-		pibbyIcons = new FlxSprite(scoreText.x - 20, 5);
+		pibbyIcons = new FlxSprite(scoreText.x, 5);
 		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons', 'pibby');
 		pibbyIcons.animation.addByPrefix('default', 'default', 24);
 		pibbyIcons.animation.addByPrefix('lowAccuracy', 'lowAccuracy', 24);
@@ -248,9 +231,7 @@ class FreeplayState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music.volume < 0.7)
-		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		}
 
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, FlxMath.bound(elapsed * 24, 0, 1)));
 		lerpRating = FlxMath.lerp(lerpRating, intendedRating, FlxMath.bound(elapsed * 12, 0, 1));
@@ -261,21 +242,11 @@ class FreeplayState extends MusicBeatState
 			lerpRating = intendedRating;
 
 		var ratingSplit:Array<String> = Std.string(CoolUtil.floorDecimal(lerpRating * 100, 2)).split('.');
-		if(ratingSplit.length < 2) { //No decimals, add an empty space
+		if(ratingSplit.length < 2)  //No decimals, add an empty space
 			ratingSplit.push('');
-		}
 		
 		while(ratingSplit[1].length < 2) { //Less than 2 decimals in it, add decimals then
 			ratingSplit[1] += '0';
-		}
-
-		if(songs[curSelected].week < 4)
-		{
-		    weekCovers.animation.play('cover' + songs[curSelected].week);
-		}
-		else
-		{
-            weekCovers.animation.play('cover0');
 		}
 
 		if(intendedRating <= .4 && intendedRating > 0)
@@ -447,21 +418,10 @@ class FreeplayState extends MusicBeatState
 					}
 				});
 			}
-
-			weekCovers.alpha = 0.55;
-		    FlxTween.tween(weekCovers, {alpha: 1}, 0.2);
 	
 			// selector.y = (70 * curSelected) + 30;
 	
 			var bullShit:Int = 0;
-	
-			for (item in grpSongs.members)
-			{
-				bullShit++;
-				item.alpha = 0;
-				if (item.targetY == curSelected)
-					item.alpha = 1;
-			}
 			
 			Mods.currentModDirectory = songs[curSelected].folder;
 			PlayState.storyWeek = songs[curSelected].week;
