@@ -203,7 +203,7 @@ class Alphabet extends FlxSpriteGroup
 				if (spaceChar) consecutiveSpaces++;
 
 				var isAlphabet:Bool = AlphaCharacter.isTypeAlphabet(character.toLowerCase());
-				if (AlphaCharacter.allLetters.exists(character.toLowerCase()) && (!bold || !spaceChar))
+				if (AlphaCharacter.allLetters.exists(character.toLowerCase()) && (bold || !spaceChar))
 				{
 					if (consecutiveSpaces > 0)
 					{
@@ -371,21 +371,11 @@ class AlphaCharacter extends FlxSprite
 			if(allLetters.exists(lowercase)) curLetter = allLetters.get(lowercase);
 			else curLetter = allLetters.get('?');
 
-			var suffix:String = '';
-			if(!bold)
-			{
-				if(isTypeAlphabet(lowercase))
-				{
-					if(lowercase != this.character)
-						suffix = ' uppercase';
-					else
-						suffix = ' lowercase';
-				}
-				else suffix = ' normal';
-			}
-			else suffix = ' bold';
+			var suffix:String = ' lowercase';
 
+			
 			var alphaAnim:String = lowercase;
+			if (alphaAnim == "'") alphaAnim = "apostraphie";
 			if(curLetter != null && curLetter.anim != null) alphaAnim = curLetter.anim;
 
 			var anim:String = alphaAnim + suffix;
@@ -393,8 +383,8 @@ class AlphaCharacter extends FlxSprite
 			animation.play(anim, true);
 			if(animation.curAnim == null)
 			{
-				if(suffix != ' bold') suffix = ' normal';
-				anim = 'question' + suffix;
+				if(suffix != ' bold') anim = alphaAnim;
+				trace('[Alphabet] Could not find the character: ${lowercase} with the suffix ${StringTools.ltrim(suffix)}, retrying...');
 				animation.addByPrefix(anim, anim, 24);
 				animation.play(anim, true);
 			}
@@ -445,10 +435,7 @@ class AlphaCharacter extends FlxSprite
 	public function updateLetterOffset()
 	{
 		if (animation.curAnim == null)
-		{
-			trace(character);
 			return;
-		}
 
 		var add:Float = 110;
 		if(animation.curAnim.name.endsWith('bold'))

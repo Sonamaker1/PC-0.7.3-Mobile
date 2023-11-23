@@ -1,75 +1,91 @@
 package backend;
 
-import flixel.util.FlxGradient;
-
 class CustomFadeTransition extends MusicBeatSubstate {
-	public static var finishCallback:Void->Void;
-	private var leTween:FlxTween = null;
-	public static var nextCamera:FlxCamera;
-	var isTransIn:Bool = false;
-	var transBlack:FlxSprite;
-	var transGradient:FlxSprite;
+	public static var finishCallback: Void->Void;
+	private var leTween: FlxTween = null;
+	public static var nextCamera: FlxCamera;
+	public static var isOnInitialize: Bool = false;
+	
+    private var isTransIn: Bool = false;
+    private var interfaceSprite: FlxSprite;
+	private var interfaceSpriteTrans: FlxSprite;
+
 
 	public function new(duration:Float, isTransIn:Bool) {
 		super();
 
 		this.isTransIn = isTransIn;
+
 		var zoom:Float = FlxMath.bound(FlxG.camera.zoom, 0.05, 1);
 		var width:Int = Std.int(FlxG.width / zoom);
 		var height:Int = Std.int(FlxG.height / zoom);
-		transGradient = FlxGradient.createGradientFlxSprite(1, height, (isTransIn ? [0x0, FlxColor.BLACK] : [FlxColor.BLACK, 0x0]));
-		transGradient.scale.x = width;
-		transGradient.updateHitbox();
-		transGradient.scrollFactor.set();
-		add(transGradient);
 
-		transBlack = new FlxSprite().makeGraphic(1, height + 400, FlxColor.BLACK);
-		transBlack.scale.x = width;
-		transBlack.updateHitbox();
-		transBlack.scrollFactor.set();
-		add(transBlack);
+		interfaceSprite = new FlxSprite();
+		if (!isOnInitialize)
+		{
+			interfaceSprite.makeGraphic(1, height + 400, FlxColor.BLACK);
+			isOnInitialize = true;
+		}
+		else
+		{
+			interfaceSpriteTrans = new FlxSprite();
+			interfaceSpriteTrans.frames = Paths.getSparrowAtlas('menus/titlescreen/menuInterference', 'pibby');
+			interfaceSpriteTrans.animation.addByPrefix('idle', 'thing', 24);
+			interfaceSpriteTrans.animation.play('idle');
+			interfaceSpriteTrans.antialiasing = ClientPrefs.data.antialiasing;
+			interfaceSpriteTrans.setGraphicSize(Std.int(interfaceSpriteTrans.width * 3));
+			interfaceSpriteTrans.updateHitbox();
+			interfaceSpriteTrans.alpha = 0;
+			interfaceSpriteTrans.scrollFactor.set();
 
-		transGradient.x -= (width - FlxG.width) / 2;
-		transBlack.x = transGradient.x;
+			interfaceSprite.frames = Paths.getSparrowAtlas('menus/titlescreen/menuInterference', 'pibby');
+			interfaceSprite.animation.addByPrefix('idle', 'thing', 24);
+			interfaceSprite.animation.play('idle');
+			interfaceSprite.antialiasing = ClientPrefs.data.antialiasing;
+		}
 
-		if(isTransIn) {
-			transGradient.y = transBlack.y - transBlack.height;
-			FlxTween.tween(transGradient, {y: transGradient.height + 50}, duration, {
-				onComplete: function(twn:FlxTween) {
-					close();
-				},
-			ease: FlxEase.linear});
-		} else {
-			transGradient.y = -transGradient.height;
-			transBlack.y = transGradient.y - transBlack.height + 50;
-			leTween = FlxTween.tween(transGradient, {y: transGradient.height + 50}, duration, {
-				onComplete: function(twn:FlxTween) {
-					if(finishCallback != null) {
+		interfaceSprite.setGraphicSize(Std.int(interfaceSprite.width * 3));
+		interfaceSprite.updateHitbox();
+		interfaceSprite.scrollFactor.set();
+		add(interfaceSprite);
+	
+		if (isOnInitialize)
+			add(interfaceSpriteTrans);
+
+		if(isTransIn)
+			FlxTween.tween(interfaceSprite, {alpha: 0}, duration, {
+			    ease: FlxEase.linear,
+                onComplete: function(twn:FlxTween) 
+					{
+						if (isOnInitialize && interfaceSpriteTrans != null)
+							interfaceSpriteTrans.alpha = 0;
+						close();
+					}
+			});
+		else
+            leTween = FlxTween.tween(interfaceSprite, {alpha: 0}, duration, {
+			    ease: FlxEase.linear,
+                onComplete: function(twn:FlxTween) 
+					if (finishCallback != null)
+					{
+						if (isOnInitialize && interfaceSpriteTrans != null)
+							interfaceSpriteTrans.alpha = 1;
 						finishCallback();
 					}
-				},
-			ease: FlxEase.linear});
-		}
+            });
 
-		if(nextCamera != null) {
-			transBlack.cameras = [nextCamera];
-			transGradient.cameras = [nextCamera];
+		if(nextCamera != null)
+		{
+			if (isOnInitialize)
+				interfaceSpriteTrans.cameras = [nextCamera];
+			interfaceSprite.cameras = [nextCamera];
 		}
+		
 		nextCamera = null;
 	}
 
 	override function update(elapsed:Float) {
-		if(isTransIn) {
-			transBlack.y = transGradient.y + transGradient.height;
-		} else {
-			transBlack.y = transGradient.y - transBlack.height;
-		}
 		super.update(elapsed);
-		if(isTransIn) {
-			transBlack.y = transGradient.y + transGradient.height;
-		} else {
-			transBlack.y = transGradient.y - transBlack.height;
-		}
 	}
 
 	override function destroy() {

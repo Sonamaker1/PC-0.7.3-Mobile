@@ -5,28 +5,27 @@ import backend.WeekData;
 
 class PibbyStoryState extends MusicBeatState 
 {
-    private static var lastDifficultyName:String = '';
-	var curDifficulty:Int = 2;
+    public static var curWorld: Int = 0;
 
-    public static var curWeek:Int = 0;
-    var mode:Bool = false;
+    private var bg: FlxSprite;
+    private var select: FlxText;
+    private var curwidth: Float;
 
-    var logos:FlxTypedSpriteGroup<FlxSprite>;
-    var bg:FlxSprite;
-    var select:FlxText;
-    var curwidth:Float;
+	private var leftArrow: FlxSprite;
+	private var rightArrow: FlxSprite;
+    
+    private var selectedWeek: Bool = false;
 
-	var leftArrow:FlxSprite;
-	var rightArrow:FlxSprite;
-
-    var logoNames:Array<String> = [
-        'adventure_time', 
-        'steven', 
-        'fnf', 
-        'regular_show', 
-        'jenny', 
-        'steamboat_willie'
+    // First index is logo name, second is position it is in.
+    private final logoNames: Array<Array<Dynamic>> = [
+        ['adventure_time', 0], 
+        ['steven', -1060], 
+        ['fnf', -2160], 
+        ['regular_show',-3240], 
+        ['jenny', -4240], 
+        ['steamboat_willie', -5332]
     ];
+    private var logos: FlxTypedSpriteGroup<FlxSprite>;
 
     override function create()
     {
@@ -59,19 +58,21 @@ class PibbyStoryState extends MusicBeatState
         logos = new FlxTypedSpriteGroup<FlxSprite>();
 		add(logos);
 
-        for (i in 0...logoNames.length)
+        var currentWorldIndex: Int = 0;
+        for (world in logoNames)
         {
-            var logo:FlxSprite = new FlxSprite(275 + (i * 1080), 0);
-            logo.frames = Paths.getSparrowAtlas('menus/story_menu/logos/' + logoNames[i] + '_logo', 'pibby');
+            var logo:FlxSprite = new FlxSprite(275 + (currentWorldIndex * 1080), 0);
+            logo.frames = Paths.getSparrowAtlas('menus/story_menu/logos/' + world[0] + '_logo', 'pibby');
             logo.animation.addByPrefix('idle', "logo final", 24, false);
             logo.antialiasing = true;
             logo.screenCenter(Y);
             logo.y += 100;
-            logo.ID = i;
+            logo.ID = world[0];
             logo.setGraphicSize(Std.int(logo.width * 0.65));
             logo.updateHitbox();
 			logo.scrollFactor.set();
             logos.add(logo);
+            currentWorldIndex++;
         }
 
         leftArrow = new FlxSprite(logos.members[0].x - 85, logos.members[0].y + 170);
@@ -104,16 +105,10 @@ class PibbyStoryState extends MusicBeatState
         if (!selectedWeek)
 		{
             if (controls.UI_RIGHT_P)
-            {
                 changeWorld(1);
-                tweenShit();
-            }
-
+            
             if (controls.UI_LEFT_P)
-            {
                 changeWorld(-1);
-                tweenShit();
-            }
 
 			if (controls.UI_LEFT) leftArrow.animation.play('press'); else leftArrow.animation.play('idle');
 
@@ -121,9 +116,8 @@ class PibbyStoryState extends MusicBeatState
         }
 
         if(controls.ACCEPT)
-        {
             selectWorld();
-        }
+        
 
         super.update(elapsed);
     }
@@ -136,16 +130,16 @@ class PibbyStoryState extends MusicBeatState
 
     function changeWorld(theChange:Int = 0):Void
     {
-        curWeek += theChange;
+        curWorld += theChange;
         FlxG.sound.play(Paths.sound('scrollMenu'));
 
-        if (curWeek >= logoNames.length)
-			curWeek = 0;
-		if (curWeek < 0)
-			curWeek = logoNames.length - 1;
-    }
+        if (curWorld >= logoNames.length)
+			curWorld = 0;
+		if (curWorld < 0)
+			curWorld = logoNames.length - 1;
 
-    var selectedWeek:Bool = false;
+        FlxTween.tween(logos ,{x: logoNames[curWorld][1]}, 0.5, {ease: FlxEase.quadInOut});
+    }
 
     function selectWorld()
     {
@@ -155,22 +149,17 @@ class PibbyStoryState extends MusicBeatState
         FlxG.sound.play(Paths.sound('menuLaugh'));
         
         var songArray:Array<String> = [];
-		var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[curWeek]).songs;
+		var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[curWorld]).songs;
 		for (i in 0...leWeek.length) 
-        {
 			songArray.push(leWeek[i][0]);
-		}
 
 		PlayState.storyPlaylist = songArray;
 		PlayState.isStoryMode = true;
 
-		var diffic = null;
-			if(diffic == null) diffic = '';
+		PlayState.storyDifficulty = 2;
 
-		PlayState.storyDifficulty = curDifficulty;
-
-		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
-        PlayState.storyWeek = curWeek;
+		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase(), PlayState.storyPlaylist[0].toLowerCase());
+        PlayState.storyWeek = curWorld;
 		PlayState.campaignScore = 0;
 		PlayState.campaignMisses = 0;
 
@@ -180,23 +169,4 @@ class PibbyStoryState extends MusicBeatState
         });
         FlxG.sound.music.volume = 0;
     }
-
-    function tweenShit()
-    {
-        switch(curWeek)
-        {
-            case 0: 
-                FlxTween.tween(logos ,{x: 0}, 0.5, {ease: FlxEase.quadInOut});
-            case 1: 
-                FlxTween.tween(logos ,{x: -1060}, 0.5, {ease: FlxEase.quadInOut});
-            case 2: 
-                FlxTween.tween(logos ,{x: -2160}, 0.5, {ease: FlxEase.quadInOut});
-            case 3: 
-                FlxTween.tween(logos ,{x: -3240}, 0.5, {ease: FlxEase.quadInOut});
-            case 4: 
-                FlxTween.tween(logos ,{x: -4240}, 0.5, {ease: FlxEase.quadInOut});
-            case 5: 
-                FlxTween.tween(logos ,{x: -5332}, 0.5, {ease: FlxEase.quadInOut});
-        }
-    }   
 }

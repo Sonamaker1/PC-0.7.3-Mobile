@@ -54,8 +54,8 @@
 	<SubTexture name="@0001" x="170" y="92" width="52" height="56"/>
 	<SubTexture name="A bold0000" x="235" y="92" width="54" height="68"/>
 	<SubTexture name="A bold0001" x="235" y="92" width="54" height="68"/>
-	<SubTexture name="A capital0000" x="235" y="92" width="54" height="68"/>
-	<SubTexture name="A capital0001" x="235" y="92" width="54" height="68"/>
+	<SubTexture name="A captial0000" x="235" y="92" width="54" height="68"/>
+	<SubTexture name="A captial0001" x="235" y="92" width="54" height="68"/>
 	<SubTexture name="APOSTRAPHIE bold0000" x="302" y="92" width="26" height="38"/>
 	<SubTexture name="APOSTRAPHIE bold0001" x="302" y="92" width="26" height="38"/>
 	<SubTexture name="B bold0000" x="341" y="92" width="54" height="75"/>
