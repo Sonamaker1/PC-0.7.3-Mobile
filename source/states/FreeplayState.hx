@@ -443,6 +443,9 @@ class FreeplayState extends MusicBeatState
 		var max:Int = Math.round(Math.max(0, Math.min(songs.length, lerpSelected + _drawDistance)));
 		for (i in min...max)
 		{
+			grpSongs.members[i].alpha = 0;
+			grpSongs.members[curSelected].alpha = 1;
+
 			var item:Alphabet = grpSongs.members[i];
 			item.visible = item.active = true;
 			item.x = ((item.targetY - lerpSelected) * item.distancePerItem.x) + item.startPosition.x;
