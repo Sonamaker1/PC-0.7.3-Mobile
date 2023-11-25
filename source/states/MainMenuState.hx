@@ -16,16 +16,16 @@ import options.OptionsState;
 
 class MainMenuState extends MusicBeatState
 {
-	public static var psychEngineVersion:String = '0.7'; //This is also used for Discord RPC
-	public static var curSelected:Int = 0;
+	public static var psychEngineVersion: String = '0.7'; //This is also used for Discord RPC
+	public static var curSelected: Int = 0;
 
-	var menuItems: FlxTypedGroup<FlxText>;
+	private var menuItems: FlxTypedGroup<FlxText>;
 	private var charMenu: FlxSprite;
 
 	private var camGame: FlxCamera;
 	private var camAchievement: FlxCamera;
 	
-	var optionShit:Array<String> = [
+	private var optionShit: Array<String> = [
 		'story',
 		'freeplay',
 		'credits',
@@ -113,7 +113,7 @@ class MainMenuState extends MusicBeatState
 		super.create();
 	}
 
-	var selectedSomethin:Bool = false;
+	var canSelect: Bool = false;
 
 	override function update(elapsed:Float)
 	{
@@ -128,7 +128,7 @@ class MainMenuState extends MusicBeatState
 
 		charMenu.y = 190 + Math.sin(Conductor.songPosition/850)*((FlxG.height * 0.015));
 
-		if (!selectedSomethin)
+		if (!canSelect)
 		{
 			if (controls.UI_UP_P)
 			{
@@ -144,7 +144,7 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.BACK)
 			{
-				selectedSomethin = true;
+				canSelect = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
 			}
@@ -152,7 +152,7 @@ class MainMenuState extends MusicBeatState
 			if ( controls.ACCEPT )
 			{
 				var secondsDelayed: Float = 0;
-				selectedSomethin = true;
+				canSelect = true;
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 	
 				FlxTween.tween(charMenu, { alpha: 0 }, 0.2, {
@@ -197,7 +197,7 @@ class MainMenuState extends MusicBeatState
 			#if desktop
 			else if (controls.justPressed('debug_1'))
 			{
-				selectedSomethin = true;
+				canSelect = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
 			}
 			#end

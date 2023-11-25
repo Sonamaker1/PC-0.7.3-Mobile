@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spongebob_logo.png">
+	<!-- Created with Adobe Animate version 23.0.2.103 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="logo final0000" x="0" y="0" width="891" height="660" frameX="0" frameY="-4" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0001" x="941" y="0" width="891" height="664"/>
+	<SubTexture name="logo final0002" x="1882" y="0" width="891" height="653" frameX="0" frameY="-11" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0003" x="2823" y="0" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0004" x="2823" y="0" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0005" x="0" y="0" width="891" height="660" frameX="0" frameY="-4" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0006" x="941" y="0" width="891" height="664"/>
+	<SubTexture name="logo final0007" x="1882" y="0" width="891" height="653" frameX="0" frameY="-11" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0008" x="0" y="714" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0009" x="0" y="714" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0010" x="941" y="714" width="891" height="660" frameX="0" frameY="-4" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0011" x="1882" y="714" width="891" height="664"/>
+	<SubTexture name="logo final0012" x="2823" y="714" width="891" height="653" frameX="0" frameY="-11" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0013" x="0" y="1428" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0014" x="941" y="1428" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0015" x="1882" y="1428" width="891" height="660" frameX="0" frameY="-4" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0016" x="941" y="0" width="891" height="664"/>
+	<SubTexture name="logo final0017" x="2823" y="1428" width="891" height="653" frameX="0" frameY="-11" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0018" x="2823" y="0" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+	<SubTexture name="logo final0019" x="2823" y="0" width="891" height="646" frameX="0" frameY="-18" frameWidth="891" frameHeight="664"/>
+</TextureAtlas>

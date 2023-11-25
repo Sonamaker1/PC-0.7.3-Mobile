@@ -7,7 +7,10 @@ class PibbyStoryState extends MusicBeatState
 {
     public static var curWorld: Int = 0;
 
+    private var actualBG: FlxSprite;
     private var bg: FlxSprite;
+    private var backgroundTween: FlxTween;
+
     private var select: FlxText;
     private var curwidth: Float;
 
@@ -16,14 +19,21 @@ class PibbyStoryState extends MusicBeatState
     
     private var selectedWeek: Bool = false;
 
-    // First index is logo name, second is position it is in.
-    private final logoNames: Array<Array<Dynamic>> = [
-        ['adventure_time', 0], 
-        ['steven', -1060], 
-        ['fnf', -2160], 
-        ['regular_show',-3240], 
-        ['jenny', -4240], 
-        ['steamboat_willie', -5332]
+    // First index is logo name, second is position it is in, third is any additional values
+    private static final logoNames: Array<Array<Dynamic>> = [
+        ['adventure_time', 0, []], 
+        ['steven', -1060, [
+            1.1,
+            true
+        ]], 
+        ['fnf', -2160, []], 
+        ['regular_show',-3240, []], 
+        ['jenny', -4240, [
+            1.1,
+            true
+        ]], 
+        ['steamboat_willie', -5332, []],
+        ['spongebob', -6450, []]
     ];
     private var logos: FlxTypedSpriteGroup<FlxSprite>;
 
@@ -36,14 +46,17 @@ class PibbyStoryState extends MusicBeatState
 		WeekData.reloadWeekFiles(true);
 		persistentUpdate = persistentDraw = true;
 
+        actualBG = new FlxSprite(0, 0);
+        add(actualBG);
+
         bg = new FlxSprite(-80, 0);
-		bg.frames = Paths.getSparrowAtlas('menus/story_menu/menu glitch', 'pibby');
-		bg.animation.addByPrefix('idle', 'menu glitch', 30);
+		bg.frames = Paths.getSparrowAtlas('menus/titlescreen/menuInterference', 'pibby');
+		bg.animation.addByPrefix('idle', 'thing', 24);
 		bg.animation.play('idle');
-        bg.antialiasing = true;
-        bg.setGraphicSize(Std.int(bg.width * 0.8));
-        bg.screenCenter();
-        bg.alpha = 0.42;
+		bg.setGraphicSize(Std.int(bg.width * 3));
+		bg.antialiasing = ClientPrefs.data.antialiasing;
+		bg.screenCenter();
+        bg.alpha = 0.3;
 		add(bg);
 
         select = new FlxText(0, 50, 0, "", 69);
@@ -62,14 +75,20 @@ class PibbyStoryState extends MusicBeatState
         for (world in logoNames)
         {
             var logo:FlxSprite = new FlxSprite(275 + (currentWorldIndex * 1080), 0);
+            var scaleSet: Null<Int> = world[2][0] != null ? world[2][0] : null;
             logo.frames = Paths.getSparrowAtlas('menus/story_menu/logos/' + world[0] + '_logo', 'pibby');
-            logo.animation.addByPrefix('idle', "logo final", 24, false);
+            logo.animation.addByPrefix('idle', "logo final", 24, world[2][1] == true ? true : false);
             logo.antialiasing = true;
-            logo.screenCenter(Y);
             logo.y += 100;
             logo.ID = world[0];
             logo.setGraphicSize(Std.int(logo.width * 0.65));
+            if (scaleSet != null)
+            {
+                logo.scale.set(scaleSet, scaleSet);
+                logo.x += -40;
+            }
             logo.updateHitbox();
+            logo.screenCenter(Y);
 			logo.scrollFactor.set();
             logos.add(logo);
             currentWorldIndex++;
@@ -90,6 +109,8 @@ class PibbyStoryState extends MusicBeatState
 		rightArrow.animation.play('idle');
 		rightArrow.antialiasing = true;
 		add(rightArrow);
+
+        changeWorld();
     }
 
     override function update(elapsed:Float)
@@ -104,19 +125,16 @@ class PibbyStoryState extends MusicBeatState
 
         if (!selectedWeek)
 		{
-            if (controls.UI_RIGHT_P)
-                changeWorld(1);
+            if (controls.UI_RIGHT_P) changeWorld(1);
             
-            if (controls.UI_LEFT_P)
-                changeWorld(-1);
+            if (controls.UI_LEFT_P) changeWorld(-1);
 
 			if (controls.UI_LEFT) leftArrow.animation.play('press'); else leftArrow.animation.play('idle');
 
 			if (controls.UI_RIGHT) rightArrow.animation.play('press'); else rightArrow.animation.play('idle');
         }
 
-        if(controls.ACCEPT)
-            selectWorld();
+        if(controls.ACCEPT) selectWorld();
         
 
         super.update(elapsed);
@@ -138,6 +156,19 @@ class PibbyStoryState extends MusicBeatState
 		if (curWorld < 0)
 			curWorld = logoNames.length - 1;
 
+        if (backgroundTween != null) backgroundTween.cancel(); backgroundTween = null;
+
+        backgroundTween = FlxTween.tween(bg, { alpha: 1 }, 0.5, { ease: FlxEase.quartInOut, onComplete: function(tween:FlxTween)
+            {
+                actualBG.loadGraphic(Paths.image('menus/story_menu/backgrounds/${logoNames[curWorld][0]}', 'pibby'));
+                actualBG.scale.set(0.5, 0.5);
+                actualBG.updateHitbox();
+                actualBG.screenCenter();
+                backgroundTween = FlxTween.tween(bg, { alpha: .3 }, 0.5, { ease: FlxEase.quartInOut, onComplete: function(tween: FlxTween) backgroundTween = null });
+            }
+        });
+
+
         FlxTween.tween(logos ,{x: logoNames[curWorld][1]}, 0.5, {ease: FlxEase.quadInOut});
     }
 
@@ -150,8 +181,8 @@ class PibbyStoryState extends MusicBeatState
         
         var songArray:Array<String> = [];
 		var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[curWorld]).songs;
-		for (i in 0...leWeek.length) 
-			songArray.push(leWeek[i][0]);
+		for (week in leWeek) 
+			songArray.push(week[0]);
 
 		PlayState.storyPlaylist = songArray;
 		PlayState.isStoryMode = true;
@@ -164,9 +195,8 @@ class PibbyStoryState extends MusicBeatState
 		PlayState.campaignMisses = 0;
 
 		new FlxTimer().start(1.5, function(tmr:FlxTimer)
-        {
-            LoadingState.loadAndSwitchState(new PlayState(), true);
-        });
+            LoadingState.loadAndSwitchState(new PlayState(), true)
+        );
         FlxG.sound.music.volume = 0;
     }
 }
