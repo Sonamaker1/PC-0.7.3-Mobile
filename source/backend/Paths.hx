@@ -233,7 +233,7 @@ class Paths
 	}
 
 	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
-	static public function image(key:String, ?library:String = null, ?allowGPU:Bool = true):FlxGraphic
+	static public function image(key:String, ?library:String = null, ?allowGPU:Bool = true, ?allowDebug: Bool = true):FlxGraphic
 	{
 		var bitmap:BitmapData = null;
 		var file:String = null;
@@ -279,7 +279,8 @@ class Paths
 			return newGraphic;
 		}
 
-		trace('oh no its returning null NOOOO ($file)');
+		if (allowDebug)
+			trace('oh no its returning null NOOOO ($file)');
 		return null;
 	}
 
@@ -361,7 +362,7 @@ class Paths
 	inline static public function getSparrowAtlas(key:String, ?library:String = null, ?allowGPU:Bool = true):FlxAtlasFrames
 	{
 		#if MODS_ALLOWED
-		var imageLoaded:FlxGraphic = image(key, allowGPU);
+		var imageLoaded:FlxGraphic = image(key, allowGPU, false);
 		var xmlExists:Bool = false;
 
 		var xml:String = modsXml(key);
@@ -378,7 +379,7 @@ class Paths
 	inline static public function getPackerAtlas(key:String, ?library:String = null, ?allowGPU:Bool = true):FlxAtlasFrames
 	{
 		#if MODS_ALLOWED
-		var imageLoaded:FlxGraphic = image(key, allowGPU);
+		var imageLoaded:FlxGraphic = image(key, allowGPU, false);
 		var txtExists:Bool = false;
 		
 		var txt:String = modsTxt(key);

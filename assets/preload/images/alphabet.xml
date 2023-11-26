@@ -186,10 +186,10 @@
 	<SubTexture name="angry faic0001" x="287" y="269" width="118" height="67"/>
 	<SubTexture name="angry faic0002" x="418" y="269" width="117" height="67" frameX="-1" frameY="0" frameWidth="118" frameHeight="67"/>
 	<SubTexture name="angry faic0003" x="418" y="269" width="117" height="67" frameX="-1" frameY="0" frameWidth="118" frameHeight="67"/>
-	<SubTexture name="apostraphie0000" x="548" y="269" width="17" height="27"/>
-	<SubTexture name="apostraphie0001" x="548" y="269" width="17" height="27"/>
-	<SubTexture name="apostraphie0002" x="578" y="269" width="17" height="27"/>
-	<SubTexture name="apostraphie0003" x="578" y="269" width="17" height="27"/>
+	<SubTexture name="apostrophe lowercase0000" x="548" y="269" width="17" height="27"/>
+	<SubTexture name="apostrophe lowercase0001" x="548" y="269" width="17" height="27"/>
+	<SubTexture name="apostrophe lowercase0002" x="578" y="269" width="17" height="27"/>
+	<SubTexture name="apostrophe lowercase0003" x="578" y="269" width="17" height="27"/>
 	<SubTexture name="b lowercase0000" x="608" y="269" width="54" height="75"/>
 	<SubTexture name="b lowercase0001" x="608" y="269" width="54" height="75"/>
 	<SubTexture name="bold &0000" x="675" y="269" width="47" height="70"/>

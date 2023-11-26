@@ -27,7 +27,10 @@ class PibbyStoryState extends MusicBeatState
             true
         ]], 
         ['fnf', -2160, []], 
-        ['regular_show',-3240, []], 
+        ['regular_show',-3240, [
+            0.65,
+            true
+        ]], 
         ['jenny', -4240, [
             1.1,
             true

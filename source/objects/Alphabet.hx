@@ -375,7 +375,6 @@ class AlphaCharacter extends FlxSprite
 
 			
 			var alphaAnim:String = lowercase;
-			if (alphaAnim == "'") alphaAnim = "apostraphie";
 			if(curLetter != null && curLetter.anim != null) alphaAnim = curLetter.anim;
 
 			var anim:String = alphaAnim + suffix;

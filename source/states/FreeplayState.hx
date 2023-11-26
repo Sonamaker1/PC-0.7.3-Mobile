@@ -250,25 +250,19 @@ class FreeplayState extends MusicBeatState
 		}
 
 		if(intendedRating <= .4 && intendedRating > 0)
-		{
 			pibbyIcons.animation.play('lowAccuracy');
-		}
+
 		else if(intendedRating <= .66 && intendedRating > .4)
-		{
 			pibbyIcons.animation.play('midAccuracy');
-		}
+
 		else if(intendedRating <= .8 && intendedRating > .66)
-		{
 			pibbyIcons.animation.play('goodAccuracy');
-		}
+
 		else if(intendedRating <= 1 && intendedRating > .8)
-		{
 			pibbyIcons.animation.play('greatAccuracy');
-		}
+
 		else
-		{
 			pibbyIcons.animation.play('default');
-		}
 
 		scoreText.text = 'BEST SCORE: ' + lerpScore;
 		percentText.text = 'ACCURACY: (' + ratingSplit.join('.') + '%)';
@@ -348,16 +342,6 @@ class FreeplayState extends MusicBeatState
 			persistentUpdate = false;
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 			var poop:String = Highscore.formatSong(songLowercase, 1);
-			/*#if MODS_ALLOWED
-			if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
-			#else
-			if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
-			#end
-				poop = songLowercase;
-				curDifficulty = 2;
-				trace('Couldnt find file');
-			}*/
-			trace(poop);
 
 			PlayState.SONG = Song.loadFromJson(poop, songLowercase);
 			PlayState.isStoryMode = false;
@@ -368,11 +352,11 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			
-			if (FlxG.keys.pressed.SHIFT){
+			if (FlxG.keys.pressed.SHIFT)
 				LoadingState.loadAndSwitchState(new ChartingState());
-			}else{
+			else
 				LoadingState.loadAndSwitchState(new PlayState());
-			}
+			
 
 			FlxG.sound.music.volume = 0;
 					
@@ -413,9 +397,8 @@ class FreeplayState extends MusicBeatState
 				}
 				intendedColor = newColor;
 				colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
-					onComplete: function(twn:FlxTween) {
-						colorTween = null;
-					}
+					onComplete: function(twn:FlxTween) 
+						colorTween = null
 				});
 			}
 	
@@ -434,9 +417,8 @@ class FreeplayState extends MusicBeatState
 	{
 		lerpSelected = FlxMath.lerp(lerpSelected, curSelected, FlxMath.bound(elapsed * 9.6, 0, 1));
 		for (i in _lastVisibles)
-		{
 			grpSongs.members[i].visible = grpSongs.members[i].active = false;
-		}
+		
 		_lastVisibles = [];
 
 		var min:Int = Math.round(Math.max(0, Math.min(songs.length, lerpSelected - _drawDistance)));
