@@ -91,7 +91,7 @@ class FunkinLua {
 
 		var game:PlayState = PlayState.instance;
 		game.luaArray.push(this);
-		trace('lua file loaded succesfully:' + scriptName);
+		trace('Lua file loaded succesfully: ' + scriptName);
 
 		// Lua shit
 		set('Function_StopLua', Function_StopLua);

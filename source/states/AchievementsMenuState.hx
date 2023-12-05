@@ -24,7 +24,7 @@ class AchievementsMenuState extends MusicBeatState
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
 		add(menuBG);
-
+		
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
 

@@ -57,6 +57,7 @@ class CustomFadeTransition extends MusicBeatSubstate {
 			    ease: FlxEase.linear,
                 onComplete: function(twn:FlxTween) 
 					{
+						trace("In");
 						if (isOnInitialize && interfaceSpriteTrans != null)
 							interfaceSpriteTrans.alpha = 1;
 						close();
@@ -66,18 +67,20 @@ class CustomFadeTransition extends MusicBeatSubstate {
             leTween = FlxTween.tween(interfaceSprite, {alpha: 0}, duration, {
 			    ease: FlxEase.linear,
                 onComplete: function(twn:FlxTween) 
-					if (finishCallback != null)
 					{
+						trace("Out");
 						if (isOnInitialize && interfaceSpriteTrans != null)
 							interfaceSpriteTrans.alpha = 0;
-						finishCallback();
+						if (finishCallback != null)
+							finishCallback();
+						
 					}
             });
 
 		if(nextCamera != null)
 		{
 			if (isOnInitialize)
-				interfaceSpriteTrans.cameras = [nextCamera];
+				//interfaceSpriteTrans.cameras = [nextCamera];
 			interfaceSprite.cameras = [nextCamera];
 		}
 		
