@@ -206,8 +206,7 @@ class MainMenuState extends MusicBeatState
 		super.update(elapsed);
 	}
 
-	private var textTween: FlxTween = null;
-
+	private var colorTextTween: FlxTween = null;
 	private function changeItem(change: Int = 0)
 	{
 		curSelected += change;
@@ -221,10 +220,13 @@ class MainMenuState extends MusicBeatState
 		{
 			txt.alpha = 0.7;
 			txt.color = 0x606060;
+			if (txt.x != -535)
+				FlxTween.tween(txt, {x: -535}, 0.2, {ease: FlxEase.quadOut});
 			if (txt.ID == curSelected)
 			{
-				if ( textTween != null ) textTween.cancel(); textTween = null;
-				textTween = FlxTween.tween( txt, { alpha : 1 }, 0.4 );
+				if ( colorTextTween != null ) colorTextTween.cancel(); colorTextTween = null;
+				
+				colorTextTween = FlxTween.tween( txt, { alpha: 1, x: -495 }, 0.4, {ease: FlxEase.quadOut});
 				txt.color = FlxColor.WHITE;
 			}
 		});
