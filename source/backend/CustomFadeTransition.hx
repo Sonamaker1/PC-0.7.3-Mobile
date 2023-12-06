@@ -50,32 +50,39 @@ class CustomFadeTransition extends MusicBeatSubstate {
 		add(interfaceSprite);
 	
 		if (isOnInitialize)
-			add(interfaceSpriteTrans);
+			//add(interfaceSpriteTrans);
 
 		if(isTransIn)
-			FlxTween.tween(interfaceSprite, {alpha: 1}, duration, {
-			    ease: FlxEase.linear,
-                onComplete: function(twn:FlxTween) 
-					{
-						trace("In");
-						if (isOnInitialize && interfaceSpriteTrans != null)
-							interfaceSpriteTrans.alpha = 1;
-						close();
-					}
-			});
+			{
+				trace("[TransitionService] Transition in");
+				FlxTween.tween(interfaceSprite, {alpha: interfaceSprite.alpha == 0 ? 1 : 0}, duration, {
+					ease: FlxEase.linear,
+					onComplete: function(twn:FlxTween) 
+						{
+							if (isOnInitialize && interfaceSpriteTrans != null)
+								//interfaceSpriteTrans.alpha = 0;
+							close();
+						}
+				});
+			}
 		else
-            leTween = FlxTween.tween(interfaceSprite, {alpha: 0}, duration, {
-			    ease: FlxEase.linear,
-                onComplete: function(twn:FlxTween) 
-					{
-						trace("Out");
-						if (isOnInitialize && interfaceSpriteTrans != null)
-							interfaceSpriteTrans.alpha = 0;
-						if (finishCallback != null)
-							finishCallback();
-						
-					}
-            });
+			{
+				trace("[TransitionService] Transition out ");
+				interfaceSprite.alpha = 0;
+				leTween = FlxTween.tween(interfaceSprite, {alpha: 1}, duration, {
+					ease: FlxEase.linear,
+					onComplete: function(twn:FlxTween) 
+						{
+							if (isOnInitialize && interfaceSpriteTrans != null)
+								//interfaceSpriteTrans.alpha = 1;
+							if (finishCallback != null)
+								finishCallback();
+							
+						}
+				});
+			}
+
+		new FlxTimer().start(duration);
 
 		if(nextCamera != null)
 		{

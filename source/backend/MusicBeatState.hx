@@ -125,19 +125,12 @@ class MusicBeatState extends FlxUIState
 			return;
 		}
 
-		if(FlxTransitionableState.skipNextTransIn)
-		{
-			FlxG.switchState(nextState);
-		}
-		else startTransition(nextState);
+
+		startTransition(nextState);
 	}
 
 	public static function resetState() {
-		if(FlxTransitionableState.skipNextTransIn)
-		{
-			FlxG.resetState();
-		}
-		else startTransition();
+		startTransition();
 	}
 
 	// Custom made Trans in
@@ -149,9 +142,15 @@ class MusicBeatState extends FlxUIState
 		FlxTransitionableState.skipNextTransIn = false;
 		FlxG.state.openSubState(new CustomFadeTransition(0.6, false));
 		if(nextState == FlxG.state)
-			CustomFadeTransition.finishCallback = function() FlxG.resetState();
-		else
-			CustomFadeTransition.finishCallback = function() FlxG.switchState(nextState);
+			{
+				trace("[TransitionService] Reseting state");
+				CustomFadeTransition.finishCallback = function() FlxG.resetState();
+			}
+			else
+			{
+				trace('[TransitionService] Transitioning over to new state! ' + Std.string(nextState));
+				CustomFadeTransition.finishCallback = function() FlxG.switchState(nextState);
+			}
 	}
 
 	public static function getState():MusicBeatState {
