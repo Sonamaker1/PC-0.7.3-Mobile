@@ -3,76 +3,87 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				0
-			],
-			"anim": "idle",
-			"fps": 24,
-			"name": "Idle",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				281,
-				57
-			],
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Left",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-37,
-				-51
+				328,
+				198
 			],
 			"anim": "singDOWN",
 			"fps": 24,
-			"name": "Down",
+			"name": "down",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				236
+				307,
+				435
 			],
 			"anim": "singUP",
 			"fps": 24,
-			"name": "Up",
+			"name": "up",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-70,
-				-110
+				94,
+				368
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
-			"name": "Right",
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				651,
+				208
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				330,
+				230
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				553,
+				477
+			],
+			"anim": "talk",
+			"fps": 24,
+			"name": "spooky",
 			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/PibbySkidNPump",
+	"image": "characters/Skid_n_Pump",
 	"position": [
-		10,
-		230
-	],
-	"healthicon": "spooky",
-	"flip_x": false,
-	"healthbar_colors": [
-		113,
-		26,
+		0,
 		0
 	],
-	"camera_position": [
+	"healthicon": "pibspooky",
+	"flip_x": false,
+	"healthbar_colors": [
 		40,
-		-50
+		15,
+		35
+	],
+	"camera_position": [
+		-400,
+		-180
 	],
 	"sing_duration": 6.1,
-	"scale": 1.3
+	"scale": 1.1
 }

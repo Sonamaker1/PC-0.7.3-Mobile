@@ -1,134 +1,134 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				93,
 				827
 			],
-			"anim": "shoot",
+			"loop": false,
 			"fps": 24,
-			"name": "shoot0",
-			"indices": []
+			"anim": "shoot",
+			"indices": [],
+			"name": "shoot0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				39,
 				98
 			],
-			"anim": "shotfired",
+			"loop": false,
 			"fps": 24,
-			"name": "shoot filed",
-			"indices": []
+			"anim": "shotfired",
+			"indices": [],
+			"name": "shoot filed"
 		},
 		{
+			"loop": false,
 			"offsets": [
 				7,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "idle",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				26,
 				71
 			],
-			"anim": "singLEFTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "left miss",
-			"indices": []
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "left miss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				24,
 				70
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "left0",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				57,
 				113
 			],
-			"anim": "singUPmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "up miss",
-			"indices": []
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "up miss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				59,
 				114
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "up0",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "up0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				66,
 				12
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "right0",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				66,
 				11
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHTmiss",
-			"fps": 24,
-			"name": "right miss",
-			"indices": []
+			"indices": [],
+			"name": "right miss"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				9,
 				3
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "down0",
-			"indices": []
+			"indices": [],
+			"name": "down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				9,
 				3
 			],
-			"anim": "singDOWNmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "down miss",
-			"indices": []
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "down miss"
 		}
 	],
 	"no_antialiasing": true,
-	"image": "characters/final_Ivashka",
+	"image": "characters/final-ivashka",
 	"position": [
 		0,
 		350
 	],
-	"healthicon": "pirate-bf",
+	"healthicon": "piratebf",
 	"flip_x": true,
 	"healthbar_colors": [
 		87,

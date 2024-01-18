@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				-160,
+				150
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				66,
+				147
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-310,
+				189
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-122,
+				61
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-38,
+				296
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-108,
+				170
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "block",
+			"loop": false,
+			"name": "Block"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/shield-steven",
+	"position": [
+		-210,
+		250
+	],
+	"healthicon": "steven",
+	"flip_x": false,
+	"healthbar_colors": [
+		40,
+		15,
+		35
+	],
+	"camera_position": [
+		230,
+		-120
+	],
+	"sing_duration": 6.1,
+	"scale": 0.8
+}

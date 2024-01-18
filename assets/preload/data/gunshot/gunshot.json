@@ -1,7 +1,1000 @@
 {
 	"song": {
 		"player1": "survivor-bf",
-		"events": [],
+		"events": [
+			[
+				0,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.9"
+					]
+				]
+			],
+			[
+				6419.53125,
+				[
+					[
+						"",
+						"",
+						""
+					]
+				]
+			],
+			[
+				11250,
+				[
+					[
+						"Flashfade",
+						"0.79",
+						"1"
+					]
+				]
+			],
+			[
+				12000,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"1"
+					],
+					[
+						"Cinematics (UnderLap)",
+						"0.01",
+						"0"
+					],
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					],
+					[
+						"camera_target",
+						"d",
+						"1"
+					]
+				]
+			],
+			[
+				13875,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.3"
+					]
+				]
+			],
+			[
+				14062.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				16500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				18000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.05"
+					]
+				]
+			],
+			[
+				19875,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.3"
+					]
+				]
+			],
+			[
+				20250,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				23250,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.2"
+					],
+					[
+						"Flashfade",
+						"0.8",
+						"1"
+					]
+				]
+			],
+			[
+				23625,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.3"
+					]
+				]
+			],
+			[
+				24000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.05"
+					]
+				]
+			],
+			[
+				24562.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.3"
+					]
+				]
+			],
+			[
+				24750,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				28500,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.3"
+					]
+				]
+			],
+			[
+				28875,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				32250,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				32625,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.3"
+					]
+				]
+			],
+			[
+				33000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.05"
+					]
+				]
+			],
+			[
+				34500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				35062.5,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.3"
+					]
+				]
+			],
+			[
+				35250,
+				[
+					[
+						"Flashfade",
+						"0.8",
+						"1"
+					]
+				]
+			],
+			[
+				36000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.05"
+					]
+				]
+			],
+			[
+				38437.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.4"
+					]
+				]
+			],
+			[
+				38625,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				39000,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.3"
+					]
+				]
+			],
+			[
+				39187.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				],
+				null,
+				"glitch_note"
+			],
+			[
+				40500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.4"
+					],
+					[
+						"Cinematics (UnderLap)",
+						"0.3",
+						"90"
+					]
+				]
+			],
+			[
+				42000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.05"
+					],
+					[
+						"Cinematics (UnderLap)",
+						"1",
+						"0"
+					]
+				]
+			],
+			[
+				43500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.2"
+					]
+				]
+			],
+			[
+				45000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.3"
+					]
+				]
+			],
+			[
+				46500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.4"
+					]
+				]
+			],
+			[
+				47625,
+				[
+					[
+						"Flashfade",
+						"0.4",
+						"1"
+					]
+				]
+			],
+			[
+				48000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.05"
+					]
+				]
+			],
+			[
+				49500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				50625,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.4"
+					]
+				]
+			],
+			[
+				50906.25,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				52500,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.4"
+					]
+				]
+			],
+			[
+				52781.25,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				57000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				57750,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.3"
+					]
+				]
+			],
+			[
+				58125,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.4"
+					]
+				]
+			],
+			[
+				58500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.05"
+					]
+				]
+			],
+			[
+				59625,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.4"
+					]
+				]
+			],
+			[
+				60000,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					],
+					[
+						"Flash Camera",
+						"1",
+						""
+					],
+					[
+						"Cinematics (UnderLap)",
+						"1",
+						"90"
+					]
+				]
+			],
+			[
+				61500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.3"
+					]
+				]
+			],
+			[
+				63000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.5"
+					]
+				]
+			],
+			[
+				64500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.6"
+					]
+				]
+			],
+			[
+				66000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.05"
+					],
+					[
+						"camera_target",
+						"all",
+						"1"
+					]
+				]
+			],
+			[
+				69000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.1"
+					]
+				]
+			],
+			[
+				70500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1.15"
+					]
+				]
+			],
+			[
+				71625,
+				[
+					[
+						"Flashfade",
+						"0.4",
+						"1"
+					]
+				]
+			],
+			[
+				71628.90625,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.5,1.3"
+					]
+				]
+			],
+			[
+				72000,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					],
+					[
+						"camera_target",
+						"d",
+						"1000"
+					],
+					[
+						"Cinematics (UnderLap)",
+						"1",
+						"0"
+					]
+				]
+			],
+			[
+				72750,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				73125,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				74250,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				74625,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				75937.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				76218.75,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				78000,
+				[
+					[
+						"camera_target",
+						"s",
+						"1"
+					]
+				]
+			],
+			[
+				79500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				81750,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.3"
+					]
+				]
+			],
+			[
+				82125,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.4"
+					]
+				]
+			],
+			[
+				82500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.05"
+					]
+				]
+			],
+			[
+				84000,
+				[
+					[
+						"Flash Camera",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				84562.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				84843.75,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				85500,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				86250,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				87937.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				88312.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				89625,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.5"
+					]
+				]
+			],
+			[
+				89812.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				90000,
+				[
+					[
+						"Flash Camera",
+						"1",
+						""
+					],
+					[
+						"camera_target",
+						"all",
+						"1000"
+					],
+					[
+						"Cinematics (UnderLap)",
+						"0.01",
+						"90"
+					]
+				]
+			],
+			[
+				95625,
+				[
+					[
+						"Flashfade",
+						"0.4",
+						"1"
+					]
+				]
+			],
+			[
+				96000,
+				[
+					[
+						"Cinematics (UnderLap)",
+						"0.01",
+						"0"
+					],
+					[
+						"camera_target",
+						"d",
+						"1"
+					]
+				]
+			],
+			[
+				97875,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.3"
+					]
+				]
+			],
+			[
+				98062.5,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				99000,
+				[
+					[
+						"Flash Camera",
+						"0.8",
+						""
+					],
+					[
+						"camera_target",
+						"d",
+						"1000"
+					]
+				]
+			],
+			[
+				100500,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				102000,
+				[
+					[
+						"Flash Camera",
+						"0.8",
+						""
+					],
+					[
+						"camera_target",
+						"d",
+						"1000"
+					]
+				]
+			],
+			[
+				102003.90625,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				103875,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.4"
+					]
+				]
+			],
+			[
+				104250,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.05"
+					]
+				]
+			],
+			[
+				105000,
+				[
+					[
+						"Flash Camera",
+						"0.8",
+						""
+					],
+					[
+						"camera_target",
+						"d",
+						"1000"
+					]
+				]
+			],
+			[
+				107250,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				107625,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.3"
+					]
+				]
+			],
+			[
+				108000,
+				[
+					[
+						"Flash Camera",
+						"1",
+						""
+					],
+					[
+						"Set Property",
+						"camGame.alpha",
+						"0"
+					]
+				]
+			]
+		],
 		"gfVersion": "nogf",
 		"player2": "corrupted-pico",
 		"notes": [
@@ -13,16 +1006,6 @@
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
-				"mustHitSection": false
-			},
-			{
-				"lengthInSteps": 16,
-				"sectionNotes": [],
-				"mustHitSection": true
-			},
-			{
-				"lengthInSteps": 16,
-				"sectionNotes": [],
 				"mustHitSection": true
 			},
 			{
@@ -33,12 +1016,22 @@
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"sectionNotes": [],
 				"mustHitSection": false
 			},
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
 				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"sectionNotes": [],
+				"mustHitSection": false
 			},
 			{
 				"lengthInSteps": 16,
@@ -90,28 +1083,8 @@
 						0
 					],
 					[
-						13875,
-						1,
-						0
-					],
-					[
 						13687.5,
 						2,
-						0
-					],
-					[
-						13921.875,
-						0,
-						0
-					],
-					[
-						13968.75,
-						2,
-						0
-					],
-					[
-						14015.625,
-						3,
 						0
 					],
 					[
@@ -133,6 +1106,30 @@
 						14812.5,
 						0,
 						0
+					],
+					[
+						13875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						13921.875,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						13968.75,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						14015.625,
+						3,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": false
@@ -317,46 +1314,6 @@
 						0
 					],
 					[
-						19875,
-						2,
-						0
-					],
-					[
-						19921.875,
-						1,
-						0
-					],
-					[
-						19968.75,
-						0,
-						0
-					],
-					[
-						20015.625,
-						2,
-						0
-					],
-					[
-						20109.375,
-						0,
-						0
-					],
-					[
-						20156.25,
-						2,
-						0
-					],
-					[
-						20203.125,
-						0,
-						0
-					],
-					[
-						20250,
-						1,
-						0
-					],
-					[
 						20625,
 						2,
 						0
@@ -377,17 +1334,65 @@
 						0
 					],
 					[
-						20062.5,
-						3,
-						0
-					],
-					[
 						20718.75,
 						3,
 						0
 					],
 					[
 						20906.25,
+						1,
+						0
+					],
+					[
+						19921.875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						19968.75,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						19875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						20015.625,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						20062.5,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						20109.375,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						20156.25,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						20203.125,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						20250,
 						1,
 						0
 					]
@@ -522,27 +1527,7 @@
 						0
 					],
 					[
-						24562.5,
-						0,
-						0
-					],
-					[
-						24609.375,
-						1,
-						0
-					],
-					[
 						24281.25,
-						0,
-						0
-					],
-					[
-						24656.25,
-						3,
-						0
-					],
-					[
-						24703.125,
 						0,
 						0
 					],
@@ -570,6 +1555,30 @@
 						25406.25,
 						0,
 						0
+					],
+					[
+						24609.375,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						24562.5,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						24656.25,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						24703.125,
+						0,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": false
@@ -716,46 +1725,6 @@
 				"lengthInSteps": 16,
 				"sectionNotes": [
 					[
-						28500,
-						3,
-						0
-					],
-					[
-						28546.875,
-						2,
-						0
-					],
-					[
-						28593.75,
-						1,
-						0
-					],
-					[
-						28640.625,
-						0,
-						0
-					],
-					[
-						28687.5,
-						3,
-						0
-					],
-					[
-						28734.375,
-						2,
-						0
-					],
-					[
-						28781.25,
-						1,
-						0
-					],
-					[
-						28828.125,
-						0,
-						0
-					],
-					[
 						29062.5,
 						3,
 						0
@@ -789,6 +1758,54 @@
 						28921.875,
 						2,
 						0
+					],
+					[
+						28500,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						28546.875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						28593.75,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						28640.625,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						28687.5,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						28734.375,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						28781.25,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						28828.125,
+						0,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": false
@@ -1061,21 +2078,6 @@
 						0
 					],
 					[
-						38437.5,
-						2,
-						0
-					],
-					[
-						38437.5,
-						0,
-						0
-					],
-					[
-						38484.375,
-						1,
-						0
-					],
-					[
 						38671.875,
 						2,
 						0
@@ -1086,14 +2088,34 @@
 						0
 					],
 					[
+						38437.5,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						38437.5,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						38484.375,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
 						38531.25,
 						3,
-						0
+						0,
+						"glitch_note"
 					],
 					[
 						38578.125,
 						0,
-						0
+						0,
+						"glitch_note"
 					],
 					[
 						38625,
@@ -1106,26 +2128,6 @@
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [
-					[
-						39000,
-						0,
-						0
-					],
-					[
-						39046.875,
-						1,
-						0
-					],
-					[
-						39093.75,
-						2,
-						0
-					],
-					[
-						39140.625,
-						3,
-						0
-					],
 					[
 						39187.5,
 						1,
@@ -1175,6 +2177,30 @@
 						40406.25,
 						3,
 						0
+					],
+					[
+						39000,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						39046.875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						39093.75,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						39140.625,
+						3,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": false
@@ -1550,11 +2576,6 @@
 						0
 					],
 					[
-						50625,
-						1,
-						0
-					],
-					[
 						50953.125,
 						1,
 						0
@@ -1570,36 +2591,6 @@
 						0
 					],
 					[
-						50671.875,
-						3,
-						0
-					],
-					[
-						50718.75,
-						2,
-						0
-					],
-					[
-						50765.625,
-						0,
-						0
-					],
-					[
-						50812.5,
-						3,
-						0
-					],
-					[
-						50859.375,
-						2,
-						0
-					],
-					[
-						50906.25,
-						0,
-						0
-					],
-					[
 						50062.5,
 						3,
 						0
@@ -1608,6 +2599,48 @@
 						50156.25,
 						1,
 						0
+					],
+					[
+						50625,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						50671.875,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						50718.75,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						50765.625,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						50812.5,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						50859.375,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						50906.25,
+						0,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": false
@@ -1698,16 +2731,6 @@
 				"lengthInSteps": 16,
 				"sectionNotes": [
 					[
-						52500,
-						3,
-						0
-					],
-					[
-						52640.625,
-						3,
-						0
-					],
-					[
 						53156.25,
 						0,
 						0
@@ -1743,31 +2766,6 @@
 						0
 					],
 					[
-						52546.875,
-						1,
-						0
-					],
-					[
-						52593.75,
-						0,
-						0
-					],
-					[
-						52687.5,
-						1,
-						0
-					],
-					[
-						52734.375,
-						0,
-						0
-					],
-					[
-						52781.25,
-						2,
-						0
-					],
-					[
 						52828.125,
 						0,
 						0
@@ -1792,6 +2790,48 @@
 						1,
 						0,
 						"No Animation"
+					],
+					[
+						52500,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						52546.875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						52593.75,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						52734.375,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						52687.5,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						52640.625,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						52781.25,
+						2,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": false
@@ -2259,26 +3299,6 @@
 						0
 					],
 					[
-						71625,
-						7,
-						0
-					],
-					[
-						71718.75,
-						5,
-						0
-					],
-					[
-						71812.5,
-						7,
-						0
-					],
-					[
-						71906.25,
-						4,
-						0
-					],
-					[
 						71250,
 						6,
 						282
@@ -2294,6 +3314,30 @@
 						6,
 						0,
 						"No Animation"
+					],
+					[
+						71625,
+						7,
+						0,
+						"glitch_note"
+					],
+					[
+						71812.5,
+						7,
+						0,
+						"glitch_note"
+					],
+					[
+						71718.75,
+						5,
+						0,
+						"glitch_note"
+					],
+					[
+						71906.25,
+						4,
+						0,
+						"glitch_note"
 					]
 				],
 				"mustHitSection": true
@@ -2301,46 +3345,6 @@
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [
-					[
-						72000,
-						3,
-						0
-					],
-					[
-						72046.875,
-						2,
-						0
-					],
-					[
-						72093.75,
-						1,
-						0
-					],
-					[
-						72140.625,
-						0,
-						0
-					],
-					[
-						72187.5,
-						3,
-						0
-					],
-					[
-						72234.375,
-						2,
-						0
-					],
-					[
-						72281.25,
-						1,
-						0
-					],
-					[
-						72328.125,
-						0,
-						0
-					],
 					[
 						72375,
 						2,
@@ -2362,51 +3366,6 @@
 						0
 					],
 					[
-						72750,
-						0,
-						0
-					],
-					[
-						72796.875,
-						1,
-						0
-					],
-					[
-						72843.75,
-						3,
-						0
-					],
-					[
-						72890.625,
-						2,
-						0
-					],
-					[
-						72937.5,
-						0,
-						0
-					],
-					[
-						72984.375,
-						1,
-						0
-					],
-					[
-						73031.25,
-						3,
-						0
-					],
-					[
-						73078.125,
-						2,
-						0
-					],
-					[
-						73125,
-						1,
-						0
-					],
-					[
 						73406.25,
 						3,
 						0
@@ -2414,6 +3373,107 @@
 					[
 						73312.5,
 						0,
+						0
+					],
+					[
+						72000,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						72046.875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						72093.75,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						72140.625,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						72187.5,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						72234.375,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						72281.25,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						72328.125,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						72750,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						72796.875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						72890.625,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						72843.75,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						72937.5,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						72984.375,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						73031.25,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						73078.125,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						73125,
+						1,
 						0
 					]
 				],
@@ -2453,46 +3513,6 @@
 						0
 					],
 					[
-						74156.25,
-						3,
-						0
-					],
-					[
-						74250,
-						2,
-						0
-					],
-					[
-						74296.875,
-						1,
-						0
-					],
-					[
-						74343.75,
-						0,
-						0
-					],
-					[
-						74390.625,
-						3,
-						0
-					],
-					[
-						74437.5,
-						2,
-						0
-					],
-					[
-						74484.375,
-						1,
-						0
-					],
-					[
-						74531.25,
-						0,
-						0
-					],
-					[
 						74578.125,
 						3,
 						0
@@ -2504,6 +3524,53 @@
 					],
 					[
 						74906.25,
+						3,
+						0
+					],
+					[
+						74437.5,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						74390.625,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						74343.75,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						74296.875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						74250,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						74484.375,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						74531.25,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						74156.25,
 						3,
 						0
 					]
@@ -2553,41 +3620,6 @@
 						0
 					],
 					[
-						75937.5,
-						1,
-						0
-					],
-					[
-						75984.375,
-						2,
-						0
-					],
-					[
-						76031.25,
-						3,
-						0
-					],
-					[
-						76078.125,
-						0,
-						0
-					],
-					[
-						76125,
-						1,
-						0
-					],
-					[
-						76171.875,
-						2,
-						0
-					],
-					[
-						76218.75,
-						3,
-						0
-					],
-					[
 						76265.625,
 						0,
 						0
@@ -2611,6 +3643,48 @@
 						75375,
 						1,
 						0
+					],
+					[
+						75937.5,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						75984.375,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						76031.25,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						76078.125,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						76125,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						76171.875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						76218.75,
+						3,
+						0,
+						"glitch_note"
 					]
 				],
 				"typeOfSection": 0,
@@ -2967,36 +4041,6 @@
 						0
 					],
 					[
-						84562.5,
-						2,
-						0
-					],
-					[
-						84656.25,
-						3,
-						0
-					],
-					[
-						84609.375,
-						1,
-						0
-					],
-					[
-						84703.125,
-						2,
-						0
-					],
-					[
-						84750,
-						1,
-						0
-					],
-					[
-						84796.875,
-						0,
-						0
-					],
-					[
 						84937.5,
 						2,
 						0
@@ -3035,6 +4079,42 @@
 						84843.75,
 						3,
 						0
+					],
+					[
+						84562.5,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						84609.375,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						84656.25,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						84703.125,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						84796.875,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						84750,
+						1,
+						0,
+						"glitch_note"
 					]
 				],
 				"typeOfSection": 0,
@@ -3046,66 +4126,6 @@
 			},
 			{
 				"sectionNotes": [
-					[
-						85500,
-						3,
-						0
-					],
-					[
-						85546.875,
-						2,
-						0
-					],
-					[
-						85593.75,
-						1,
-						0
-					],
-					[
-						85640.625,
-						0,
-						0
-					],
-					[
-						85687.5,
-						3,
-						0
-					],
-					[
-						85734.375,
-						2,
-						0
-					],
-					[
-						85781.25,
-						1,
-						0
-					],
-					[
-						85828.125,
-						0,
-						0
-					],
-					[
-						85875,
-						2,
-						0
-					],
-					[
-						86109.375,
-						2,
-						0
-					],
-					[
-						86156.25,
-						1,
-						0
-					],
-					[
-						86203.125,
-						0,
-						0
-					],
 					[
 						86250,
 						2,
@@ -3132,26 +4152,6 @@
 						0
 					],
 					[
-						85968.75,
-						3,
-						0
-					],
-					[
-						85921.875,
-						0,
-						0
-					],
-					[
-						86015.625,
-						2,
-						0
-					],
-					[
-						86062.5,
-						1,
-						0
-					],
-					[
 						86812.5,
 						1,
 						0
@@ -3160,6 +4160,102 @@
 						86906.25,
 						3,
 						0
+					],
+					[
+						85500,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						85546.875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						85593.75,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						85640.625,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						85687.5,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						85734.375,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						85781.25,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						85828.125,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						86015.625,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						85968.75,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						86062.5,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						86109.375,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						86156.25,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						86203.125,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						85921.875,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						85875,
+						2,
+						0,
+						"glitch_note"
 					]
 				],
 				"typeOfSection": 0,
@@ -3187,26 +4283,6 @@
 						0
 					],
 					[
-						87937.5,
-						3,
-						0
-					],
-					[
-						88078.125,
-						0,
-						0
-					],
-					[
-						88125,
-						3,
-						0
-					],
-					[
-						88265.625,
-						0,
-						0
-					],
-					[
 						87000,
 						2,
 						0
@@ -3227,24 +4303,52 @@
 						0
 					],
 					[
+						87937.5,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
 						87984.375,
 						1,
-						0
+						0,
+						"glitch_note"
 					],
 					[
 						88031.25,
 						2,
-						0
+						0,
+						"glitch_note"
+					],
+					[
+						88078.125,
+						0,
+						0,
+						"glitch_note"
 					],
 					[
 						88171.875,
 						1,
-						0
+						0,
+						"glitch_note"
 					],
 					[
 						88218.75,
 						2,
-						0
+						0,
+						"glitch_note"
+					],
+					[
+						88125,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						88265.625,
+						0,
+						0,
+						"glitch_note"
 					]
 				],
 				"typeOfSection": 0,
@@ -3297,24 +4401,28 @@
 						0
 					],
 					[
-						89671.875,
-						3,
-						0
-					],
-					[
 						89625,
 						2,
-						0
+						0,
+						"glitch_note"
+					],
+					[
+						89671.875,
+						3,
+						0,
+						"glitch_note"
 					],
 					[
 						89765.625,
 						1,
-						0
+						0,
+						"glitch_note"
 					],
 					[
 						89718.75,
 						2,
-						0
+						0,
+						"glitch_note"
 					]
 				],
 				"typeOfSection": 0,
@@ -3655,28 +4763,8 @@
 						0
 					],
 					[
-						97875,
-						2,
-						0
-					],
-					[
 						97687.5,
 						1,
-						0
-					],
-					[
-						97921.875,
-						3,
-						0
-					],
-					[
-						97968.75,
-						1,
-						0
-					],
-					[
-						98015.625,
-						0,
 						0
 					],
 					[
@@ -3703,6 +4791,30 @@
 						97500,
 						0,
 						0
+					],
+					[
+						97875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						97921.875,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						97968.75,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						98015.625,
+						0,
+						0,
+						"glitch_note"
 					]
 				],
 				"typeOfSection": 0,
@@ -3819,11 +4931,6 @@
 					[
 						102000,
 						5,
-						283
-					],
-					[
-						102000,
-						5,
 						282
 					],
 					[
@@ -3908,46 +5015,6 @@
 						0
 					],
 					[
-						103875,
-						1,
-						0
-					],
-					[
-						103921.875,
-						2,
-						0
-					],
-					[
-						103968.75,
-						3,
-						0
-					],
-					[
-						104015.625,
-						1,
-						0
-					],
-					[
-						104109.375,
-						3,
-						0
-					],
-					[
-						104156.25,
-						1,
-						0
-					],
-					[
-						104203.125,
-						3,
-						0
-					],
-					[
-						104250,
-						2,
-						0
-					],
-					[
 						104625,
 						1,
 						0
@@ -3968,17 +5035,65 @@
 						0
 					],
 					[
-						104062.5,
-						0,
-						0
-					],
-					[
 						104718.75,
 						0,
 						0
 					],
 					[
 						104906.25,
+						2,
+						0
+					],
+					[
+						103875,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						103921.875,
+						2,
+						0,
+						"glitch_note"
+					],
+					[
+						103968.75,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						104015.625,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						104062.5,
+						0,
+						0,
+						"glitch_note"
+					],
+					[
+						104156.25,
+						1,
+						0,
+						"glitch_note"
+					],
+					[
+						104203.125,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						104109.375,
+						3,
+						0,
+						"glitch_note"
+					],
+					[
+						104250,
 						2,
 						0
 					]
@@ -4490,6 +5605,166 @@
 				"mustHitSection": true,
 				"changeBPM": false,
 				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"gfSection": false,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 160,
+				"sectionBeats": 4,
+				"changeBPM": false,
+				"mustHitSection": true
 			}
 		],
 		"player3": null,

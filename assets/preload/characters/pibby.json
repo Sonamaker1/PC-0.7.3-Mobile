@@ -1,66 +1,66 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "Pibby idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Pibby idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				34,
 				-3
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "Pibby left pose",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Pibby left pose"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				5,
 				-24
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "Pibby down pose",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Pibby down pose"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				2,
 				-16
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "Pibby up pose",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "Pibby up pose"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-12,
 				-20
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "Pibby right pose",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Pibby right pose"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/PibbyPlayable",
+	"image": "characters/pibby",
 	"position": [
-		130,
-		320
+		680,
+		360
 	],
 	"healthicon": "pibby",
 	"flip_x": false,
@@ -70,7 +70,7 @@
 		195
 	],
 	"camera_position": [
-		70,
+		-290,
 		30
 	],
 	"sing_duration": 6.1,

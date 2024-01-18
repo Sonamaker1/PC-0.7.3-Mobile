@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="Livesey-boss.png">
+<TextureAtlas imagePath="livesey-boss.png">
 	<!-- Created with Adobe Animate version 21.0.0.35450 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="Down V0000" x="1564" y="2659" width="803" height="458" frameX="-9" frameY="-20" frameWidth="821" frameHeight="484"/>

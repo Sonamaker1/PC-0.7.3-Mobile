@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="Finn.png">
+<TextureAtlas imagePath="finn.png">
 	<!-- Created with Adobe Animate version 22.0.3.179 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="Finn Down0000" x="0" y="0" width="763" height="639" frameX="-19" frameY="-162" frameWidth="782" frameHeight="801"/>

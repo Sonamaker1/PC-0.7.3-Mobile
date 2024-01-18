@@ -57,17 +57,17 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/livesey_gnidosa_finale",
+	"image": "characters/livesey-gnidosa",
 	"position": [
 		0,
 		0
 	],
-	"healthicon": "dad",
+	"healthicon": "livesey",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		40,
+		15,
+		35
 	],
 	"camera_position": [
 		-310,
