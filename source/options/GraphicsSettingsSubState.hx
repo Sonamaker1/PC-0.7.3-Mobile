@@ -70,6 +70,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			if(sprite != null && (sprite is FlxSprite) && !(sprite is FlxText)) {
 				sprite.antialiasing = ClientPrefs.data.antialiasing;
 			}
+			lime.app.Application.current.window.context.attributes.antialiasing = ClientPrefs.data.antialiasing ? (ClientPrefs.data.lowQuality ? 2 : 4) : 0;
 		}
 	}
 

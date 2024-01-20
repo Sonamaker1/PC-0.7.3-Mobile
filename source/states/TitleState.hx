@@ -80,6 +80,12 @@ class TitleState extends MusicBeatState
 		ClientPrefs.loadPrefs();
 		Highscore.load();
 
+		// what am i doing with my life is this even useful
+
+		// remove both it if you want idrm
+		// lime.app.Application.current.window.context.attributes.hardware = !ClientPrefs.data.lowQuality;
+		lime.app.Application.current.window.context.attributes.antialiasing = ClientPrefs.data.antialiasing ? (ClientPrefs.data.lowQuality ? 2 : 4) : 0;
+
 		// IGNORE THIS!!!
 		titleJSON = Json.parse(Paths.getTextFromFile('images/gfDanceTitle.json'));
 
@@ -172,6 +178,8 @@ class TitleState extends MusicBeatState
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
 		add(titleText);
+
+		FlxTween.tween(titleText, {alpha: 0}, 2, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.antialiasing = ClientPrefs.data.antialiasing;

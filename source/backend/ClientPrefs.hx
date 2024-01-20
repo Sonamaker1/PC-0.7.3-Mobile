@@ -24,6 +24,7 @@ class SaveVariables {
 	public var framerate:Int = 60;
 	public var cursing:Bool = true;
 	public var violence:Bool = true;
+	public var screenShake:Bool = true;
 	public var camZooms:Bool = true;
 	public var hideHud:Bool = false;
 	public var noteOffset:Int = 0;

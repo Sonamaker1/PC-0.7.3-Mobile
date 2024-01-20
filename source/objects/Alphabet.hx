@@ -29,6 +29,8 @@ class Alphabet extends FlxSpriteGroup
 	public var distancePerItem:FlxPoint = new FlxPoint(20, 120);
 	public var startPosition:FlxPoint = new FlxPoint(0, 0); //for the calculations
 
+	public var lerpPosition:Array<Bool> = [true, true]; // x / y
+
 	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true)
 	{
 		super(x, y);
@@ -167,9 +169,9 @@ class Alphabet extends FlxSpriteGroup
 		{
 			var lerpVal:Float = FlxMath.bound(elapsed * 9.6, 0, 1);
 			if(changeX)
-				x = FlxMath.lerp(x, (targetY * distancePerItem.x) + startPosition.x, lerpVal);
+				x = FlxMath.lerp(x, (targetY * distancePerItem.x) + startPosition.x, lerpPosition[0] ? lerpVal : 1);
 			if(changeY)
-				y = FlxMath.lerp(y, (targetY * 1.3 * distancePerItem.y) + startPosition.y, lerpVal);
+				y = FlxMath.lerp(y, (targetY * 1.3 * distancePerItem.y) + startPosition.y, lerpPosition[1] ? lerpVal : 1);
 		}
 		super.update(elapsed);
 	}

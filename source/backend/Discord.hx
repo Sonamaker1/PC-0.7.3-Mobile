@@ -7,18 +7,39 @@ import lime.app.Application;
 class DiscordClient
 {
 	public static var isInitialized:Bool = false;
-	private static var _defaultID:String = "863222024192262205";
+	private static var _defaultID:String = "1197604274914463835";
 	public static var clientID(default, set):String = _defaultID;
 
-	private static var _options:Dynamic = {
+	private static var _options:DiscordPresenceOptions = {
 		details: "In the Menus",
 		state: null,
-		largeImageKey: 'icon',
+		largeImageKey: 'logo',
 		largeImageText: "Psych Engine",
 		smallImageKey : null,
 		startTimestamp : null,
-		endTimestamp : null
+		endTimestamp : null,
+		spectateSecret: null, // this one doesn't work im not doing super advanced stuff 
 	};
+
+	// i mean it's kinda cool
+	private static var funnyTexts:Array<String> = [
+		'The Mod Where Everything Gets REPLACED',
+		'Imagine Taking 2 Years For An Update??',
+		'Version 1.5',
+		'Pibber',
+		'Werid, Must Be A Pibby Glitch',
+		'This Is A Text The Game Randomly Choosed',
+		'The Mod Became Good Trust Me',
+		'Insert Scary Text',
+		'Insert Goofy Text',
+		'0 Divided By 0',
+		'I Hate Pibby From FNF',
+		'Glitched Legends But Good',
+		'How Does The Turkey Smell?',
+		'Steamboat Full Of RATS',
+		'Hello, Is This Patrick?',
+		'Yeah'
+	];
 
 	public function new()
 	{
@@ -27,7 +48,8 @@ class DiscordClient
 			clientID: clientID,
 			onReady: onReady,
 			onError: onError,
-			onDisconnected: onDisconnected
+			onDisconnected: onDisconnected,
+			onSpectate: (thing) -> thing = 'https://gamebanana.com/mods/344757'
 		});
 		trace("Discord Client started.");
 
@@ -116,8 +138,8 @@ class DiscordClient
 
 		_options.details = details;
 		_options.state = state;
-		_options.largeImageKey = 'icon';
-		_options.largeImageText = "Engine Version: " + states.MainMenuState.psychEngineVersion;
+		_options.largeImageKey = 'logo';
+		_options.largeImageText = funnyTexts[FlxG.random.int(0, funnyTexts.length - 1)];
 		_options.smallImageKey = smallImageKey;
 		// Obtained times are in milliseconds so they are divided so Discord can use it
 		_options.startTimestamp = Std.int(startTimestamp / 1000);

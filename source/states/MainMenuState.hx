@@ -92,7 +92,7 @@ class MainMenuState extends MusicBeatState
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "", 12);
 		versionShit.text = 
 			"Psych Engine v" + psychEngineVersion
-			+ "\nFriday Night Funkin' v"+ Application.current.meta.get('version');
+			+ "\nPibby Corrupted' v"+ Application.current.meta.get('version');
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);

@@ -1,205 +1,144 @@
 {
-    "animations": [{
-            "offsets": [
-                63,
-                3
-            ],
-            "loop": false,
-            "fps": 24,
-            "anim": "singLEFTmiss",
-            "indices": [],
-            "name": "left miss"
-        },
-        {
-            "offsets": [
-                140, -63
-            ],
-            "loop": false,
-            "fps": 24,
-            "anim": "singDOWNmiss",
-            "indices": [],
-            "name": "down miss"
-        },
-        {
-            "offsets": [-74,
-                28
-            ],
-            "loop": false,
-            "fps": 24,
-            "anim": "singUPmiss",
-            "indices": [],
-            "name": "up miss"
-        },
-        {
-            "offsets": [
-                42,
-                10
-            ],
-            "loop": false,
-            "fps": 24,
-            "anim": "singRIGHTmiss",
-            "indices": [],
-            "name": "right miss"
-        },
-        {
-            "offsets": [
-                218,
-                146
-            ],
-            "loop": false,
-            "fps": 24,
-            "anim": "firstDeath",
-            "indices": [],
-            "name": "BF dies"
-        },
-        {
-            "offsets": [
-                285, -168
-            ],
-            "loop": true,
-            "fps": 24,
-            "anim": "deathLoop",
-            "indices": [],
-            "name": "BF Dead Loop"
-        },
-        {
-            "offsets": [
-                217,
-                9
-            ],
-            "loop": false,
-            "fps": 24,
-            "anim": "deathConfirm",
-            "indices": [],
-            "name": "BF Dead confirm"
-        },
-        {
-            "loop": false,
-            "offsets": [
-                513,
-                308
-            ],
-            "anim": "attack",
-            "fps": 24,
-            "name": "shoot0",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [-5,
-                0
-            ],
-            "anim": "idle",
-            "fps": 24,
-            "name": "idle",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [
-                67,
-                8
-            ],
-            "anim": "singLEFT",
-            "fps": 24,
-            "name": "left0",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [
-                97, -2
-            ],
-            "anim": "LEFTdodge",
-            "fps": 24,
-            "name": "left dodge",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [-23, -2],
-            "anim": "RIGHTdodge",
-            "fps": 24,
-            "name": "right dodge",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [-33,
-                38
-            ],
-            "anim": "UPdodge",
-            "fps": 24,
-            "name": "up dodge",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [-53, -62],
-            "anim": "DOWNdodge",
-            "fps": 24,
-            "name": "down dodge",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [
-                129, -57
-            ],
-            "anim": "singDOWN",
-            "fps": 24,
-            "name": "down0",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [-79,
-                26
-            ],
-            "anim": "singUP",
-            "fps": 24,
-            "name": "up0",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [
-                43,
-                10
-            ],
-            "anim": "singRIGHT",
-            "fps": 24,
-            "name": "right0",
-            "indices": []
-        },
-        {
-            "loop": false,
-            "offsets": [
-                422,
-                265
-            ],
-            "anim": "shoot2",
-            "fps": 24,
-            "name": "shoot 2",
-            "indices": []
-        }
-    ],
-    "no_antialiasing": false,
-    "image": "characters/Survivor_BF",
-    "position": [
-        0,
-        350
-    ],
-    "healthicon": "bf",
-    "flip_x": true,
-    "healthbar_colors": [
-        73,
-        28,
-        178
-    ],
-    "camera_position": [
-        350, -60
-    ],
-    "sing_duration": 4,
-    "scale": 1
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				17,
+				-12
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "left miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				6,
+				-45
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "down miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				4,
+				39
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "up miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-123,
+				-27
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "right miss0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				12,
+				17
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-8,
+				5
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				23
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				400,
+				272
+			],
+			"anim": "attack",
+			"fps": 24,
+			"name": "shoot",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				28,
+				1
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left 0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				50,
+				23
+			],
+			"anim": "dodge",
+			"fps": 24,
+			"name": "dodge",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Survivor_Boyfriend",
+	"position": [
+		100,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		60,
+		76,
+		155
+	],
+	"camera_position": [
+		90,
+		30
+	],
+	"sing_duration": 5.99999999999999,
+	"scale": 1
 }
