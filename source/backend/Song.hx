@@ -92,15 +92,22 @@ class Song
 		#if MODS_ALLOWED
 		var moddyFile:String = Paths.modsJson(formattedFolder + '/' + formattedSong);
 		if(FileSystem.exists(moddyFile)) {
-			rawJson = File.getContent(moddyFile).trim();
+			var moddyFileName:String = formattedFolder + "/" + formattedSong;
+			if (moddyFileName.endsWith("-null")) {
+				moddyFileName.replace("-null", "");
+			}
+
+			rawJson = File.getContent(moddyFileName).trim();
 		}
 		#end
 
 		if(rawJson == null) {
+			var daSongFILE:String = Paths.json(formattedFolder + '/' + formattedSong).replace("-null", "");
+
 			#if sys
-			rawJson = File.getContent(Paths.json(formattedFolder + '/' + formattedSong)).trim();
+			rawJson = File.getContent(daSongFILE).trim();
 			#else
-			rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
+			rawJson = Assets.getText(daSongFILE).trim();
 			#end
 		}
 

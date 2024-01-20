@@ -6,6 +6,7 @@
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
+				"gfSection": false,
 				"mustHitSection": true
 			},
 			{
@@ -2511,11 +2512,6 @@
 						214.285714285714
 					],
 					[
-						63571.4285714286,
-						0,
-						142.857142857143
-					],
-					[
 						63285.7142857143,
 						1,
 						0,
@@ -2524,6 +2520,11 @@
 					[
 						63714.2857142857,
 						1,
+						0
+					],
+					[
+						63571.4285714286,
+						0,
 						0
 					]
 				],
@@ -3812,6 +3813,16 @@
 				"sectionNotes": [
 					[
 						94857.1428571429,
+						7,
+						0
+					],
+					[
+						95142.8571428571,
+						4,
+						0
+					],
+					[
+						94857.1428571429,
 						3,
 						0
 					],
@@ -3821,53 +3832,43 @@
 						0
 					],
 					[
-						94857.1428571429,
-						7,
-						0
-					],
-					[
-						95142.8571428571,
-						4,
-						0
-					],
-					[
 						95428.5714285714,
-						7,
+						3,
 						0
 					],
 					[
 						95571.4285714286,
-						4,
+						0,
 						0
 					],
 					[
 						95714.2857142857,
-						7,
+						3,
 						0
 					],
 					[
 						95785.7142857143,
-						4,
+						0,
 						0
 					],
 					[
 						95857.1428571429,
-						7,
+						3,
 						0
 					],
 					[
 						95928.5714285715,
-						5,
+						1,
 						0
 					],
 					[
 						95428.5714285715,
-						1,
+						5,
 						216
 					],
 					[
 						95714.2857142858,
-						2,
+						6,
 						216
 					]
 				],
@@ -3943,15 +3944,1451 @@
 				"mustHitSection": true,
 				"changeBPM": false,
 				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 210
+			},
+			{
+				"gfSection": false,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 210,
+				"sectionBeats": 4,
+				"changeBPM": false,
+				"mustHitSection": true
 			}
 		],
 		"gfVersion": "nogf",
-		"events": [],
+		"events": [
+			[
+				0,
+				[
+					[
+						"WBG",
+						"Bon",
+						""
+					],
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,0.4"
+					],
+					[
+						"Set Property",
+						"dad.alpha",
+						"0"
+					]
+				]
+			],
+			[
+				71.4285714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"15,1"
+					]
+				]
+			],
+			[
+				4571.42857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					],
+					[
+						"WBG",
+						"off",
+						""
+					],
+					[
+						"Set Property",
+						"dad.alpha",
+						"1"
+					],
+					[
+						"camera_target",
+						"d",
+						"1000"
+					]
+				]
+			],
+			[
+				5571.42857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				6857.14285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				8428.57142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.85"
+					]
+				]
+			],
+			[
+				8857.14285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				8928.57142857143,
+				[
+					[
+						"camera_target",
+						"d",
+						"1.5"
+					]
+				]
+			],
+			[
+				9142.85714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				10142.8571428571,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				11428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				12428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				13714.2857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				16000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				17142.8571428571,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				17428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				17714.2857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				18285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,1"
+					]
+				]
+			],
+			[
+				20571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.5"
+					],
+					[
+						"camera_target",
+						"all",
+						"1000"
+					]
+				]
+			],
+			[
+				21714.2857142857,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					],
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1"
+					]
+				]
+			],
+			[
+				22000,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				22285.7142857143,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					]
+				]
+			],
+			[
+				22428.5714285714,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				22571.4285714286,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					]
+				]
+			],
+			[
+				22642.8571428571,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				22714.2857142857,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					]
+				]
+			],
+			[
+				22785.7142857143,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				22857.1428571429,
+				[
+					[
+						"camera_target",
+						"e",
+						"1000"
+					],
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				25142.8571428571,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				26285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				27142.8571428571,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				27214.2857142857,
+				[
+					[
+						"camera_target",
+						"d",
+						"1.5"
+					]
+				]
+			],
+			[
+				27428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				29714.2857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				30857.1428571428,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				31428.5714285714,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"0"
+					]
+				]
+			],
+			[
+				32000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					],
+					[
+						"camera_target",
+						"e",
+						"1000"
+					],
+					[
+						"Set Property",
+						"camGame.alpha",
+						"1"
+					]
+				]
+			],
+			[
+				34285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				35428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				36285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				36357.1428571429,
+				[
+					[
+						"camera_target",
+						"d",
+						"1.5"
+					]
+				]
+			],
+			[
+				36571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				38857.1428571428,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				40000,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,0.9"
+					]
+				]
+			],
+			[
+				40285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1"
+					]
+				]
+			],
+			[
+				40571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.1"
+					]
+				]
+			],
+			[
+				40857.1428571428,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1.2"
+					]
+				]
+			],
+			[
+				41142.8571428571,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				42285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				42714.2857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				43428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				44857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				45428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.1"
+					]
+				]
+			],
+			[
+				45714.2857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				46857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				47285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				48000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				49142.8571428571,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				49428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				49714.2857142857,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"0"
+					]
+				]
+			],
+			[
+				50285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					],
+					[
+						"camera_target",
+						"e",
+						"1000"
+					],
+					[
+						"Set Property",
+						"camGame.alpha",
+						"1"
+					]
+				]
+			],
+			[
+				51214.2857142857,
+				[
+					[
+						"camera_target",
+						"d",
+						"1.5"
+					]
+				]
+			],
+			[
+				51428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				51857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				52571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				54000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				54571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.1"
+					]
+				]
+			],
+			[
+				54857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				56000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				56428.5714285714,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				57142.8571428572,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				58285.7142857143,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"0"
+					]
+				]
+			],
+			[
+				58642.8571428572,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				59428.5714285715,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"1"
+					],
+					[
+						"camera_target",
+						"e",
+						"1000"
+					],
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				60357.1428571429,
+				[
+					[
+						"camera_target",
+						"d",
+						"1.5"
+					]
+				]
+			],
+			[
+				61428.5714285715,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				61714.2857142857,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				63285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.1"
+					]
+				]
+			],
+			[
+				64000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				66000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				66285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				67857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.1"
+					]
+				]
+			],
+			[
+				68571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				70571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				70857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				72428.5714285715,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.1"
+					]
+				]
+			],
+			[
+				73142.8571428572,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				75142.8571428572,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				75428.5714285715,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				77000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.1"
+					]
+				]
+			],
+			[
+				77285.7142857143,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"0"
+					]
+				]
+			],
+			[
+				77714.2857142858,
+				[
+					[
+						"camera_target",
+						"e",
+						"1000"
+					],
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,0.7"
+					]
+				]
+			],
+			[
+				78642.8571428571,
+				[
+					[
+						"camera_target",
+						"d",
+						"1.5"
+					]
+				]
+			],
+			[
+				78714.2857142858,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				80000.0000000001,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				81571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.85"
+					]
+				]
+			],
+			[
+				82000,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				82285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				83285.7142857143,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				84571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				85571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				86571.4285714286,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1.2"
+					]
+				]
+			],
+			[
+				86857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				87857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				89142.8571428572,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.7"
+					]
+				]
+			],
+			[
+				90285.7142857144,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.8"
+					]
+				]
+			],
+			[
+				90571.4285714287,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.9"
+					]
+				]
+			],
+			[
+				90857.1428571429,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				91428.5714285715,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"1,0.7"
+					]
+				]
+			],
+			[
+				92428.5714285715,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,1"
+					]
+				]
+			],
+			[
+				93714.2857142858,
+				[
+					[
+						"Camera zoom with tween",
+						"expoOut",
+						"0.5,0.5"
+					],
+					[
+						"camera_target",
+						"all",
+						"1000"
+					]
+				]
+			],
+			[
+				94857.1428571429,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					],
+					[
+						"Camera zoom with tween",
+						"",
+						"0.01,1"
+					]
+				]
+			],
+			[
+				95142.8571428572,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				95428.5714285714,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					]
+				]
+			],
+			[
+				95571.4285714287,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				95714.2857142857,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					]
+				]
+			],
+			[
+				95785.7142857144,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				95857.1428571429,
+				[
+					[
+						"camera_target",
+						"dad",
+						"1000"
+					]
+				]
+			],
+			[
+				95928.5714285715,
+				[
+					[
+						"camera_target",
+						"bf",
+						"1000"
+					]
+				]
+			],
+			[
+				96000.0000000001,
+				[
+					[
+						"Camera zoom with tween",
+						"",
+						"3,0.7"
+					],
+					[
+						"camera_target",
+						"x",
+						"1000"
+					]
+				]
+			],
+			[
+				97142.8571428572,
+				[
+					[
+						"Set Property",
+						"camGame.alpha",
+						"0"
+					],
+					[
+						"Set Property",
+						"camHUD.alpha",
+						"0"
+					]
+				]
+			]
+		],
 		"player3": null,
 		"song": "Terminated",
 		"validScore": true,
 		"needsVoices": true,
-		"stage": "laboratory",
+		"stage": "Mordecai bg",
 		"speed": 2.9,
 		"bpm": 210
 	}

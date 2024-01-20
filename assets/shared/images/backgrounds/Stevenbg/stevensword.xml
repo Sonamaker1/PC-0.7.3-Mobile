@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stevensword.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="sword glitch0000" x="0" y="0" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0001" x="0" y="0" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0002" x="517" y="0" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0003" x="517" y="0" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0004" x="1034" y="0" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0005" x="1034" y="0" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0006" x="0" y="459" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0007" x="0" y="459" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0008" x="517" y="459" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0009" x="517" y="459" width="517" height="459" frameX="0" frameY="0" frameWidth="521" frameHeight="459"/>
+	<SubTexture name="sword glitch0010" x="1034" y="459" width="521" height="459"/>
+	<SubTexture name="sword glitch0011" x="1034" y="459" width="521" height="459"/>
+	<SubTexture name="sword glitch0012" x="0" y="918" width="521" height="459"/>
+	<SubTexture name="sword glitch0013" x="0" y="918" width="521" height="459"/>
+</TextureAtlas>

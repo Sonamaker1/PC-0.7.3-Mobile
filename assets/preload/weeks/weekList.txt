@@ -1,4 +1,11 @@
-at
-su
-fnf
-rs
+adventure-time
+steven-universe
+regular-show
+friday-night-funkin
+mlaatr
+steamboat-willie
+spongebob
+treasure-island
+adventure-extras
+steven-extras
+funkin-extras

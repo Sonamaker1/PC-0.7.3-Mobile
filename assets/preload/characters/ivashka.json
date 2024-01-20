@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				7,
+				100
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "ivashka_idle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				11,
+				77
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "miss_ivashka_left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				84
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "ivashka_left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				6,
+				102
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "miss_ivashka_up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				6,
+				100
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "ivashka_up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				90
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "ivashka_right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				17,
+				86
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "miss_ivashka_right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				7,
+				78
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "ivashka_down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				7,
+				90
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "miss_ivashka_down",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/ivashka",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "piratebf",
+	"flip_x": true,
+	"healthbar_colors": [
+		87,
+		86,
+		135
+	],
+	"camera_position": [
+		-230,
+		-60
+	],
+	"sing_duration": 4,
+	"scale": 1
+}
