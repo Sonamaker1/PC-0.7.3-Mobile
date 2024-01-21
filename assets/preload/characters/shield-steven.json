@@ -1,77 +1,77 @@
 {
 	"animations": [
 		{
-			"loop": true,
 			"offsets": [
 				-160,
 				150
 			],
+			"loop": true,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "Idle",
-			"indices": []
+			"indices": [],
+			"name": "Idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				66,
-				147
+				86,
+				137
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Left",
-			"indices": []
+			"indices": [],
+			"name": "Left"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-310,
-				189
+				-360,
+				209
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "Right",
-			"indices": []
+			"indices": [],
+			"name": "Right"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-122,
-				61
+				-142,
+				71
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				12,
+				346
+			],
+			"loop": false,
 			"fps": 24,
-			"name": "Down",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
 		},
 		{
 			"loop": false,
-			"offsets": [
-				-38,
-				296
-			],
-			"anim": "singUP",
-			"fps": 24,
-			"name": "Up",
-			"indices": []
-		},
-		{
 			"offsets": [
 				-108,
 				170
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "block",
-			"loop": false,
-			"name": "Block"
+			"fps": 24,
+			"name": "Block",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/shield-steven",
+	"image": "characters/Shield_Steven",
 	"position": [
-		-210,
-		250
+		-180,
+		290
 	],
 	"healthicon": "steven",
 	"flip_x": false,
@@ -81,9 +81,10 @@
 		35
 	],
 	"camera_position": [
-		230,
-		-120
+		140,
+		-180
 	],
 	"sing_duration": 6.1,
-	"scale": 0.8
+	"scale": 0.8,
+	"_editor_isPlayer": false
 }

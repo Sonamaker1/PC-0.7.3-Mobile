@@ -4,7 +4,7 @@ makeLuaSprite('ffade', nil, 0, 0)
 makeGraphic('ffade', screenWidth, screenHeight, 'ffffff')
 setProperty('ffade.alpha', 0)
 setObjectCamera('ffade', 'other')
-addLuaSprite('ffade', true)
+addLuaSprite('ffade', false)
 end
 
 function onEvent(name, value1, value2)

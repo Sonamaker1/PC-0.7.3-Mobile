@@ -32,7 +32,7 @@ addLuaSprite('JH2', false)
 ---------------------------------------------
 ---------------------------------------------
 --jake cover notes hand1
-makeAnimatedLuaSprite('JM1', 'Jake_Mechanic2',850,-50)
+makeAnimatedLuaSprite('JM1', 'Jake_Mechanic2',950,-50)
 addAnimationByPrefix('JM1', 'spawn', 'Jake Mechanic2 Charge',24,false)
 addAnimationByPrefix('JM1', 'idle', 'Jake Mechanic2 Idle',24,true)
 setObjectCamera('JM1', 'hud')

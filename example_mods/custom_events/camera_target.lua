@@ -29,7 +29,7 @@ elseif target == 'dad' then
 cameraSetTarget('dad')
 elseif target == 'gf' then
 
-setProperty('camFollow.x', getMidpointX('gf') + (getProperty('gf.cameraPosition[0]') + getProperty('girlfriendCameraOffset[0]')))
 setProperty('camFollow.y', getMidpointY('gf') + (getProperty('gf.cameraPosition[1]') + getProperty('girlfriendCameraOffset[1]')))
+setProperty('camFollow.x', getMidpointX('gf') + (getProperty('gf.cameraPosition[0]') + getProperty('girlfriendCameraOffset[0]')))
 end
 end
