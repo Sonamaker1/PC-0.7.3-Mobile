@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="clusterhand.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="za hando glitch0000" x="0" y="0" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0001" x="0" y="0" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0002" x="805" y="0" width="805" height="755" frameX="-14" frameY="0" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0003" x="805" y="0" width="805" height="755" frameX="-14" frameY="0" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0004" x="1610" y="0" width="819" height="741" frameX="0" frameY="-14" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0005" x="1610" y="0" width="819" height="741" frameX="0" frameY="-14" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0006" x="2429" y="0" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0007" x="2429" y="0" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0008" x="3234" y="0" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0009" x="3234" y="0" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0010" x="0" y="755" width="805" height="741" frameX="-14" frameY="-14" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0011" x="0" y="755" width="805" height="741" frameX="-14" frameY="-14" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0012" x="805" y="755" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+	<SubTexture name="za hando glitch0013" x="805" y="755" width="805" height="735" frameX="-14" frameY="-20" frameWidth="819" frameHeight="755"/>
+</TextureAtlas>

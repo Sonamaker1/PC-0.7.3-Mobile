@@ -9,7 +9,7 @@
     V2 [CURRENT]: Added a "cinematic bars" toggle!
 ]]
 
-local graphicmodule = require 'mods/scripts/graphicmodule'
+local graphicmodule = require 'assets/scripts/graphicmodule'
 
 function onEvent(tag, var1, var2)
     if tag == 'Kabounce' then

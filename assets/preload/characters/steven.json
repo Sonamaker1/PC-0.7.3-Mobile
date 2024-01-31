@@ -1,88 +1,88 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				86,
-				137
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "Left"
-		},
-		{
-			"offsets": [
-				-360,
-				209
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Right"
-		},
-		{
-			"offsets": [
-				-142,
-				71
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "Down"
-		},
-		{
-			"offsets": [
-				12,
-				346
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "Up"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-108,
-				170
-			],
-			"anim": "block",
-			"fps": 24,
-			"name": "Block",
-			"indices": []
-		},
-		{
+			"loop": true,
 			"offsets": [
 				-160,
 				150
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": true,
-			"name": "Idle"
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				81,
+				91
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-82,
+				113
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-132,
+				166
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				12,
+				292
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-158,
+				130
+			],
+			"anim": "shield",
+			"fps": 24,
+			"name": "Shield Transition",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Shield_Steven",
+	"image": "characters/steven",
 	"position": [
-		-180,
-		200
+		-210,
+		250
 	],
 	"healthicon": "steven",
 	"flip_x": false,
 	"healthbar_colors": [
-		240,
-		80,
-		160
+		40,
+		15,
+		35
 	],
 	"camera_position": [
-		140,
-		-180
+		230,
+		-120
 	],
 	"sing_duration": 6.1,
 	"scale": 0.8

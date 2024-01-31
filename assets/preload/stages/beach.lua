@@ -15,9 +15,9 @@ setScrollFactor("moon", 0.12, 0.12);
 addLuaSprite("moon");
 
 
-makeLuaSprite("water",dir..'water',-600, -900)
+makeLuaSprite("water",dir..'water',-600, -1060)
 setScrollFactor("water", 0.28, 0.28);
-scaleObject("water", 1, 1.5, true);
+scaleObject("water", 1, 1.7, true);
 addLuaSprite("water");
 
 
@@ -33,7 +33,7 @@ scaleObject("ground", 1.4, 1.4, true);
 addLuaSprite("ground");
 
 
-makeAnimatedLuaSprite("lion", dir..'lion', 1220, 80)
+makeAnimatedLuaSprite("lion", dir..'lion', 1220, 55)
 addAnimationByPrefix('lion', 'idle', 'lion', 24, false);
 setScrollFactor("lion", 0.28,0.28);
 addLuaSprite('lion')
