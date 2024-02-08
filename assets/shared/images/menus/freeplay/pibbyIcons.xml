@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="pibbyIcons.png">
-        <SubTexture name="default0000" x="0" y="0" width="169" height="107" frameX="0" frameY="0" frameWidth="169" frameHeight="107" />
-        <SubTexture name="lowAccuracy0000" x="169" y="0" width="169" height="107" frameX="0" frameY="0" frameWidth="169" frameHeight="107" />
-        <SubTexture name="midAccuracy0000" x="338" y="0" width="169" height="107" frameX="0" frameY="0" frameWidth="169" frameHeight="107" />
-        <SubTexture name="goodAccuracy0000" x="507" y="0" width="169" height="106" frameX="0" frameY="0" frameWidth="169" frameHeight="106" />
-        <SubTexture name="greatAccuracy0000" x="0" y="107" width="168" height="106" frameX="0" frameY="0" frameWidth="168" frameHeight="106" />
-</TextureAtlas>
