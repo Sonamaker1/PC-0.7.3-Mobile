@@ -9,12 +9,8 @@ import flixel.ui.FlxButton;
 import openfl.net.FileReference;
 import openfl.events.Event;
 import openfl.events.IOErrorEvent;
-import flash.net.FileFilter;
-import tjson.TJSON as Json;
-#if sys
-import sys.io.File;
-#end
-
+import openfl.net.FileFilter;
+import haxe.Json;
 import objects.TypedAlphabet;
 
 import cutscenes.DialogueBoxPsych;
@@ -71,7 +67,15 @@ class DialogueEditorState extends MusicBeatState
 		addEditorBox();
 		FlxG.mouse.visible = true;
 
-		var addLineText:FlxText = new FlxText(10, 10, FlxG.width - 20, 'Press O to remove the current dialogue line, Press P to add another line after the current one.', 8);
+		var lineTxt:String;
+
+		if (controls.mobileC) {
+			lineTxt = "Press A to remove the current dialogue line, Press X to add another line after the current one.";
+		} else {
+			lineTxt = "Press O to remove the current dialogue line, Press P to add another line after the current one.";
+		}
+
+		var addLineText:FlxText = new FlxText(10, 10, FlxG.width - 20, lineTxt, 8);
 		addLineText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		addLineText.scrollFactor.set();
 		add(addLineText);
@@ -90,6 +94,7 @@ class DialogueEditorState extends MusicBeatState
 		daText.setScale(0.7);
 		add(daText);
 		changeText();
+		addVirtualPad(LEFT_FULL, A_B_X_Y);
 		super.create();
 	}
 
@@ -210,7 +215,11 @@ class DialogueEditorState extends MusicBeatState
 		characterAnimSpeed();
 
 		if(character.animation.curAnim != null && character.jsonFile.animations != null) {
+			if (controls.mobileC) {
+			animText.text = 'Animation: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - Press UP or DOWN to scroll';
+			} else {
 			animText.text = 'Animation: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - Press W or S to scroll';
+			}
 		} else {
 			animText.text = 'ERROR! NO ANIMATIONS FOUND';
 		}
@@ -238,7 +247,7 @@ class DialogueEditorState extends MusicBeatState
 		daText.y = DialogueBoxPsych.DEFAULT_TEXT_Y;
 		if(daText.rows > 2) daText.y -= DialogueBoxPsych.LONG_TEXT_ADD;
 
-		#if desktop
+		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
 		var rpcText:String = lineInputText.text;
 		if(rpcText == null || rpcText.length < 1) rpcText = '(Empty)';
@@ -257,7 +266,11 @@ class DialogueEditorState extends MusicBeatState
 					curAnim = 0;
 					if(character.jsonFile.animations.length > curAnim && character.jsonFile.animations[curAnim] != null) {
 						character.playAnim(character.jsonFile.animations[curAnim].anim, daText.finishedText);
+						if (controls.mobileC) {
+						animText.text = 'Animation: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - Press UP or DOWN to scroll';
+						} else {
 						animText.text = 'Animation: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - Press W or S to scroll';
+						}
 					} else {
 						animText.text = 'ERROR! NO ANIMATIONS FOUND';
 					}
@@ -332,17 +345,17 @@ class DialogueEditorState extends MusicBeatState
 
 		if(!blockInput) {
 			ClientPrefs.toggleVolumeKeys(true);
-			if(FlxG.keys.justPressed.SPACE) {
+			if(FlxG.keys.justPressed.SPACE || virtualPad.buttonY.justPressed) {
 				reloadText(false);
 			}
-			if(FlxG.keys.justPressed.ESCAPE) {
+			if(FlxG.keys.justPressed.ESCAPE || virtualPad.buttonB.justPressed) {
 				MusicBeatState.switchState(new states.editors.MasterEditorMenu());
 				FlxG.sound.playMusic(Paths.music('freakyMenu'), 1);
 				transitioning = true;
 			}
 			var negaMult:Array<Int> = [1, -1];
-			var controlAnim:Array<Bool> = [FlxG.keys.justPressed.W, FlxG.keys.justPressed.S];
-			var controlText:Array<Bool> = [FlxG.keys.justPressed.D, FlxG.keys.justPressed.A];
+			var controlAnim:Array<Bool> = [FlxG.keys.justPressed.W || virtualPad.buttonUp.justPressed, FlxG.keys.justPressed.S || virtualPad.buttonDown.justPressed];
+			var controlText:Array<Bool> = [FlxG.keys.justPressed.D || virtualPad.buttonRight.justPressed, FlxG.keys.justPressed.A || virtualPad.buttonLeft.justPressed];
 			for (i in 0...controlAnim.length) {
 				if(controlAnim[i] && character.jsonFile.animations.length > 0) {
 					curAnim -= negaMult[i];
@@ -354,14 +367,18 @@ class DialogueEditorState extends MusicBeatState
 						character.playAnim(animToPlay, daText.finishedText);
 						dialogueFile.dialogue[curSelected].expression = animToPlay;
 					}
+					if (controls.mobileC) {
+					animText.text = 'Animation: ' + animToPlay + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - Press UP or DOWN to scroll';
+					} else {
 					animText.text = 'Animation: ' + animToPlay + ' (' + (curAnim + 1) +' / ' + character.jsonFile.animations.length + ') - Press W or S to scroll';
+					}
 				}
 				if(controlText[i]) {
 					changeText(negaMult[i]);
 				}
 			}
 
-			if(FlxG.keys.justPressed.O) {
+			if(FlxG.keys.justPressed.O || virtualPad.buttonA.justPressed ) {
 				dialogueFile.dialogue.remove(dialogueFile.dialogue[curSelected]);
 				if(dialogueFile.dialogue.length < 1) //You deleted everything, dumbo!
 				{
@@ -370,7 +387,7 @@ class DialogueEditorState extends MusicBeatState
 					];
 				}
 				changeText();
-			} else if(FlxG.keys.justPressed.P) {
+			} else if(FlxG.keys.justPressed.P || virtualPad.buttonX.justPressed) {
 				dialogueFile.dialogue.insert(curSelected + 1, copyDefaultLine());
 				changeText(1);
 			}
@@ -412,13 +429,21 @@ class DialogueEditorState extends MusicBeatState
 				}
 			}
 			character.playAnim(character.jsonFile.animations[curAnim].anim, daText.finishedText);
+			if (controls.mobileC) {
+			animText.text = 'Animation: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + leLength + ') - Press UP or DOWN to scroll';
+			} else {
 			animText.text = 'Animation: ' + character.jsonFile.animations[curAnim].anim + ' (' + (curAnim + 1) +' / ' + leLength + ') - Press W or S to scroll';
+			}
 		} else {
 			animText.text = 'ERROR! NO ANIMATIONS FOUND';
 		}
 		characterAnimSpeed();
 
+		if (controls.mobileC) {
+		selectedText.text = 'Line: (' + (curSelected + 1) + ' / ' + dialogueFile.dialogue.length + ') - Press LEFT or RIGHT to scroll';
+		} else {
 		selectedText.text = 'Line: (' + (curSelected + 1) + ' / ' + dialogueFile.dialogue.length + ') - Press A or D to scroll';
+		}
 	}
 
 	function characterAnimSpeed() {
@@ -435,7 +460,7 @@ class DialogueEditorState extends MusicBeatState
 	function loadDialogue() {
 		var jsonFilter:FileFilter = new FileFilter('JSON', 'json');
 		_file = new FileReference();
-		_file.addEventListener(Event.SELECT, onLoadComplete);
+		_file.addEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.addEventListener(Event.CANCEL, onLoadCancel);
 		_file.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 		_file.browse([jsonFilter]);
@@ -443,7 +468,7 @@ class DialogueEditorState extends MusicBeatState
 
 	function onLoadComplete(_):Void
 	{
-		_file.removeEventListener(Event.SELECT, onLoadComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.removeEventListener(Event.CANCEL, onLoadCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 
@@ -478,7 +503,7 @@ class DialogueEditorState extends MusicBeatState
 		*/
 	function onLoadCancel(_):Void
 	{
-		_file.removeEventListener(Event.SELECT, onLoadComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.removeEventListener(Event.CANCEL, onLoadCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 		_file = null;
@@ -490,7 +515,7 @@ class DialogueEditorState extends MusicBeatState
 		*/
 	function onLoadError(_):Void
 	{
-		_file.removeEventListener(Event.SELECT, onLoadComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.removeEventListener(Event.CANCEL, onLoadCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 		_file = null;
@@ -501,17 +526,21 @@ class DialogueEditorState extends MusicBeatState
 		var data:String = haxe.Json.stringify(dialogueFile, "\t");
 		if (data.length > 0)
 		{
+			#if mobile
+			SUtil.saveContent("dialogue", ".json", data);
+			#else
 			_file = new FileReference();
-			_file.addEventListener(Event.COMPLETE, onSaveComplete);
+			_file.addEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 			_file.save(data, "dialogue.json");
+			#end
 		}
 	}
 
 	function onSaveComplete(_):Void
 	{
-		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
@@ -523,7 +552,7 @@ class DialogueEditorState extends MusicBeatState
 		*/
 	function onSaveCancel(_):Void
 	{
-		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
@@ -534,7 +563,7 @@ class DialogueEditorState extends MusicBeatState
 		*/
 	function onSaveError(_):Void
 	{
-		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;

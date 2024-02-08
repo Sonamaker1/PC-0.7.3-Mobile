@@ -14,7 +14,7 @@ typedef BPMChangeEvent =
 
 class Conductor
 {
-	public static var bpm:Float = 100;
+	public static var bpm(default, set):Float = 100;
 	public static var crochet:Float = ((60 / bpm) * 1000); // beats in milliseconds
 	public static var stepCrochet:Float = crochet / 4; // steps in milliseconds
 	public static var songPosition:Float = 0;
@@ -24,10 +24,6 @@ class Conductor
 	public static var safeZoneOffset:Float = 0; // is calculated in create(), is safeFrames in milliseconds
 
 	public static var bpmChangeMap:Array<BPMChangeEvent> = [];
-
-	public function new()
-	{
-	}
 
 	public static function judgeNote(arr:Array<Rating>, diff:Float=0):Rating // die
 	{
@@ -139,11 +135,9 @@ class Conductor
 		return (60/bpm)*1000;
 	}
 
-	public static function changeBPM(newBpm:Float)
-	{
-		bpm = newBpm;
-
-		crochet = calculateCrochet(bpm);
+	public static function set_bpm(newBPM:Float):Float {
+		crochet = calculateCrochet(newBPM);
 		stepCrochet = crochet / 4;
+		return bpm = newBPM;
 	}
 }

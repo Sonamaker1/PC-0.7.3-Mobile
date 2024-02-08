@@ -2,10 +2,6 @@ package states.editors;
 
 import backend.WeekData;
 
-#if MODS_ALLOWED
-import sys.FileSystem;
-#end
-
 import objects.Character;
 
 import states.MainMenuState;
@@ -20,7 +16,8 @@ class MasterEditorMenu extends MusicBeatState
 		'Menu Character Editor',
 		'Dialogue Editor',
 		'Dialogue Portrait Editor',
-		'Note Splash Debug'
+		'Note Splash Debug'#if !officialBuild ,
+                'Stage Editor' #end
 	];
 	private var grpTexts:FlxTypedGroup<Alphabet>;
 	private var directories:Array<String> = [null];
@@ -32,7 +29,7 @@ class MasterEditorMenu extends MusicBeatState
 	override function create()
 	{
 		FlxG.camera.bgColor = FlxColor.BLACK;
-		#if desktop
+		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Editors Main Menu", null);
 		#end
@@ -76,6 +73,13 @@ class MasterEditorMenu extends MusicBeatState
 		changeSelection();
 
 		FlxG.mouse.visible = false;
+
+		#if MODS_ALLOWED
+		addVirtualPad(LEFT_FULL, A_B);
+		#else
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		super.create();
 	}
 
@@ -121,12 +125,14 @@ class MasterEditorMenu extends MusicBeatState
 				case 'Dialogue Portrait Editor':
 					LoadingState.loadAndSwitchState(new DialogueCharacterEditorState(), false);
 				case 'Note Splash Debug':
-					LoadingState.loadAndSwitchState(new NoteSplashDebugState());
+					MusicBeatState.switchState(new NoteSplashDebugState());
+				#if !officialBuild
+				case 'Stage Editor':
+					LoadingState.loadAndSwitchState(new StageEditorState());
+				#end
 			}
 			FlxG.sound.music.volume = 0;
-			#if PRELOAD_ALL
 			FreeplayState.destroyFreeplayVocals();
-			#end
 		}
 		
 		var bullShit:Int = 0;

@@ -1,12 +1,7 @@
 package backend;
 
-#if MODS_ALLOWED
-import sys.io.File;
-import sys.FileSystem;
-#else
 import openfl.utils.Assets;
-#end
-import tjson.TJSON as Json;
+import haxe.Json;
 import backend.Song;
 
 typedef StageFile = {
@@ -24,6 +19,13 @@ typedef StageFile = {
 	var camera_opponent:Array<Float>;
 	var camera_girlfriend:Array<Float>;
 	var camera_speed:Null<Float>;
+
+	#if !officialBuild
+	@:optional var name:String;
+	@:optional var layerArray:Array<LayerFile>;
+	#end
+
+	@:optional var preload:Dynamic;
 }
 
 class StageData {
@@ -88,7 +90,7 @@ class StageData {
 
 	public static function getStageFile(stage:String):StageFile {
 		var rawJson:String = null;
-		var path:String = Paths.getPreloadPath('stages/' + stage + '.json');
+		var path:String = Paths.getSharedPath('stages/' + stage + '.json');
 
 		#if MODS_ALLOWED
 		var modPath:String = Paths.modFolders('stages/' + stage + '.json');
@@ -106,7 +108,7 @@ class StageData {
 		{
 			return null;
 		}
-		return cast Json.parse(rawJson);
+		return cast tjson.TJSON.parse(rawJson);
 	}
 
 	public static function vanillaSongStage(songName):String
@@ -133,3 +135,17 @@ class StageData {
 		return 'stage';
 	}
 }
+#if !officialBuild
+typedef LayerFile =
+{
+	public var name:String;
+	public var directory:String;
+	public var xAxis:Float;
+	public var yAxis:Float;
+	public var scrollX:Float;
+	public var scrollY:Float;
+	public var scale:Float;
+    public var flipX:Bool;
+	public var flipY:Bool;
+}
+#end

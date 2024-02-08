@@ -1,7 +1,5 @@
 package objects;
 
-import flixel.math.FlxPoint;
-
 enum Alignment
 {
 	LEFT;
@@ -26,10 +24,8 @@ class Alphabet extends FlxSpriteGroup
 	public var scaleY(default, set):Float = 1;
 	public var rows:Int = 0;
 
-	public var distancePerItem:FlxPoint = new FlxPoint(20, 120);
-	public var startPosition:FlxPoint = new FlxPoint(0, 0); //for the calculations
-
-	public var lerpPosition:Array<Bool> = [true, true]; // x / y
+	public var distancePerItem:FlxPoint = FlxPoint.get(20, 120);
+	public var startPosition:FlxPoint = FlxPoint.get(0, 0); //for the calculations
 
 	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true)
 	{
@@ -39,6 +35,9 @@ class Alphabet extends FlxSpriteGroup
 		this.startPosition.y = y;
 		this.bold = bold;
 		this.text = text;
+
+		moves = false;
+		immovable = true;
 	}
 
 	public function setAlignmentFromString(align:String)
@@ -101,8 +100,9 @@ class Alphabet extends FlxSpriteGroup
 			var letter:AlphaCharacter = letters[i];
 			if(letter != null)
 			{
-				letter.kill();
+				//letter = FlxDestroyUtil.destroy(letter);
 				letters.remove(letter);
+				letter.kill();
 				remove(letter);
 			}
 		}
@@ -167,11 +167,11 @@ class Alphabet extends FlxSpriteGroup
 	{
 		if (isMenuItem)
 		{
-			var lerpVal:Float = FlxMath.bound(elapsed * 9.6, 0, 1);
+			var lerpVal:Float = Math.exp(-elapsed * 9.6);
 			if(changeX)
-				x = FlxMath.lerp(x, (targetY * distancePerItem.x) + startPosition.x, lerpPosition[0] ? lerpVal : 1);
+				x = FlxMath.lerp((targetY * distancePerItem.x) + startPosition.x, x, lerpVal);
 			if(changeY)
-				y = FlxMath.lerp(y, (targetY * 1.3 * distancePerItem.y) + startPosition.y, lerpPosition[1] ? lerpVal : 1);
+				y = FlxMath.lerp((targetY * 1.3 * distancePerItem.y) + startPosition.y, y, lerpVal);
 		}
 		super.update(elapsed);
 	}
@@ -205,11 +205,12 @@ class Alphabet extends FlxSpriteGroup
 				if (spaceChar) consecutiveSpaces++;
 
 				var isAlphabet:Bool = AlphaCharacter.isTypeAlphabet(character.toLowerCase());
-				if (AlphaCharacter.allLetters.exists(character.toLowerCase()) && (bold || !spaceChar))
+				if (AlphaCharacter.allLetters.exists(character.toLowerCase()) && (!bold || !spaceChar))
 				{
 					if (consecutiveSpaces > 0)
 					{
 						xPos += 28 * consecutiveSpaces * scaleX;
+						rowData[rows] = xPos;
 						if(!bold && xPos >= FlxG.width * 0.65)
 						{
 							xPos = 0;
@@ -221,6 +222,7 @@ class Alphabet extends FlxSpriteGroup
 					var letter:AlphaCharacter = cast recycle(AlphaCharacter, true);
 					letter.scale.x = scaleX;
 					letter.scale.y = scaleY;
+					letter.rowWidth = 0;
 
 					letter.setupAlphaCharacter(xPos, rows * Y_PER_ROW * scale.y, character, bold);
 					@:privateAccess letter.parent = this;
@@ -248,6 +250,14 @@ class Alphabet extends FlxSpriteGroup
 		}
 
 		if(letters.length > 0) rows++;
+	}
+
+	override function destroy(){
+		distancePerItem.put();
+		startPosition.put();
+		letters = FlxDestroyUtil.destroyArray(letters);
+		active = false;
+		super.destroy();
 	}
 }
 
@@ -349,6 +359,9 @@ class AlphaCharacter extends FlxSprite
 		super(x, y);
 		image = 'alphabet';
 		antialiasing = ClientPrefs.data.antialiasing;
+
+		moves = false;
+		immovable = true;
 	}
 	
 	public var curLetter:Letter = null;
@@ -373,9 +386,20 @@ class AlphaCharacter extends FlxSprite
 			if(allLetters.exists(lowercase)) curLetter = allLetters.get(lowercase);
 			else curLetter = allLetters.get('?');
 
-			var suffix:String = ' lowercase';
+			var suffix:String = '';
+			if(!bold)
+			{
+				if(isTypeAlphabet(lowercase))
+				{
+					if(lowercase != this.character)
+						suffix = ' uppercase';
+					else
+						suffix = ' lowercase';
+				}
+				else suffix = ' normal';
+			}
+			else suffix = ' bold';
 
-			
 			var alphaAnim:String = lowercase;
 			if(curLetter != null && curLetter.anim != null) alphaAnim = curLetter.anim;
 
@@ -384,8 +408,8 @@ class AlphaCharacter extends FlxSprite
 			animation.play(anim, true);
 			if(animation.curAnim == null)
 			{
-				if(suffix != ' bold') anim = alphaAnim;
-				trace('[Alphabet] Could not find the character: ${lowercase} with the suffix ${StringTools.ltrim(suffix)}, retrying...');
+				if(suffix != ' bold') suffix = ' normal';
+				anim = 'question' + suffix;
 				animation.addByPrefix(anim, anim, 24);
 				animation.play(anim, true);
 			}
@@ -436,7 +460,10 @@ class AlphaCharacter extends FlxSprite
 	public function updateLetterOffset()
 	{
 		if (animation.curAnim == null)
+		{
+			trace(character);
 			return;
+		}
 
 		var add:Float = 110;
 		if(animation.curAnim.name.endsWith('bold'))
@@ -465,5 +492,10 @@ class AlphaCharacter extends FlxSprite
 	{
 		super.updateHitbox();
 		updateLetterOffset();
+	}
+
+	override function destroy(){
+		active = false;
+		super.destroy();
 	}
 }

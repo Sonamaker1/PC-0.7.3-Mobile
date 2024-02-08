@@ -1,10 +1,8 @@
 package options;
 
-import flixel.math.FlxPoint;
-
 import backend.StageData;
 import objects.Character;
-import objects.HealthBar;
+import objects.Bar;
 import flixel.addons.display.shapes.FlxShapeCircle;
 
 import states.stages.StageWeek1 as BackgroundStage;
@@ -27,7 +25,7 @@ class NoteOffsetState extends MusicBeatState
 	var barPercent:Float = 0;
 	var delayMin:Int = -500;
 	var delayMax:Int = 500;
-	var timeBar:HealthBar;
+	var timeBar:Bar;
 	var timeTxt:FlxText;
 	var beatText:Alphabet;
 	var beatTween:FlxTween;
@@ -39,19 +37,21 @@ class NoteOffsetState extends MusicBeatState
 
 	override public function create()
 	{
-		// Cameras
-		camGame = new FlxCamera();
-		camHUD = new FlxCamera();
-		camOther = new FlxCamera();
-		camHUD.bgColor.alpha = 0;
-		camOther.bgColor.alpha = 0;
+		#if DISCORD_ALLOWED
+		DiscordClient.changePresence("Delay/Combo Offset Menu", null);
+		#end
 
-		FlxG.cameras.reset(camGame);
+		// Cameras
+		camGame = initPsychCamera();
+
+		camHUD = new FlxCamera();
+		camHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(camHUD, false);
+
+		camOther = new FlxCamera();
+		camOther.bgColor.alpha = 0;
 		FlxG.cameras.add(camOther, false);
 
-		FlxG.cameras.setDefaultDrawTarget(camGame, true);
-		CustomFadeTransition.nextCamera = camOther;
 		FlxG.camera.scroll.set(120, 130);
 
 		persistentUpdate = true;
@@ -133,7 +133,7 @@ class NoteOffsetState extends MusicBeatState
 		barPercent = ClientPrefs.data.noteOffset;
 		updateNoteDelay();
 		
-		timeBar = new HealthBar(0, timeTxt.y + (timeTxt.height / 3), 'healthBar', function() return barPercent, delayMin, delayMax);
+		timeBar = new Bar(0, timeTxt.y + (timeTxt.height / 3), 'healthBar', function() return barPercent, delayMin, delayMax);
 		timeBar.scrollFactor.set();
 		timeBar.screenCenter(X);
 		timeBar.visible = false;
@@ -167,8 +167,11 @@ class NoteOffsetState extends MusicBeatState
 		updateMode();
 		_lastControllerMode = true;
 
-		Conductor.changeBPM(128.0);
+		Conductor.bpm = 128.0;
 		FlxG.sound.playMusic(Paths.music('offsetSong'), 1, true);
+
+		addVirtualPad(LEFT_FULL, A_B_C);
+		addVirtualPadCamera(false);
 
 		super.create();
 	}
@@ -177,8 +180,8 @@ class NoteOffsetState extends MusicBeatState
 	var onComboMenu:Bool = true;
 	var holdingObjectType:Null<Bool> = null;
 
-	var startMousePos:FlxPoint = new FlxPoint();
-	var startComboOffset:FlxPoint = new FlxPoint();
+	var startMousePos:FlxPoint = FlxPoint.get();
+	var startComboOffset:FlxPoint = FlxPoint.get();
 
 	override public function update(elapsed:Float)
 	{
@@ -346,7 +349,7 @@ class NoteOffsetState extends MusicBeatState
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET || virtualPad.buttonC.justPressed)
 			{
 				for (i in 0...ClientPrefs.data.comboOffset.length)
 				{
@@ -384,7 +387,7 @@ class NoteOffsetState extends MusicBeatState
 				updateNoteDelay();
 			}
 
-			if(controls.RESET)
+			if(controls.RESET || virtualPad.buttonC.justPressed)
 			{
 				holdTime = 0;
 				barPercent = 0;
@@ -405,7 +408,6 @@ class NoteOffsetState extends MusicBeatState
 			if(beatTween != null) beatTween.cancel();
 
 			persistentUpdate = false;
-			CustomFadeTransition.nextCamera = camOther;
 			MusicBeatState.switchState(new options.OptionsState());
 			if(OptionsState.onPlayState)
 			{
@@ -539,11 +541,21 @@ class NoteOffsetState extends MusicBeatState
 		else
 			str = 'Note/Beat Delay';
 
-		if(!controls.controllerMode)
-			str2 = '(Press Accept to Switch)';
-		else
-			str2 = '(Press Start to Switch)';
+                if (controls.mobileC) {
+		str2 = '(Press A to Switch)';
+                } else {
+					if(!controls.controllerMode)
+						str2 = '(Press Accept to Switch)';
+					else
+						str2 = '(Press Start to Switch)';
+                }
 
 		changeModeText.text = '< ${str.toUpperCase()} ${str2.toUpperCase()} >';
+	}
+
+	override function destroy(){
+		startMousePos.put();
+		startComboOffset.put();
+		super.destroy();
 	}
 }

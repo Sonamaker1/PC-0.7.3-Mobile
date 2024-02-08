@@ -1,14 +1,11 @@
 package flixel.addons.ui;
 
 import lime.system.Clipboard;
-import flash.errors.Error;
-import flash.events.KeyboardEvent;
-import flash.geom.Rectangle;
+import openfl.errors.Error;
+import openfl.events.KeyboardEvent;
+import openfl.geom.Rectangle;
 import flixel.addons.ui.FlxUI.NamedString;
-
-import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-
 import flixel.util.FlxDestroyUtil;
 
 /**
@@ -307,15 +304,16 @@ class FlxInputText extends FlxText
 		if (FlxG.mouse.justPressed)
 		{
 			var hadFocus:Bool = hasFocus;
-			if (mouseOverlapping())
+			if (FlxG.mouse.overlaps(this,camera))
 			{
 				caretIndex = getCaretIndex();
-				hasFocus = true;
+				hasFocus = FlxG.stage.window.textInputEnabled = true;
 				if (!hadFocus && focusGained != null)
 					focusGained();
 			}
 			else
 			{
+				//hasFocus = FlxG.stage.window.textInputEnabled = false;
 				hasFocus = false;
 				if (hadFocus && focusLost != null)
 					focusLost();
@@ -324,17 +322,6 @@ class FlxInputText extends FlxText
 		#end
 	}
 	
-	function mouseOverlapping()
-	{
-		var mousePoint = FlxG.mouse.getScreenPosition(camera);
-		var objPoint = this.getScreenPosition(null, camera);
-		if(mousePoint.x >= objPoint.x && mousePoint.y >= objPoint.y &&
-			mousePoint.x < objPoint.x + this.width && mousePoint.y < objPoint.y + this.height)
-		{
-			return true;
-		}
-		return false;
-	}
 
 	/**
 	 * Handles keypresses generated on the stage.

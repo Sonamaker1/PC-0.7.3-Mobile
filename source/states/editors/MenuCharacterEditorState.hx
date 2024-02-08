@@ -9,12 +9,8 @@ import flixel.ui.FlxButton;
 import openfl.net.FileReference;
 import openfl.events.Event;
 import openfl.events.IOErrorEvent;
-import flash.net.FileFilter;
-import tjson.TJSON as Json;
-#if sys
-import sys.io.File;
-#end
-
+import openfl.net.FileFilter;
+import haxe.Json;
 import objects.MenuCharacter;
 
 class MenuCharacterEditorState extends MusicBeatState
@@ -33,7 +29,7 @@ class MenuCharacterEditorState extends MusicBeatState
 			confirm_anim: 'M Dad Idle',
 			flipX: false
 		};
-		#if desktop
+		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Menu Character Editor", "Editting: " + characterFile.image);
 		#end
@@ -65,6 +61,8 @@ class MenuCharacterEditorState extends MusicBeatState
 		addEditorBox();
 		FlxG.mouse.visible = true;
 		updateCharTypeBox();
+		
+		addVirtualPad(MENU_CHARACTER, MENU_CHARACTER);
 
 		super.create();
 	}
@@ -229,7 +227,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		char.animation.play('idle');
 		updateOffset();
 		
-		#if desktop
+		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Menu Character Editor", "Editting: " + characterFile.image);
 		#end
@@ -266,32 +264,32 @@ class MenuCharacterEditorState extends MusicBeatState
 
 		if(!blockInput) {
 			ClientPrefs.toggleVolumeKeys(true);
-			if(FlxG.keys.justPressed.ESCAPE) {
+			if(FlxG.keys.justPressed.ESCAPE #if android || FlxG.android.justPressed.BACK #end || virtualPad.buttonB.justPressed) {
 				MusicBeatState.switchState(new states.editors.MasterEditorMenu());
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			}
 
 			var shiftMult:Int = 1;
-			if(FlxG.keys.pressed.SHIFT) shiftMult = 10;
+			if(FlxG.keys.pressed.SHIFT || virtualPad.buttonA.pressed) shiftMult = 10;
 
-			if(FlxG.keys.justPressed.LEFT) {
+			if(FlxG.keys.justPressed.LEFT || virtualPad.buttonLeft.justPressed) {
 				characterFile.position[0] += shiftMult;
 				updateOffset();
 			}
-			if(FlxG.keys.justPressed.RIGHT) {
+			if(FlxG.keys.justPressed.RIGHT || virtualPad.buttonRight.justPressed) {
 				characterFile.position[0] -= shiftMult;
 				updateOffset();
 			}
-			if(FlxG.keys.justPressed.UP) {
+			if(FlxG.keys.justPressed.UP || virtualPad.buttonUp.justPressed) {
 				characterFile.position[1] += shiftMult;
 				updateOffset();
 			}
-			if(FlxG.keys.justPressed.DOWN) {
+			if(FlxG.keys.justPressed.DOWN || virtualPad.buttonDown.justPressed) {
 				characterFile.position[1] -= shiftMult;
 				updateOffset();
 			}
 
-			if(FlxG.keys.justPressed.SPACE && curTypeSelected == 1) {
+			if(FlxG.keys.justPressed.SPACE || virtualPad.buttonC.justPressed && curTypeSelected == 1) {
 				grpWeekCharacters.members[curTypeSelected].animation.play('confirm', true);
 			}
 		}
@@ -314,7 +312,7 @@ class MenuCharacterEditorState extends MusicBeatState
 	function loadCharacter() {
 		var jsonFilter:FileFilter = new FileFilter('JSON', 'json');
 		_file = new FileReference();
-		_file.addEventListener(Event.SELECT, onLoadComplete);
+		_file.addEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.addEventListener(Event.CANCEL, onLoadCancel);
 		_file.addEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 		_file.browse([jsonFilter]);
@@ -322,7 +320,7 @@ class MenuCharacterEditorState extends MusicBeatState
 
 	function onLoadComplete(_):Void
 	{
-		_file.removeEventListener(Event.SELECT, onLoadComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.removeEventListener(Event.CANCEL, onLoadCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 
@@ -362,7 +360,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		*/
 	function onLoadCancel(_):Void
 	{
-		_file.removeEventListener(Event.SELECT, onLoadComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.removeEventListener(Event.CANCEL, onLoadCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 		_file = null;
@@ -374,7 +372,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		*/
 	function onLoadError(_):Void
 	{
-		_file.removeEventListener(Event.SELECT, onLoadComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onLoadComplete);
 		_file.removeEventListener(Event.CANCEL, onLoadCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onLoadError);
 		_file = null;
@@ -388,17 +386,21 @@ class MenuCharacterEditorState extends MusicBeatState
 			var splittedImage:Array<String> = imageInputText.text.trim().split('_');
 			var characterName:String = splittedImage[splittedImage.length-1].toLowerCase().replace(' ', '');
 
+			#if mobile
+			SUtil.saveContent(characterName, ".json", data);
+			#else
 			_file = new FileReference();
-			_file.addEventListener(Event.COMPLETE, onSaveComplete);
+			_file.addEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 			_file.addEventListener(Event.CANCEL, onSaveCancel);
 			_file.addEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 			_file.save(data, characterName + ".json");
+			#end
 		}
 	}
 
 	function onSaveComplete(_):Void
 	{
-		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
@@ -410,7 +412,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		*/
 	function onSaveCancel(_):Void
 	{
-		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;
@@ -421,7 +423,7 @@ class MenuCharacterEditorState extends MusicBeatState
 		*/
 	function onSaveError(_):Void
 	{
-		_file.removeEventListener(Event.COMPLETE, onSaveComplete);
+		_file.removeEventListener(#if desktop Event.SELECT #else Event.COMPLETE #end, onSaveComplete);
 		_file.removeEventListener(Event.CANCEL, onSaveCancel);
 		_file.removeEventListener(IOErrorEvent.IO_ERROR, onSaveError);
 		_file = null;

@@ -1,13 +1,31 @@
 #if !macro
 //Discord API
-#if desktop
+#if DISCORD_ALLOWED
 import backend.Discord;
 #end
 
 //Psych
-#if LUA_ALLOWED
-import llua.*;
-import llua.Lua;
+#if ACHIEVEMENTS_ALLOWED
+import backend.Achievements;
+#end
+#if VIDEOS_ALLOWED
+import backend.VideoManager;
+import backend.VideoSpriteManager;
+#end
+
+//Mobile Controls
+import mobile.objects.MobileControls;
+import mobile.flixel.FlxHitbox;
+import mobile.flixel.FlxVirtualPad;
+import mobile.flixel.input.FlxMobileInputID;
+import mobile.backend.Data;
+import mobile.backend.SUtil;
+
+#if sys
+import sys.*;
+import sys.io.*;
+#elseif js
+import js.html.*;
 #end
 
 import backend.Paths;
@@ -28,16 +46,18 @@ import objects.BGSprite;
 import states.PlayState;
 import states.LoadingState;
 
-//Flixel
-#if (flixel >= "5.3.0")
-import flixel.sound.FlxSound;
-#else
-import flixel.system.FlxSound;
+#if flxanimate
+import flxanimate.*;
 #end
+
+//Flixel
+import flixel.sound.FlxSound;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
+import flixel.util.FlxDestroyUtil;
 import flixel.math.FlxMath;
+import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;

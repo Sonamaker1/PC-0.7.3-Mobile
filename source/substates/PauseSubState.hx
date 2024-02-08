@@ -8,7 +8,7 @@ import flixel.addons.transition.FlxTransitionableState;
 
 import flixel.util.FlxStringUtil;
 
-import states.PibbyStoryState;
+import states.StoryMenuState;
 import states.FreeplayState;
 import options.OptionsState;
 
@@ -17,7 +17,7 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Options', 'Exit to menu'];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Chart Editor', 'Change Difficulty', 'Options', 'Exit to menu'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
@@ -27,11 +27,13 @@ class PauseSubState extends MusicBeatSubstate
 	var skipTimeTracker:Alphabet;
 	var curTime:Float = Math.max(0, Conductor.songPosition);
 
-	public static var songName:String = '';
+	var missingTextBG:FlxSprite;
+	var missingText:FlxText;
 
-	public function new(x:Float, y:Float)
+	public static var songName:String = null;
+
+	override function create()
 	{
-		super();
 		if(Difficulty.list.length < 2) menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
 
 		if(PlayState.chartingMode)
@@ -58,17 +60,20 @@ class PauseSubState extends MusicBeatSubstate
 
 
 		pauseMusic = new FlxSound();
-		if(songName != null) {
-			pauseMusic.loadEmbedded(Paths.music(songName), true, true);
-		} else if (songName != 'None') {
-			pauseMusic.loadEmbedded(Paths.music(Paths.formatToSongPath(ClientPrefs.data.pauseMusic)), true, true);
+		try
+		{
+			var pauseSong:String = getPauseSong();
+			if(pauseSong != null) pauseMusic.loadEmbedded(Paths.music(pauseSong), true, true);
 		}
+		catch(e:Dynamic) {}
 		pauseMusic.volume = 0;
 		pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
 
 		FlxG.sound.list.add(pauseMusic);
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		var bg:FlxSprite = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
+		bg.scale.set(FlxG.width, FlxG.height);
+		bg.updateHitbox();
 		bg.alpha = 0;
 		bg.scrollFactor.set();
 		add(bg);
@@ -124,8 +129,42 @@ class PauseSubState extends MusicBeatSubstate
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
 		add(grpMenuShit);
 
+		missingTextBG = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
+		missingTextBG.scale.set(FlxG.width, FlxG.height);
+		missingTextBG.updateHitbox();
+		missingTextBG.alpha = 0.6;
+		missingTextBG.visible = false;
+		add(missingTextBG);
+		
+		missingText = new FlxText(50, 0, FlxG.width - 100, '', 24);
+		missingText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		missingText.scrollFactor.set();
+		missingText.visible = false;
+		add(missingText);
+
 		regenMenu();
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+		if (PlayState.chartingMode)
+		{
+			addVirtualPad(LEFT_FULL, A);
+		}
+		else
+		{
+			addVirtualPad(UP_DOWN, A);
+		}
+		addVirtualPadCamera(false);
+
+		super.create();
+	}
+	
+	function getPauseSong()
+	{
+		var formattedSongName:String = (songName != null ? Paths.formatToSongPath(songName) : '');
+		var formattedPauseMusic:String = Paths.formatToSongPath(ClientPrefs.data.pauseMusic);
+		if(formattedSongName == 'none' || (formattedSongName != 'none' && formattedPauseMusic == 'none')) return null;
+
+		return (formattedSongName != '') ? formattedSongName : formattedPauseMusic;
 	}
 
 	var holdTime:Float = 0;
@@ -137,17 +176,19 @@ class PauseSubState extends MusicBeatSubstate
 			pauseMusic.volume += 0.01 * elapsed;
 
 		super.update(elapsed);
+
+		if(controls.BACK)
+		{
+			close();
+			return;
+		}
+
 		updateSkipTextStuff();
-
-		var upP = controls.UI_UP_P;
-		var downP = controls.UI_DOWN_P;
-		var accepted = controls.ACCEPT;
-
-		if (upP)
+		if (controls.UI_UP_P)
 		{
 			changeSelection(-1);
 		}
-		if (downP)
+		if (controls.UI_DOWN_P)
 		{
 			changeSelection(1);
 		}
@@ -183,21 +224,38 @@ class PauseSubState extends MusicBeatSubstate
 				}
 		}
 
-		if (accepted && (cantUnpause <= 0 || !controls.controllerMode))
+		if (controls.ACCEPT && (cantUnpause <= 0 || !controls.controllerMode))
 		{
 			if (menuItems == difficultyChoices)
 			{
-				if(menuItems.length - 1 != curSelected && difficultyChoices.contains(daSelected)) {
-					var name:String = PlayState.SONG.song;
-					var poop = Highscore.formatSong(name, curSelected);
-					PlayState.SONG = Song.loadFromJson(poop, name);
-					PlayState.storyDifficulty = curSelected;
-					MusicBeatState.resetState();
-					FlxG.sound.music.volume = 0;
-					PlayState.changedDifficulty = true;
-					PlayState.chartingMode = false;
+				try{
+					if(menuItems.length - 1 != curSelected && difficultyChoices.contains(daSelected)) {
+
+						var name:String = PlayState.SONG.song;
+						var poop = Highscore.formatSong(name, curSelected);
+						PlayState.SONG = Song.loadFromJson(poop, name);
+						PlayState.storyDifficulty = curSelected;
+						MusicBeatState.resetState();
+						FlxG.sound.music.volume = 0;
+						PlayState.changedDifficulty = true;
+						PlayState.chartingMode = false;
+						return;
+					}					
+				}catch(e:Dynamic){
+					trace('ERROR! $e');
+
+					var errorStr:String = e.toString();
+					if(errorStr.startsWith('[file_contents,assets/data/')) errorStr = 'Missing file: ' + errorStr.substring(27, errorStr.length-1); //Missing chart
+					missingText.text = 'ERROR WHILE LOADING CHART:\n$errorStr';
+					missingText.screenCenter(Y);
+					missingText.visible = true;
+					missingTextBG.visible = true;
+					FlxG.sound.play(Paths.sound('cancelMenu'));
+
+					super.update(elapsed);
 					return;
 				}
+
 
 				menuItems = menuItemsOG;
 				regenMenu();
@@ -217,6 +275,8 @@ class PauseSubState extends MusicBeatSubstate
 					practiceText.visible = PlayState.instance.practiceMode;
 				case "Restart Song":
 					restartSong();
+				case 'Chart Editor':
+					PlayState.instance.openChartEditor();
 				case "Leave Charting Mode":
 					restartSong();
 					PlayState.chartingMode = false;
@@ -258,22 +318,40 @@ class PauseSubState extends MusicBeatSubstate
 					}
 					OptionsState.onPlayState = true;
 				case "Exit to menu":
-					#if desktop DiscordClient.resetClientID(); #end
+					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 
 					Mods.loadTopMod();
-					if(PlayState.isStoryMode) {
-						MusicBeatState.switchState(new states.PibbyStoryState());
-					} else {
+					if(PlayState.isStoryMode)
+						MusicBeatState.switchState(new StoryMenuState());
+					else 
 						MusicBeatState.switchState(new FreeplayState());
-					}
-					PlayState.cancelMusicFadeTween();
+
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					PlayState.changedDifficulty = false;
 					PlayState.chartingMode = false;
 					FlxG.camera.followLerp = 0;
 			}
+		}
+
+		if (virtualPad == null) //sometimes it dosent add the vpad, hopefully this fixes it
+		{
+			if (PlayState.chartingMode)
+			{
+				addVirtualPad(LEFT_FULL, A);
+				virtualPad.buttonLeft.color = 0xFFC24B99;
+				virtualPad.buttonDown.color = 0xFF00FFFF;
+				virtualPad.buttonUp.color = 0xFF12FA05;
+				virtualPad.buttonRight.color = 0xFFF9393F; 
+			}
+			else
+			{
+				addVirtualPad(UP_DOWN, A);
+				virtualPad.buttonDown.color = 0xFF00FFFF;
+				virtualPad.buttonUp.color = 0xFF12FA05;
+			}
+			addVirtualPadCamera(false);
 		}
 	}
 
@@ -343,6 +421,8 @@ class PauseSubState extends MusicBeatSubstate
 				}
 			}
 		}
+		missingText.visible = false;
+		missingTextBG.visible = false;
 	}
 
 	function regenMenu():Void {

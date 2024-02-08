@@ -1,12 +1,7 @@
 package backend;
 
-import tjson.TJSON as Json;
-import lime.utils.Assets;
-
-#if sys
-import sys.io.File;
-import sys.FileSystem;
-#end
+import haxe.Json;
+import openfl.utils.Assets;
 
 import backend.Section;
 
@@ -24,8 +19,15 @@ typedef SwagSong =
 	var gfVersion:String;
 	var stage:String;
 
-	var arrowSkin:String;
-	var splashSkin:String;
+	@:optional var gameOverChar:String;
+	@:optional var gameOverSound:String;
+	@:optional var gameOverLoop:String;
+	@:optional var gameOverEnd:String;
+	
+	@:optional var disableNoteRGB:Bool;
+
+	@:optional var arrowSkin:String;
+	@:optional var splashSkin:String;
 }
 
 class Song
@@ -37,6 +39,11 @@ class Song
 	public var needsVoices:Bool = true;
 	public var arrowSkin:String;
 	public var splashSkin:String;
+	public var gameOverChar:String;
+	public var gameOverSound:String;
+	public var gameOverLoop:String;
+	public var gameOverEnd:String;
+	public var disableNoteRGB:Bool = false;
 	public var speed:Float = 1;
 	public var stage:String;
 	public var player1:String = 'bf';
@@ -90,31 +97,21 @@ class Song
 		var formattedFolder:String = Paths.formatToSongPath(folder);
 		var formattedSong:String = Paths.formatToSongPath(jsonInput);
 		#if MODS_ALLOWED
-		var moddyFile:String = Paths.modsJson(formattedFolder + '/' + formattedSong);
+		var moddyFile:String = Paths.modsJson('$formattedFolder/$formattedSong');
 		if(FileSystem.exists(moddyFile)) {
-			var moddyFileName:String = formattedFolder + "/" + formattedSong;
-			if (moddyFileName.endsWith("-null")) {
-				moddyFileName.replace("-null", "");
-			}
-
-			rawJson = File.getContent(moddyFileName).trim();
+			rawJson = File.getContent(moddyFile).trim();
 		}
 		#end
 
 		if(rawJson == null) {
-			var daSongFILE:String = Paths.json(formattedFolder + '/' + formattedSong).replace("-null", "");
+			var path:String = Paths.json('$formattedFolder/$formattedSong');
 
 			#if sys
-			rawJson = File.getContent(daSongFILE).trim();
-			#else
-			rawJson = Assets.getText(daSongFILE).trim();
+			if(FileSystem.exists(path))
+				rawJson = File.getContent(path);
+			else
 			#end
-		}
-
-		while (!rawJson.endsWith("}"))
-		{
-			rawJson = rawJson.substr(0, rawJson.length - 1);
-			// LOL GOING THROUGH THE BULLSHIT TO CLEAN IDK WHATS STRANGE
+				rawJson = Assets.getText(path);
 		}
 
 		// FIX THE CASTING ON WINDOWS/NATIVE

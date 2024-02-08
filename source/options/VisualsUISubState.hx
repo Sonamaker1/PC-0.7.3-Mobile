@@ -2,10 +2,10 @@ package options;
 
 import objects.Note;
 import objects.StrumNote;
-import objects.Alphabet;
 
 class VisualsUISubState extends BaseOptionsMenu
 {
+	public static var pauseMusics:Array<String> = ['None', 'Breakfast', 'Tea Time'];
 	var noteOptionID:Int = -1;
 	var notes:FlxTypedGroup<StrumNote>;
 	var notesTween:Array<FlxTween> = [];
@@ -28,7 +28,7 @@ class VisualsUISubState extends BaseOptionsMenu
 
 		// options
 
-		var noteSkins:Array<String> = Mods.mergeAllTextsNamed('images/noteSkins/list.txt', 'shared');
+		var noteSkins:Array<String> = Mods.mergeAllTextsNamed('images/noteSkins/list.txt');
 		if(noteSkins.length > 0)
 		{
 			if(!noteSkins.contains(ClientPrefs.data.noteSkin))
@@ -45,7 +45,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			noteOptionID = optionsArray.length - 1;
 		}
 		
-		var noteSplashes:Array<String> = Mods.mergeAllTextsNamed('images/noteSplashes/list.txt', 'shared');
+		var noteSplashes:Array<String> = Mods.mergeAllTextsNamed('images/noteSplashes/list.txt');
 		if(noteSplashes.length > 0)
 		{
 			if(!noteSplashes.contains(ClientPrefs.data.splashSkin))
@@ -90,12 +90,6 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool');
 		addOption(option);
 
-		var option:Option = new Option('Screen Shaking',
-			"Uncheck this if you're sensitive to screen shake!",
-			'screenShake',
-			'bool');
-		addOption(option);
-
 		var option:Option = new Option('Camera Zooms',
 			"If unchecked, the camera won't zoom in on a beat hit.",
 			'camZooms',
@@ -118,21 +112,19 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.changeValue = 0.1;
 		option.decimals = 1;
 		addOption(option);
-		
-		#if !mobile
+
 		var option:Option = new Option('FPS Counter',
-			'If unchecked, hides FPS Counter.',
+			'If unchecked, hides the FPS Counter.',
 			'showFPS',
 			'bool');
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
-		#end
 		
 		var option:Option = new Option('Pause Screen Song:',
-			"What song do you prefer for the Pause Screen?",
+			"Which song do you prefer for the Pause Screen?",
 			'pauseMusic',
 			'string',
-			['None', 'Breakfast', 'Tea Time']);
+			pauseMusics);
 		addOption(option);
 		option.onChange = onChangePauseMusic;
 		
@@ -144,7 +136,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		addOption(option);
 		#end
 
-		#if desktop
+		#if DISCORD_ALLOWED
 		var option:Option = new Option('Discord Rich Presence',
 			"Uncheck this to prevent accidental leaks, it will hide the Application from your \"Playing\" box on Discord",
 			'discordRPC',
@@ -153,7 +145,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		#end
 
 		var option:Option = new Option('Combo Stacking',
-			"If unchecked, Ratings and Combo won't stack, saving on System Memory and making them easier to read",
+			"If unchecked, Ratings and Combo won't stack, saving on System Memory and easier to read",
 			'comboStacking',
 			'bool');
 		addOption(option);
@@ -216,11 +208,9 @@ class VisualsUISubState extends BaseOptionsMenu
 		super.destroy();
 	}
 
-	#if !mobile
 	function onChangeFPSCounter()
 	{
 		if(Main.fpsVar != null)
 			Main.fpsVar.visible = ClientPrefs.data.showFPS;
 	}
-	#end
 }

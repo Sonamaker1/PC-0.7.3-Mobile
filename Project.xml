@@ -20,12 +20,18 @@
 	
 	<!-- ______________________ PSYCH ENGINE CUSTOMIZATION ______________________ -->
 
-	<define name="MODS_ALLOWED" if="desktop" />
-	<define name="LUA_ALLOWED" if="desktop" />
+	<define name="MODS_ALLOWED" if="desktop || mobile || emscripten" />
+	<define name="HSCRIPT_ALLOWED" if="desktop || mobile || web" />
+	<define name="LUA_ALLOWED" if="desktop || mobile" unless="hl"/>
 	<define name="ACHIEVEMENTS_ALLOWED" />
-	<define name="VIDEOS_ALLOWED" if="windows || linux || android" unless="32bits"/>
-	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
-	<define name="TITLE_SCREEN_EASTER_EGG" if="officialBuild"/> <!-- DELETE THE if="officialBuild" for enabling this on an unofficial build -->
+	<define name="DISCORD_ALLOWED" if="desktop" unless="hl"/>
+	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE THE PSYCH LOGO FROM LOADING SCREEN -->
+	<define name="VIDEOS_ALLOWED" if="desktop || mobile" unless="32bits || hl || NOVIDEO || rpi"/> <!-- i'll keep this cuz it makes vscode think i don't use videos -->
+        <define name="CUSTOM_SHADERS_ALLOWED" if="LUA_ALLOWED"/>
+
+	<section if="officialBuild">
+		<define name="TITLE_SCREEN_EASTER_EGG"/>
+	</section>
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
@@ -39,7 +45,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" resizable="false" allow-shaders="true" require-shaders="true" allow-high-dpi="true" />
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
@@ -49,59 +55,47 @@
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bits" />
+        <set name="BUILD_DIR" value="export/rpi" if="rpi" />
 
 	<classpath name="source" />
 
 	<!-- __________________________ Game Assets & Etc. __________________________ -->
-	
-	<!-- Turn on Crash Handler -->
-	<define name="CRASH_HANDLER" if="desktop release" />
 
-	<!-- Preload Assets -->
 	<define name="PRELOAD_ALL" unless="web" />
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL"/>
 
+	<!-- Assets -->
 	<assets path="assets/fonts" />
-	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
-	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
-	<section if="TITLE_SCREEN_EASTER_EGG">
-		<assets path="assets/secrets" rename="assets" exclude="*.ogg" if="web"/>
-		<assets path="assets/secrets" rename="assets" exclude="*.mp3"  unless="web"/>
-	</section>
-
-	<!-- DONT ENABLE THIS -->
-	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
-
-	<!-- Week Assets -->
-	<library name="videos"        preload="true" />
-	<section if="PRELOAD_ALL">
-		<library name="songs"         preload="true" />
-		<library name="shared"        preload="true" />
-		<library name="week_assets"   preload="true" />
-		<library name="pibby"   	  preload="true" />
-	</section>
-	
-	<section if="NO_PRELOAD_ALL">
-		<library name="songs"         preload="false" />
-		<library name="shared"        preload="false" />
-		<library name="week_assets"   preload="false" />
-		<library name="pibby"   	  preload="false" />
-	</section>
-	
+	<assets path="assets/shared"        exclude="*.ogg" if="web"/>
+	<assets path="assets/shared"        exclude="*.mp3" unless="web"/>
 	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.ogg" if="web"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.mp3" unless="web"/>
-	<assets path="assets/shared"        library="shared"        exclude="*.ogg" if="web"/>
-	<assets path="assets/shared"        library="shared"        exclude="*.mp3" unless="web"/>
 	<assets path="assets/week_assets"   library="week_assets"   rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/week_assets"   library="week_assets"   rename="assets" exclude="*.mp3" unless="web"/>
-	<assets path="assets/pibby"   		library="pibby"   		exclude="*.ogg" if="web"/>
-	<assets path="assets/pibby"   		library="pibby"   		exclude="*.mp3" unless="web"/>
-	
-	<section if="MODS_ALLOWED">
-		<assets path='example_mods' rename='mods' embed='false'/>
+	<section if="TITLE_SCREEN_EASTER_EGG">
+		<assets path="assets/secrets" rename="assets/shared" exclude="*.ogg" if="web"/>
+		<assets path="assets/secrets" rename="assets/shared" exclude="*.mp3"  unless="web"/>
 	</section>
-	<assets path='art/readme.txt' rename='do NOT readme.txt' />
+
+	<library name="videos"        preload="true" if="VIDEOS_ALLOWED"/>
+
+	<section if="PRELOAD_ALL">
+	<library name="songs"         preload="true" />
+	<library name="week_assets"   preload="true" />
+	</section>
+
+	<section if="NO_PRELOAD_ALL">
+	<library name="songs"         preload="false" />
+	<library name="week_assets"   preload="false" />
+	</section>
+
+	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild" />
+
+	<section if="MODS_ALLOWED">
+		<assets path='example_mods' rename='mods' embed='false' type='template'/>
+	</section>
+	<assets path='art/readme.txt' rename='do NOT readme.txt' unless="mobile"/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
@@ -111,16 +105,24 @@
 
 	<!--Psych stuff needed-->
 	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
-	<haxelib name="hxCodec" if="VIDEOS_ALLOWED" version="2.6.1"/>
-	<haxelib name="discord_rpc" if="desktop"/>
-	<haxelib name="tjson" />
-	<haxelib name="hscript" />
-	<define name="hscriptPos" />
+	<haxelib name="SScript" if="HSCRIPT_ALLOWED"/>
+	<haxelib name="hxCodec" if="VIDEOS_ALLOWED" unless="ios"/>
+	<haxelib name="hxvlc" if="VIDEOS_ALLOWED ios"/>
+	<haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED"/>
+	<haxelib name="flxanimate" unless="html5"/>
+	<haxelib name="tjson"/>
+
+	<!-- Mobile Specific-->
+	<haxelib name="extension-androidtools" if="android" />
+	<!--<haxelib name="hx-ios-uikit" if="ios" />-->
+
+	<!-- Disable Discord IO Thread -->
+	<haxedef name="DISCORD_DISABLE_IO_THREAD" if="hxdiscord_rpc" />
+	<haxedef name="NO_PRECOMPILED_HEADERS" if="linux" />
 
 	<!-- Enables a terminal log prompt on debug builds -->
 	<haxelib name="hxcpp-debug-server" if="debug"/>
-	<haxedef name="HXC_LIBVLC_LOGGING" if="VIDEOS_ALLOWED debug" />
-	
+
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<!--Enable the Flixel core recording system-->
@@ -146,22 +148,41 @@
 
 	<!--Disable the Flixel core focus lost screen-->
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
-	
+
 	<!-- Show debug traces for hxCodec -->
-	<haxedef name="HXC_DEBUG_TRACE" if="debug" />
+	<haxedef name="HXC_DEBUG_TRACE" if="debug hxCodec" />
+        <haxedef name="HXC_LIBVLC_LOGGING" if="debug hxCodec" />
 	
 	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
-	
-	<!--Used for Izzy Engine's crash handler-->
-	<haxedef name="HXCPP_CHECK_POINTER" if="CRASH_HANDLER" />
-	<haxedef name="HXCPP_STACK_LINE" if="CRASH_HANDLER" />
-	<haxedef name="HXCPP_STACK_TRACE" if="CRASH_HANDLER" />
+
 	<haxedef name='no-deprecation-warnings' />
+
+	<haxedef name='no-inline' if="html5"/>
+
+		<!--Always enable Null Object Reference check-->
+		<haxedef name="HXCPP_CHECK_POINTER" />
+		<haxedef name="HXCPP_STACK_LINE" />
+		<haxedef name="HXCPP_STACK_TRACE" />
 	
+		<section if="android">
+			<!-- Do whatever you want I'm tired uninstall and install everytime -->
+			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
+
+			<!--Target SDK-->
+			<android target-sdk-version="29" if="EXTERNAL || MEDIA"/>
+
+                        <config:android permission="android.permission.MANAGE_EXTERNAL_STORAGE" if="EXTERNAL || MEDIA"/>
+		</section>
+
+		<section if="ios">
+			<define name='objc' />
+			<ios linker-flags='-ObjC' />
+		</section>
+
 	<!--Macro fixes-->
 	<haxeflag name="--macro" value="allowPackage('flash')" />
 	<haxeflag name="--macro" value="include('my.pack')" />
@@ -169,7 +190,8 @@
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
-	
+
+	<assets path='art/icon16.png' rename='icon.png' if="linux" />
 	<icon path="art/icon16.png" size='16'/>
 	<icon path="art/icon32.png" size='32'/>
 	<icon path="art/icon64.png" size='64'/>

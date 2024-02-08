@@ -13,8 +13,9 @@ import objects.MenuCharacter;
 import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
 
-class PibbyStoryState extends MusicBeatState
+class StoryMenuState extends MusicBeatState
 {
+	public static var weekCompleted:Map<String, Bool> = new Map<String, Bool>();
 
 	var scoreText:FlxText;
 
@@ -78,7 +79,7 @@ class PibbyStoryState extends MusicBeatState
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
 
-		#if desktop
+		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
@@ -174,6 +175,8 @@ class PibbyStoryState extends MusicBeatState
 		changeWeek();
 		changeDifficulty();
 
+		addVirtualPad(LEFT_FULL, A_B_X_Y);
+
 		super.create();
 	}
 
@@ -181,12 +184,14 @@ class PibbyStoryState extends MusicBeatState
 		persistentUpdate = true;
 		changeWeek();
 		super.closeSubState();
+		removeVirtualPad();
+		addVirtualPad(LEFT_FULL, A_B_X_Y);
 	}
 
 	override function update(elapsed:Float)
 	{
 		// scoreText.setFormat('VCR OSD Mono', 32);
-		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, FlxMath.bound(elapsed * 30, 0, 1)));
+		lerpScore = Math.floor(FlxMath.lerp(intendedScore, lerpScore, Math.exp(-elapsed * 30)));
 		if(Math.abs(intendedScore - lerpScore) < 10) lerpScore = intendedScore;
 
 		scoreText.text = "WEEK SCORE:" + lerpScore;
@@ -233,15 +238,17 @@ class PibbyStoryState extends MusicBeatState
 			else if (upP || downP)
 				changeDifficulty();
 
-			if(FlxG.keys.justPressed.CONTROL)
+			if(FlxG.keys.justPressed.CONTROL || virtualPad.buttonX.justPressed)
 			{
 				persistentUpdate = false;
 				openSubState(new GameplayChangersSubstate());
+				removeVirtualPad();
 			}
-			else if(controls.RESET)
+			else if(controls.RESET || virtualPad.buttonY.justPressed)
 			{
 				persistentUpdate = false;
 				openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));
+				removeVirtualPad();
 				//FlxG.sound.play(Paths.sound('scrollMenu'));
 			}
 			else if (controls.ACCEPT)
@@ -307,8 +314,7 @@ class PibbyStoryState extends MusicBeatState
 			{
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 
-				grpWeekText.members[curWeek].startFlashing();
-
+				grpWeekText.members[curWeek].isFlashing = true;
 				for (char in grpWeekCharacters.members)
 				{
 					if (char.character != '' && char.hasConfirmAnimation)
@@ -321,16 +327,16 @@ class PibbyStoryState extends MusicBeatState
 
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
+				LoadingState.prepareToSong();
 				LoadingState.loadAndSwitchState(new PlayState(), true);
 				FreeplayState.destroyFreeplayVocals();
 			});
 			
-			#if MODS_ALLOWED
+			#if (MODS_ALLOWED && DISCORD_ALLOWED)
 			DiscordClient.loadModRPC();
 			#end
-		} else {
-			FlxG.sound.play(Paths.sound('cancelMenu'));
 		}
+		else FlxG.sound.play(Paths.sound('cancelMenu'));
 	}
 
 	var tweenDifficulty:FlxTween;
@@ -430,7 +436,7 @@ class PibbyStoryState extends MusicBeatState
 
 	function weekIsLocked(name:String):Bool {
 		var leWeek:WeekData = WeekData.weeksLoaded.get(name);
-		return false;
+		return (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!weekCompleted.exists(leWeek.weekBefore) || !weekCompleted.get(leWeek.weekBefore)));
 	}
 
 	function updateText()

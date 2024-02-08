@@ -1,11 +1,11 @@
 package objects;
 
-// If you want to make a custom note type, you should search for:
-// "function set_noteType"
-
+import backend.animation.PsychAnimationController;
 import backend.NoteTypesConfig;
+
 import shaders.RGBPalette;
 import shaders.RGBPalette.RGBShaderReference;
+
 import objects.StrumNote;
 
 import flixel.math.FlxRect;
@@ -23,6 +23,7 @@ typedef NoteSplashData = {
 	disabled:Bool,
 	texture:String,
 	useGlobalShader:Bool, //breaks r/g/b/a but makes it copy default colors for your custom note
+	useRGBShader:Bool,
 	antialiasing:Bool,
 	r:FlxColor,
 	g:FlxColor,
@@ -30,16 +31,25 @@ typedef NoteSplashData = {
 	a:Float
 }
 
+/**
+ * The note object used as a data structure to spawn and manage notes during gameplay.
+ * 
+ * If you want to make a custom note type, you should search for: "function set_noteType"
+**/
 class Note extends FlxSprite
 {
 	public var extraData:Map<String, Dynamic> = new Map<String, Dynamic>();
 
 	public var strumTime:Float = 0;
-	public var mustPress:Bool = false;
 	public var noteData:Int = 0;
+
+	public var mustPress:Bool = false;
 	public var canBeHit:Bool = false;
 	public var tooLate:Bool = false;
+
 	public var wasGoodHit:Bool = false;
+	public var missed:Bool = false;
+
 	public var ignoreNote:Bool = false;
 	public var hitByOpponent:Bool = false;
 	public var noteWasHit:Bool = false;
@@ -76,7 +86,18 @@ class Note extends FlxSprite
 	public static var colArray:Array<String> = ['purple', 'blue', 'green', 'red'];
 	public static var defaultNoteSkin(default, never):String = 'noteSkins/NOTE_assets';
 
-	public var noteSplashData:NoteSplashData = {disabled: false, texture: null, antialiasing: !PlayState.isPixelStage, useGlobalShader: false, r: -1, g: -1, b: -1, a: ClientPrefs.data.splashAlpha};
+	public var noteSplashData:NoteSplashData = {
+		disabled: false,
+		texture: null,
+		antialiasing: !PlayState.isPixelStage,
+		useGlobalShader: false,
+		useRGBShader: (PlayState.SONG != null) ? !(PlayState.SONG.disableNoteRGB == true) : true,
+		r: -1,
+		g: -1,
+		b: -1,
+		a: ClientPrefs.data.splashAlpha
+	};
+
 	public var offsetX:Float = 0;
 	public var offsetY:Float = 0;
 	public var offsetAngle:Float = 0;
@@ -114,7 +135,7 @@ class Note extends FlxSprite
 
 	public function resizeByRatio(ratio:Float) //haha funny twitter shit
 	{
-		if(isSustainNote && !animation.curAnim.name.endsWith('end'))
+		if(isSustainNote && animation.curAnim != null && !animation.curAnim.name.endsWith('end'))
 		{
 			scale.y *= ratio;
 			updateHitbox();
@@ -187,7 +208,9 @@ class Note extends FlxSprite
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false, ?createdFrom:Dynamic = null)
 	{
 		super();
-		
+
+		animation = new PsychAnimationController(this);
+
 		antialiasing = ClientPrefs.data.antialiasing;
 		if(createdFrom == null) createdFrom = PlayState.instance;
 
@@ -210,6 +233,7 @@ class Note extends FlxSprite
 		if(noteData > -1) {
 			texture = '';
 			rgbShader = new RGBShaderReference(this, initializeGlobalRGBShader(noteData));
+			if(PlayState.SONG != null && PlayState.SONG.disableNoteRGB) rgbShader.enabled = false;
 
 			x += swagWidth * (noteData);
 			if(!isSustainNote && noteData < colArray.length) { //Doing this 'if' check to fix the warnings on Senpai songs
@@ -371,7 +395,7 @@ class Note extends FlxSprite
 	function loadNoteAnims() {
 		if (isSustainNote)
 		{
-			animation.addByPrefix('purpleholdend', 'pruple end hold', 24, true); // this fixes some retarded typo from the original note .FLA
+			attemptToAddAnimationByPrefix('purpleholdend', 'pruple end hold', 24, true); // this fixes some retarded typo from the original note .FLA
 			animation.addByPrefix(colArray[noteData] + 'holdend', colArray[noteData] + ' hold end', 24, true);
 			animation.addByPrefix(colArray[noteData] + 'hold', colArray[noteData] + ' hold piece', 24, true);
 		}
@@ -387,6 +411,16 @@ class Note extends FlxSprite
 			animation.add(colArray[noteData] + 'holdend', [noteData + 4], 24, true);
 			animation.add(colArray[noteData] + 'hold', [noteData], 24, true);
 		} else animation.add(colArray[noteData] + 'Scroll', [noteData + 4], 24, true);
+	}
+
+	function attemptToAddAnimationByPrefix(name:String, prefix:String, framerate:Float = 24, doLoop:Bool = true)
+	{
+		var animFrames = [];
+		@:privateAccess
+		animation.findByPrefix(animFrames, prefix); // adds valid frames to animFrames
+		if(animFrames.length < 1) return;
+
+		animation.addByPrefix(name, prefix, framerate, doLoop);
 	}
 
 	override function update(elapsed:Float)
@@ -486,5 +520,16 @@ class Note extends FlxSprite
 			}
 			clipRect = swagRect;
 		}
+	}
+
+	@:noCompletion
+	override function set_clipRect(rect:FlxRect):FlxRect
+	{
+		clipRect = rect;
+
+		if (frames != null)
+			frame = frames.frames[animation.frameIndex];
+
+		return rect;
 	}
 }
