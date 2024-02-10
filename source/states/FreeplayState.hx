@@ -24,6 +24,7 @@ class FreeplayState extends MusicBeatState
 
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
+	var percentText:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var lerpRating:Float = 0;
@@ -38,6 +39,7 @@ class FreeplayState extends MusicBeatState
 	var bg:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
+	var pibbyIcons:FlxSprite;
 
 	var missingTextBG:FlxSprite;
 	var missingText:FlxText;
@@ -88,10 +90,16 @@ class FreeplayState extends MusicBeatState
 		}
 		Mods.loadTopMod();
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/sky'));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
 		bg.screenCenter();
+		bg.y -= 56;
+
+		var fg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/fpFG'));
+		fg.antialiasing = ClientPrefs.data.antialiasing;
+		add(fg);
+		fg.screenCenter();
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -123,19 +131,39 @@ class FreeplayState extends MusicBeatState
 			// songText.screenCenter(X);
 		}
 		WeekData.setDirectoryFromWeek();
+		
+		scoreText = new FlxText(FlxG.width * 0.6, 25, 0, "", 44);
+		scoreText.x -= 25;
+		scoreText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
+		
+		percentText = new FlxText(FlxG.width * 0.6, scoreText.y + 45, 0, "", 44);
+		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
-		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
+		pibbyIcons = new FlxSprite(scoreText.x, 5);
+		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons');
+		pibbyIcons.animation.addByPrefix('default', 'default', 24);
+		pibbyIcons.animation.addByPrefix('lowAccuracy', 'lowAccuracy', 24);
+		pibbyIcons.animation.addByPrefix('midAccuracy', 'midAccuracy', 24);
+		pibbyIcons.animation.addByPrefix('goodAccuracy', 'goodAccuracy', 24);
+		pibbyIcons.animation.addByPrefix('greatAccuracy', 'greatAccuracy', 24);
+		pibbyIcons.antialiasing = ClientPrefs.data.antialiasing;
 
-		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
+
+
+		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing'));
+		scoreBG.scale.y = 1.8;
+		scoreBG.scale.x = 2.85;
 		scoreBG.alpha = 0.6;
+		scoreBG.antialiasing = ClientPrefs.data.antialiasing;
 		add(scoreBG);
 
-		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
+		diffText = new FlxText(scoreText.x, scoreText.y + 76, 0, "", 24);
 		diffText.font = scoreText.font;
 		add(diffText);
 
 		add(scoreText);
+		add(percentText);
+		add(pibbyIcons);
 
 
 		missingTextBG = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -233,7 +261,23 @@ class FreeplayState extends MusicBeatState
 
 		if (!player.playingMusic)
 		{
-			scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + ratingSplit.join('.') + '%)';
+			if(intendedRating <= .4 && intendedRating > 0)
+				pibbyIcons.animation.play('lowAccuracy');
+
+			else if(intendedRating <= .66 && intendedRating > .4)
+				pibbyIcons.animation.play('midAccuracy');
+
+			else if(intendedRating <= .8 && intendedRating > .66)
+				pibbyIcons.animation.play('goodAccuracy');
+
+			else if(intendedRating <= 1 && intendedRating > .8)
+				pibbyIcons.animation.play('greatAccuracy');
+
+			else
+				pibbyIcons.animation.play('default');
+
+			scoreText.text = 'BEST SCORE: ' + lerpScore;
+			percentText.text = 'ACCURACY: (' + ratingSplit.join('.') + '%)';
 			positionHighscore();
 			
 			if(songs.length > 1)
@@ -458,7 +502,7 @@ class FreeplayState extends MusicBeatState
 		if (Difficulty.list.length > 1)
 			diffText.text = '< ' + lastDifficultyName.toUpperCase() + ' >';
 		else
-			diffText.text = lastDifficultyName.toUpperCase();
+			diffText.text = "";//lastDifficultyName.toUpperCase();
 
 		positionHighscore();
 		missingText.visible = false;
@@ -535,12 +579,13 @@ class FreeplayState extends MusicBeatState
 	inline private function _updateSongLastDifficulty()
 	{
 		songs[curSelected].lastDifficulty = Difficulty.getString(curDifficulty);
-	}
-
+	}	
 	private function positionHighscore() {
-		scoreText.x = FlxG.width - scoreText.width - 6;
-		scoreBG.scale.x = FlxG.width - scoreText.x + 6;
-		scoreBG.x = FlxG.width - (scoreBG.scale.x / 2);
+		var offsetX = -80;
+		scoreText.x = FlxG.width - scoreText.width - 20 + offsetX;
+		scoreBG.scale.x = 1.85;
+		scoreBG.x = FlxG.width - scoreBG.width+ offsetX;
+		percentText.x = FlxG.width - scoreText.width - 15 + offsetX;
 		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
 		diffText.x -= diffText.width / 2;
 	}
@@ -563,9 +608,13 @@ class FreeplayState extends MusicBeatState
 		{
 			var item:Alphabet = grpSongs.members[i];
 			item.visible = item.active = true;
-			item.x = ((item.targetY - lerpSelected) * item.distancePerItem.x) + item.startPosition.x;
-			item.y = ((item.targetY - lerpSelected) * 1.3 * item.distancePerItem.y) + item.startPosition.y;
-
+			item.x = (Math.cos((item.targetY - lerpSelected)/songs.length*30) * item.distancePerItem.x*40) - 140 - FlxG.width/2 + item.startPosition.x;
+			//item.targetX = 120+(item.targetY-lerpSelected)*80;
+			//item.changeX = true;
+			//item.targetX = (item.targetY-lerpSelected)*300;
+			//item.forceX = 400;
+			item.y = ((item.targetY - lerpSelected) * 1.75 * item.distancePerItem.y) + item.startPosition.y;
+			
 			var icon:HealthIcon = iconArray[i];
 			icon.visible = icon.active = true;
 			_lastVisibles.push(i);

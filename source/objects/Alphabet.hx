@@ -15,6 +15,11 @@ class Alphabet extends FlxSpriteGroup
 	public var letters:Array<AlphaCharacter> = [];
 
 	public var isMenuItem:Bool = false;
+	
+	//Old habits die hard, I'm adding targetX and forceX from an old build in for sanity lol -Winn
+	public var forceX:Float = Math.NEGATIVE_INFINITY;
+	public var targetX:Float = Math.NEGATIVE_INFINITY;
+
 	public var targetY:Int = 0;
 	public var changeX:Bool = true;
 	public var changeY:Bool = true;
@@ -30,7 +35,7 @@ class Alphabet extends FlxSpriteGroup
 	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true)
 	{
 		super(x, y);
-
+		forceX = Math.NEGATIVE_INFINITY;
 		this.startPosition.x = x;
 		this.startPosition.y = y;
 		this.bold = bold;
@@ -168,7 +173,11 @@ class Alphabet extends FlxSpriteGroup
 		if (isMenuItem)
 		{
 			var lerpVal:Float = Math.exp(-elapsed * 9.6);
-			if(changeX)
+			if(forceX != Math.NEGATIVE_INFINITY) 
+				x = forceX;
+			else if(targetX !=Math.NEGATIVE_INFINITY)
+				x = FlxMath.lerp(x, targetX, lerpVal);
+			else if(changeX)
 				x = FlxMath.lerp((targetY * distancePerItem.x) + startPosition.x, x, lerpVal);
 			if(changeY)
 				y = FlxMath.lerp((targetY * 1.3 * distancePerItem.y) + startPosition.y, y, lerpVal);
@@ -180,7 +189,11 @@ class Alphabet extends FlxSpriteGroup
 	{
 		if (isMenuItem)
 		{
-			if(changeX)
+			if(forceX != Math.NEGATIVE_INFINITY) 
+				x = forceX;
+			else if(targetX !=Math.NEGATIVE_INFINITY)
+				x = targetX;
+			else if(changeX)
 				x = (targetY * distancePerItem.x) + startPosition.x;
 			if(changeY)
 				y = (targetY * 1.3 * distancePerItem.y) + startPosition.y;

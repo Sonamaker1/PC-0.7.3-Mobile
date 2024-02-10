@@ -66,13 +66,12 @@
 
 	<!-- Assets -->
 	<assets path="assets/fonts" />
+	<assets path="assets/pibby" rename="assets/pibby" />
 	<assets path="assets/shared"        exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"        exclude="*.mp3" unless="web"/>
 	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.ogg" if="web"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.mp3" unless="web"/>
-	<assets path="assets/week_assets"   library="week_assets"   rename="assets" exclude="*.ogg" if="web"/>
-	<assets path="assets/week_assets"   library="week_assets"   rename="assets" exclude="*.mp3" unless="web"/>
 	<section if="TITLE_SCREEN_EASTER_EGG">
 		<assets path="assets/secrets" rename="assets/shared" exclude="*.ogg" if="web"/>
 		<assets path="assets/secrets" rename="assets/shared" exclude="*.mp3"  unless="web"/>
@@ -82,12 +81,10 @@
 
 	<section if="PRELOAD_ALL">
 	<library name="songs"         preload="true" />
-	<library name="week_assets"   preload="true" />
 	</section>
 
 	<section if="NO_PRELOAD_ALL">
 	<library name="songs"         preload="false" />
-	<library name="week_assets"   preload="false" />
 	</section>
 
 	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild" />
@@ -95,8 +92,7 @@
 	<section if="MODS_ALLOWED">
 		<assets path='example_mods' rename='mods' embed='false' type='template'/>
 	</section>
-	<assets path='art/readme.txt' rename='do NOT readme.txt' unless="mobile"/>
-
+	
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />
@@ -191,7 +187,7 @@
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
 
-	<assets path='art/icon16.png' rename='icon.png' if="linux" />
+	<assets path='art/icon64.png' rename='icon.png' if="linux" />
 	<icon path="art/icon16.png" size='16'/>
 	<icon path="art/icon32.png" size='32'/>
 	<icon path="art/icon64.png" size='64'/>
