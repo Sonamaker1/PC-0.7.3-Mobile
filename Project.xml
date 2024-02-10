@@ -66,7 +66,6 @@
 
 	<!-- Assets -->
 	<assets path="assets/fonts" />
-	<assets path="assets/pibby" rename="assets/pibby" />
 	<assets path="assets/shared"        exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"        exclude="*.mp3" unless="web"/>
 	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
