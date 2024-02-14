@@ -11,7 +11,7 @@ import haxe.Json;
 
 import backend.Song;
 import backend.Section;
-import states.stages.objects.TankmenBG;
+//import states.stages.objects.TankmenBG;
 
 typedef CharacterFile = {
 	var animations:Array<AnimArray>;
@@ -126,13 +126,13 @@ class Character extends FlxSprite
 		recalculateDanceIdle();
 		dance();
 
-		switch(curCharacter)
+		/*switch(curCharacter)
 		{
 			case 'pico-speaker':
 				skipDance = true;
 				loadMappedAnims();
 				playAnim("shoot1");
-		}
+		}*/
 	}
 
 	public function loadCharacterFile(json:Dynamic)
@@ -390,7 +390,7 @@ class Character extends FlxSprite
 		}
 	}
 
-	function loadMappedAnims():Void
+	/*function loadMappedAnims():Void
 	{
 		try
 		{
@@ -404,7 +404,7 @@ class Character extends FlxSprite
 			animationNotes.sort(sortAnims);
 		}
 		catch(e:Dynamic) {}
-	}
+	}*/
 
 	function sortAnims(Obj1:Array<Dynamic>, Obj2:Array<Dynamic>):Int
 	{

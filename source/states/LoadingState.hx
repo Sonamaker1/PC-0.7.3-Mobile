@@ -46,7 +46,7 @@ class LoadingState extends MusicBeatState
 	var curPercent:Float = 0;
 	var canChangeState:Bool = true;
 
-	#if PSYCH_WATERMARKS
+	#if PSYCH_LOADING_SCREEN
 	var logo:FlxSprite;
 	var pessy:FlxSprite;
 	var loadingText:FlxText;
@@ -72,11 +72,16 @@ class LoadingState extends MusicBeatState
 			return;
 		}
 
-		#if PSYCH_WATERMARKS // PSYCH LOADING SCREEN
-		var bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.setGraphicSize(Std.int(FlxG.width));
-		bg.color = 0xFFD16FFF;
+		#if PSYCH_LOADING_SCREEN // PSYCH LOADING SCREEN
+		var bg: FlxSprite = new FlxSprite();
+		bg.frames = Paths.getSparrowAtlas('menus/titlescreen/menuInterference');
+		bg.scrollFactor.set(0, 0);
+		bg.animation.addByPrefix('idle', 'thing', 24);
+		bg.animation.play('idle');
+		bg.setGraphicSize(Std.int(bg.width * 3));
 		bg.updateHitbox();
+		bg.antialiasing = ClientPrefs.data.antialiasing;
+		bg.screenCenter();
 		add(bg);
 	
 		loadingText = new FlxText(520, 600, 400, 'Now Loading...', 32);
@@ -94,17 +99,27 @@ class LoadingState extends MusicBeatState
 		add(logo);
 
 		#else // BASE GAME LOADING SCREEN
-		var bg = new FlxSprite().makeGraphic(1, 1, 0xFFCAFF4D);
-		bg.scale.set(FlxG.width, FlxG.height);
+		var bg: FlxSprite = new FlxSprite();
+		bg.frames = Paths.getSparrowAtlas('menus/titlescreen/menuInterference');
+		bg.scrollFactor.set(0, 0);
+		bg.animation.addByPrefix('idle', 'thing', 24);
+		bg.animation.play('idle');
+		bg.setGraphicSize(Std.int(bg.width * 3));
 		bg.updateHitbox();
+		bg.antialiasing = ClientPrefs.data.antialiasing;
 		bg.screenCenter();
 		add(bg);
 
-		funkay = new FlxSprite(0, 0).loadGraphic(Paths.image('funkay'));
+		/*funkay = new FlxSprite(0, 0).loadGraphic(Paths.image('funkay'));
 		funkay.antialiasing = ClientPrefs.data.antialiasing;
 		funkay.setGraphicSize(0, FlxG.height);
 		funkay.updateHitbox();
-		add(funkay);
+		add(funkay);*/
+		
+		loadingText = new FlxText(520, 600, 400, 'Now Loading...', 32);
+		loadingText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, LEFT, OUTLINE_FAST, FlxColor.BLACK);
+		loadingText.borderSize = 2;
+		add(loadingText);
 		#end
 
 		var bg:FlxSprite = new FlxSprite(0, 660).makeGraphic(1, 1, FlxColor.BLACK);
@@ -149,7 +164,7 @@ class LoadingState extends MusicBeatState
 			bar.updateHitbox();
 		}
 
-		#if PSYCH_WATERMARKS // PSYCH LOADING SCREEN
+		#if PSYCH_LOADING_SCREEN // PSYCH LOADING SCREEN
 		timePassed += elapsed;
 		shakeFl += elapsed * 3000;
 		var txt:String = 'Now Loading.';
