@@ -45,12 +45,12 @@ class LoadingState extends MusicBeatState
 	var intendedPercent:Float = 0;
 	var curPercent:Float = 0;
 	var canChangeState:Bool = true;
+	var loadingText:FlxText;
 
 	#if PSYCH_LOADING_SCREEN
 	var logo:FlxSprite;
 	var pessy:FlxSprite;
-	var loadingText:FlxText;
-
+	
 	var timePassed:Float;
 	var shakeFl:Float;
 	var shakeMult:Float = 0;
