@@ -110,13 +110,13 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/sky', 'pibby'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/sky'));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
 		bg.screenCenter();
 		bg.y -= 56;
 
-		var fg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/fpFG', 'pibby'));
+		var fg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/fpFG'));
 		fg.antialiasing = ClientPrefs.data.antialiasing;
 		add(fg);
 		fg.screenCenter();
@@ -153,7 +153,7 @@ class FreeplayState extends MusicBeatState
 		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
 
 		pibbyIcons = new FlxSprite(scoreText.x, 5);
-		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons', 'pibby');
+		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons');
 		pibbyIcons.animation.addByPrefix('default', 'default', 24);
 		pibbyIcons.animation.addByPrefix('lowAccuracy', 'lowAccuracy', 24);
 		pibbyIcons.animation.addByPrefix('midAccuracy', 'midAccuracy', 24);
@@ -162,7 +162,7 @@ class FreeplayState extends MusicBeatState
 		pibbyIcons.antialiasing = ClientPrefs.data.antialiasing;
 
 
-		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing', 'pibby'));
+		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing'));
 		scoreBG.scale.y = 1.5;
 		scoreBG.scale.x = 2.85;
 		scoreBG.alpha = 0.6;

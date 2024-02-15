@@ -24,6 +24,7 @@ import cutscenes.CutsceneHandler;
 import cutscenes.DialogueBoxPsych;
 
 import states.StoryMenuState;
+import states.PibbyStoryState;
 import states.FreeplayState;
 import states.editors.ChartingState;
 import states.editors.CharacterEditorState;
@@ -2462,7 +2463,7 @@ class PlayState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(new PibbyStoryState());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice') && !ClientPrefs.getGameplaySetting('botplay')) {

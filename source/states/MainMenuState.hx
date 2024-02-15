@@ -61,7 +61,7 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-			var menuText:FlxText = new FlxText(75, ((i + 1) * 115));
+			var menuText:FlxText = new FlxText(75, 70 + ((i + 1) * 110));
 			menuText.setFormat(Paths.font("Pixel Emulator.otf"), 45, FlxColor.WHITE);
 			menuText.text = optionShit[i];
 			menuText.antialiasing = true;
@@ -95,6 +95,8 @@ class MainMenuState extends MusicBeatState
 		super.create();
 
 		FlxG.camera.follow(camFollow, null, 9);
+
+		changeItem();
 	}
 
 	var canSelect: Bool = false;
@@ -160,7 +162,7 @@ class MainMenuState extends MusicBeatState
 							switch (daChoice)
 							{
 								case 'story':
-									MusicBeatState.switchState(new states.StoryMenuState());
+									MusicBeatState.switchState(new states.PibbyStoryState());
 								case 'freeplay':
 									MusicBeatState.switchState(new FreeplayState());
 								case 'credits':
