@@ -42,6 +42,7 @@ class BaseStage extends FlxBasic
 
 	public var defaultCamZoom(get, set):Float;
 	public var camFollow(get, never):FlxObject;
+	public var curDirectory(default, never) = 'backgrounds/${PlayState.curStage}';
 
 	public function new()
 	{
