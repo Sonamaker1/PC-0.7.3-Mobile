@@ -9,11 +9,12 @@ import options.OptionsState;
 
 class MainMenuState extends MusicBeatState
 {
-	public static var psychEngineVersion:String = '0.7.3'; // This is also used for Discord RPC
-	public static var curSelected:Int = 0;
+	public static var psychEngineVersion: String = '0.7.3'; // This is also used for Discord RPC
+	public static var curSelected: Int = 0;
 
 	private var menuItems: FlxTypedGroup<FlxText>;
 	private var charMenu: FlxSprite;
+	private var camFollow: FlxObject;
 
 	var optionShit:Array<String> = [
 		'story',
@@ -21,9 +22,6 @@ class MainMenuState extends MusicBeatState
 		'credits',
 		'options'
 	];
-
-	var magenta:FlxSprite;
-	var camFollow:FlxObject;
 
 	override function create()
 	{
@@ -71,7 +69,6 @@ class MainMenuState extends MusicBeatState
 			menuItems.add(menuText);
 		}
 
-
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "", 12);
 		versionShit.text = 
 			"Psych Engine v" + psychEngineVersion
@@ -91,11 +88,9 @@ class MainMenuState extends MusicBeatState
 
 		
 		addVirtualPad(UP_DOWN, A_B_E);
-
-		super.create();
-
 		FlxG.camera.follow(camFollow, null, 9);
 
+		super.create();
 		changeItem();
 	}
 
@@ -202,8 +197,10 @@ class MainMenuState extends MusicBeatState
 				FlxTween.tween(txt, {x: 75}, 0.2, {ease: FlxEase.quadOut});
 			if (txt.ID == curSelected)
 			{
-				if ( colorTextTween != null ) colorTextTween.cancel(); colorTextTween = null;
+				if (colorTextTween != null) 
+					colorTextTween.cancel(); 
 				
+				colorTextTween = null;
 				colorTextTween = FlxTween.tween( txt, { alpha: 1, x: 115 }, 0.4, {ease: FlxEase.quadOut});
 				txt.color = FlxColor.WHITE;
 			}
