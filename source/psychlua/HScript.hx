@@ -11,7 +11,12 @@ import psychlua.FunkinLua;
 
 #if HSCRIPT_ALLOWED
 import tea.SScript;
-import tea.SScript.TeaCall;
+
+#if (SScript == "7.7.0") 
+import tea.SScript.TeaCall as Tea;
+#else
+import tea.SScript.Tea;
+#end
 class HScript extends SScript
 {
 	public var modFolder:String;
