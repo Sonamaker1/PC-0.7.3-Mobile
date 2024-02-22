@@ -882,7 +882,7 @@ class FunkinLua {
 			return isDad;
 		});
 		set("cameraShake", function(camera:String, intensity:Float, duration:Float) {
-			LuaUtils.cameraFromString(camera).shake(intensity, duration);
+			if (ClientPrefs.data.screenShake) LuaUtils.cameraFromString(camera).shake(intensity, duration);
 		});
 
 		set("cameraFlash", function(camera:String, color:String, duration:Float,forced:Bool) {

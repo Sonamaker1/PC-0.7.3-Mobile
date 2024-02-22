@@ -8,9 +8,30 @@ import hxdiscord_rpc.Types;
 class DiscordClient
 {
 	public static var isInitialized:Bool = false;
-	private static final _defaultID:String = "863222024192262205";
+	private static var _defaultID:String = "1197604274914463835";
 	public static var clientID(default, set):String = _defaultID;
+
 	private static var presence:DiscordRichPresence = DiscordRichPresence.create();
+
+	// i mean it's kinda cool
+	private static var funnyTexts:Array<String> = [
+		'The Mod Where Everything Gets REPLACED',
+		'Imagine Taking 2 Years For An Update??',
+		'Version 1.5',
+		'Pibber',
+		'Werid, Must Be A Pibby Glitch',
+		'This Is A Text The Game Randomly Choosed',
+		'The Mod Became Good Trust Me',
+		'Insert Scary Text',
+		'Insert Goofy Text',
+		'0 Divided By 0',
+		'I Hate Pibby From FNF',
+		'Glitched Legends But Good',
+		'How Does The Turkey Smell?',
+		'Steamboat Full Of RATS',
+		'Hello, Is This Patrick?',
+		'Yeah'
+	];
 
 	public static function check()
 	{
@@ -87,8 +108,8 @@ class DiscordClient
 
 		presence.details = details;
 		presence.state = state;
-		presence.largeImageKey = 'icon';
-		presence.largeImageText = "Engine Version: " + states.MainMenuState.psychEngineVersion;
+		presence.largeImageKey = 'logo';
+		presence.largeImageText = funnyTexts[FlxG.random.int(0, funnyTexts.length - 1)];
 		presence.smallImageKey = smallImageKey;
 		// Obtained times are in milliseconds so they are divided so Discord can use it
 		presence.startTimestamp = Std.int(startTimestamp / 1000);

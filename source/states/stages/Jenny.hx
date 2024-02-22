@@ -23,37 +23,66 @@ class Jenny extends BaseStage
         {
             game.camZooming = true;
 
-            var bg : FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('${curDirectory}/BackBackground'));
+            var bg : FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('${curDirectory}/BackBackground2'));
             bg.scrollFactor.set(0.95, 0.95);
             bg.updateHitbox();
             add(bg);
 
             skinsuit = new FlxSprite(50, 300);
-            skinsuit.frames = Paths.getSparrowAtlas('${curDirectory}/Skinsuit');
+            skinsuit.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             skinsuit.animation.addByPrefix("idle", "skinsuit final");
             skinsuit.animation.play("idle", true); 
             skinsuit.antialiasing = ClientPrefs.data.antialiasing;
             skinsuit.updateHitbox();
             add(skinsuit);
             
+            var right_leaves:FlxSprite = new FlxSprite(0, 10);
+            right_leaves.frames = Paths.getSparrowAtlas('${curDirectory}/Leaves');
+            right_leaves.animation.addByPrefix("idle", "right_leaves");
+            right_leaves.animation.play("idle", true);
+            right_leaves.antialiasing = ClientPrefs.data.antialiasing;
+            right_leaves.updateHitbox();
+            add(right_leaves);
+            
+            var left_leaves:FlxSprite = new FlxSprite(0, 10);
+            left_leaves.frames = Paths.getSparrowAtlas('${curDirectory}/Leaves');
+            left_leaves.animation.addByPrefix("idle", "left_leaves");
+            left_leaves.animation.play("idle", true);
+            left_leaves.antialiasing = ClientPrefs.data.antialiasing;
+            left_leaves.updateHitbox();
+            add(left_leaves);
+            
             var realbg:FlxSprite = new FlxSprite(0, 0);
-            realbg.frames = Paths.getSparrowAtlas('${curDirectory}/Background');
-            realbg.animation.addByPrefix("idle", "bg");
+            realbg.frames = Paths.getSparrowAtlas('${curDirectory}/houseJenny');
+            realbg.animation.addByPrefix("idle", "bgL0");
             realbg.animation.play("idle", true);
             realbg.antialiasing = ClientPrefs.data.antialiasing;
             realbg.updateHitbox();
+            realbg.x+=1;
+            add(realbg);
+            
+            var realbg:FlxSprite = new FlxSprite(0, 0);
+            realbg.frames = Paths.getSparrowAtlas('${curDirectory}/houseJenny');
+            realbg.animation.addByPrefix("idle", "bgR0");
+            realbg.animation.play("idle", true);
+            realbg.antialiasing = ClientPrefs.data.antialiasing;
+            realbg.updateHitbox();
+            realbg.x-=1;
+            add(realbg);
+            
+            var realbg:FlxSprite = new FlxSprite(0, 0);
+            realbg.frames = Paths.getSparrowAtlas('${curDirectory}/houseJenny');
+            realbg.animation.addByPrefix("idle", "bgM0");
+            realbg.animation.play("idle", true);
+            realbg.antialiasing = ClientPrefs.data.antialiasing;
+            realbg.updateHitbox();
+            
             add(realbg);
 
-            var leaves:FlxSprite = new FlxSprite(0, 10);
-            leaves.frames = Paths.getSparrowAtlas('${curDirectory}/Leaves');
-            leaves.animation.addByPrefix("idle", "leaves");
-            leaves.animation.play("idle", true);
-            leaves.antialiasing = ClientPrefs.data.antialiasing;
-            leaves.updateHitbox();
-            add(leaves);
+            
 
             tiger = new FlxSprite(475, 355);
-            tiger.frames = Paths.getSparrowAtlas('${curDirectory}/Tiger');
+            tiger.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             tiger.animation.addByPrefix("idle", "tiger");
             tiger.animation.play("idle", true);
             tiger.antialiasing = ClientPrefs.data.antialiasing;
@@ -61,7 +90,7 @@ class Jenny extends BaseStage
             add(tiger);
 
             glen = new FlxSprite(225, 450);
-            glen.frames = Paths.getSparrowAtlas('${curDirectory}/Glen');
+            glen.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             glen.animation.addByPrefix("idle", "glen");
             glen.animation.play("idle", true);
             glen.antialiasing = ClientPrefs.data.antialiasing;
@@ -69,15 +98,24 @@ class Jenny extends BaseStage
             add(glen);
 
             krakus = new FlxSprite(400, 600);
-            krakus.frames = Paths.getSparrowAtlas('${curDirectory}/Krakus');
+            krakus.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             krakus.animation.addByPrefix("idle", "krakus");
             krakus.animation.play("idle", true);
             krakus.antialiasing = ClientPrefs.data.antialiasing;
             krakus.updateHitbox();
             add(krakus);
-
+            
+			var brit:FlxSprite = new FlxSprite(200, 580);
+            brit.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
+            brit.animation.addByPrefix("idle", "Brit");
+            brit.animation.play("idle", true);
+            brit.antialiasing = ClientPrefs.data.antialiasing;
+            brit.scale.set(1.15, 1.15);
+            brit.updateHitbox();
+            add(brit);
+            
             var tiff:FlxSprite = new FlxSprite(50, 625);
-            tiff.frames = Paths.getSparrowAtlas('${curDirectory}/Tiff');
+            tiff.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             tiff.animation.addByPrefix("idle", "Tiff");
             tiff.animation.play("idle", true);
             tiff.antialiasing = ClientPrefs.data.antialiasing;
@@ -85,17 +123,8 @@ class Jenny extends BaseStage
             tiff.updateHitbox();
             add(tiff);
 
-            var brit:FlxSprite = new FlxSprite(200, 580);
-            brit.frames = Paths.getSparrowAtlas('${curDirectory}/Brit');
-            brit.animation.addByPrefix("idle", "Brit");
-            brit.animation.play("idle", true);
-            brit.antialiasing = ClientPrefs.data.antialiasing;
-            brit.scale.set(1.15, 1.15);
-            brit.updateHitbox();
-            add(brit);
-
             smytus = new FlxSprite(1550, 275);
-            smytus.frames = Paths.getSparrowAtlas('${curDirectory}/Smytus');
+            smytus.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             smytus.animation.addByPrefix("idle", "smytus final");
             smytus.animation.play("idle", true);
             smytus.antialiasing = ClientPrefs.data.antialiasing;
@@ -103,7 +132,7 @@ class Jenny extends BaseStage
             add(smytus);
 
             bitch = new FlxSprite(2075, 625);
-            bitch.frames = Paths.getSparrowAtlas('${curDirectory}/WhatsThisBitchsName');
+            bitch.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             bitch.animation.addByPrefix("idle", "idfk");
             bitch.animation.play("idle", true);
             bitch.antialiasing = ClientPrefs.data.antialiasing;
@@ -111,7 +140,7 @@ class Jenny extends BaseStage
             add(bitch);
 
             var killgore:FlxSprite = new FlxSprite(2200, 950);
-            killgore.frames = Paths.getSparrowAtlas('${curDirectory}/Killgore');
+            killgore.frames = Paths.getSparrowAtlas('${curDirectory}/bgCharacters');
             killgore.animation.addByPrefix("idle", "killgore");
             killgore.animation.play("idle", true);
             killgore.antialiasing = ClientPrefs.data.antialiasing;

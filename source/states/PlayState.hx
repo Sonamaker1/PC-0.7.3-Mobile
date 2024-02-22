@@ -1,5 +1,6 @@
 package states;
 
+import flixel.addons.text.FlxTypeText;
 import backend.Highscore;
 import backend.StageData;
 import backend.WeekData;
@@ -24,6 +25,7 @@ import cutscenes.CutsceneHandler;
 import cutscenes.DialogueBoxPsych;
 
 import states.StoryMenuState;
+import states.PibbyStoryState;
 import states.FreeplayState;
 import states.editors.ChartingState;
 import states.editors.CharacterEditorState;
@@ -269,6 +271,16 @@ class PlayState extends MusicBeatState
 	#if VIDEOS_ALLOWED public var videoSprites:Array<VideoSpriteManager> = []; #end
 
 	public var luaVirtualPad:FlxVirtualPad;
+
+	// this is when i go yanderedeving all around
+	var heartbeat = false;
+	var bulletCount = 6;
+	var bulletTxt:FlxTypeText;
+
+	// allowShoot is for allow shooting (example: allowShoot is false for black mark)
+	// mustShoot is for allow shooting while having bullets, else it wont let you shoot until bullets are reloaded
+	var allowShoot:Bool = true;
+	var mustShoot:Bool = true;
 
 	override public function create()
 	{
@@ -568,6 +580,12 @@ class PlayState extends MusicBeatState
 		uiGroup.add(botplayTxt);
 		if(ClientPrefs.data.downScroll)
 			botplayTxt.y = timeBar.y - 78;
+
+		bulletTxt = new FlxTypeText(500, ClientPrefs.data.downScroll ? 100 : 545, FlxG.width, '', 30);
+		bulletTxt.font = Paths.font('Pixel Emulator.otf');
+		bulletTxt.alignment = CENTER;
+		bulletTxt.screenCenter(X);
+		uiGroup.add(bulletTxt);
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
@@ -1801,6 +1819,23 @@ class PlayState extends MusicBeatState
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
 
+		// bullet mechanic (will rewrite at some point)
+		if (controls.SHOOT)
+		{
+			if (allowShoot)
+			{
+				if (dad.curCharacter.contains('steven')) {
+					// todo make some kind of variable for Character n shit
+					dad.playAnim('nuhuh', true);
+					dad.specialAnim = true;
+					boyfriend.playAnim('attack', true);
+					boyfriend.specialAnim = true;
+					if (ClientPrefs.data.screenShake) camGame.shake(0.01, 0.2);	
+					FlxG.sound.play(Paths.sound('shoot'), 0.4);
+				} else bulletShit();
+			}
+		}
+
 		// RESET = Quick Game Over Screen
 		if (!ClientPrefs.data.noReset && controls.RESET && canReset && !inCutscene && startedCountdown && !endingSong)
 		{
@@ -1944,6 +1979,44 @@ class PlayState extends MusicBeatState
 		iconP1.animation.curAnim.curFrame = (healthBar.percent < 20) ? 1 : 0; //If health is under 20%, change player icon to frame 1 (losing icon), otherwise, frame 0 (normal)
 		iconP2.animation.curAnim.curFrame = (healthBar.percent > 80) ? 1 : 0; //If health is over 80%, change opponent icon to frame 1 (losing icon), otherwise, frame 0 (normal)
 		return health;
+	}
+
+	function bulletShit()
+	{
+		if (boyfriend.curCharacter.contains('bf'))
+		{
+			if (bulletCount > 0)
+			{
+				bulletTxt.alpha = 1;
+				bulletTxt.revive();
+				bulletTxt.color = FlxColor.WHITE;
+				songScore -= 500;
+				boyfriend.playAnim('attack', true);
+				boyfriend.specialAnim = true;
+				health += 0.25;
+				bulletCount--;
+				bulletTxt.resetText('Bullets: ${bulletCount}');
+				bulletTxt.start(0.08, true);
+				if (ClientPrefs.data.screenShake) camGame.shake(0.01, 0.2);	
+				FlxG.sound.play(Paths.sound('shoot'), 0.4);
+				updateScore();
+			} 
+
+			if (bulletCount < 1)
+			{
+				bulletTxt.revive();
+				bulletTxt.color = FlxColor.RED;
+				bulletTxt.resetText('Reloading Bullets...');
+				bulletTxt.start(0.08, true);
+				FlxG.sound.play(Paths.sound('gunclick'), 0.4);
+
+				new FlxTimer().start(5, (timer) -> {
+					bulletCount = 6;
+					bulletTxt.color = 0x22ff00;
+					FlxG.sound.play(Paths.sound('gunclick'), 0.4);
+				});
+			}
+		}
 	}
 
 	function openPauseMenu()
@@ -2200,7 +2273,7 @@ class PlayState extends MusicBeatState
 					if(Math.isNaN(intensity)) intensity = 0;
 
 					if(duration > 0 && intensity != 0) {
-						targetsArray[i].shake(intensity, duration);
+						if (ClientPrefs.data.screenShake) targetsArray[i].shake(intensity, duration);
 					}
 				}
 
@@ -2467,7 +2540,7 @@ class PlayState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(new PibbyStoryState());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice') && !ClientPrefs.getGameplaySetting('botplay')) {
@@ -3022,6 +3095,24 @@ class PlayState extends MusicBeatState
 			var animToPlay:String = singAnimations[Std.int(Math.abs(Math.min(singAnimations.length-1, note.noteData)))] + altAnim;
 			if(note.gfNote) char = gf;
 
+			// first one for the hud and the other one for the game cam
+			// also putting this into the no noAnimation note check for fair reasons 
+			var daLuckyRoll:Array<Float> = [FlxG.random.int(1, 50), FlxG.random.int(1, 50)];
+
+			if (ClientPrefs.data.screenShake)
+			{
+				if (!SONG.notes[Std.int(curStep / 16)].mustHitSection)
+				{
+					if (daLuckyRoll[0] >= 45)
+						camHUD.shake(0.08, 0.05);
+	
+					if (daLuckyRoll[1] >= 45)
+						FlxG.camera.shake(0.08, 0.05);
+				}
+			}
+
+			health -= healthBar.percent < 20 ? 0 : FlxG.random.float(0.013, 0.043);
+
 			if(char != null)
 			{
 				char.playAnim(animToPlay, true);
@@ -3209,6 +3300,8 @@ class PlayState extends MusicBeatState
 		}
 
 		super.stepHit();
+
+		if (ClientPrefs.data.screenShake) camHUD.shake(FlxG.random.float(0.001, .0033), 0.2);
 
 		if(curStep == lastStepHit) {
 			return;

@@ -29,17 +29,17 @@ class FPSCounter extends TextField
 	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
 	{
 		super();
-		if(LimeSystem.platformName == LimeSystem.platformVersion || LimeSystem.platformVersion == null)
+		/*if(LimeSystem.platformName == LimeSystem.platformVersion || LimeSystem.platformVersion == null)
 			os = '\nOS: ${LimeSystem.platformName}' #if cpp + ' ${getArch()}' #end;
 		else
-			os = '\nOS: ${LimeSystem.platformName}' #if cpp + ' ${getArch()}' #end + ' - ${LimeSystem.platformVersion}';
+			os = '\nOS: ${LimeSystem.platformName}' #if cpp + ' ${getArch()}' #end + ' - ${LimeSystem.platformVersion}';*/
 
 		positionFPS(x, y);
 
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat("_sans", 14, color);
+		defaultTextFormat = new TextFormat(Paths.font('Pixel Emulator.otf'), 14, color);
 		width = FlxG.width;
 		multiline = true;
 		text = "FPS: ";

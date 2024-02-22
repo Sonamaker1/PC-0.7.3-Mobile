@@ -23,6 +23,10 @@ class Controls
 	public var NOTE_DOWN_P(get, never):Bool;
 	public var NOTE_LEFT_P(get, never):Bool;
 	public var NOTE_RIGHT_P(get, never):Bool;
+	public var SHOOT(get, never):Bool;
+
+	private function get_SHOOT()
+		return justPressed('shoot');
 
 	private function get_UI_UP_P()
 		return justPressed('ui_up');

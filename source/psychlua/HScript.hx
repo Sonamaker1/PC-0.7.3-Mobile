@@ -11,6 +11,12 @@ import psychlua.FunkinLua;
 
 #if HSCRIPT_ALLOWED
 import tea.SScript;
+
+#if (SScript == "7.7.0") 
+import tea.SScript.TeaCall as Tea;
+#else
+import tea.SScript.Tea;
+#end
 class HScript extends SScript
 {
 	public var modFolder:String;
@@ -363,7 +369,7 @@ class HScript extends SScript
 		}
 	}
 
-	public function executeCode(?funcToRun:String = null, ?funcArgs:Array<Dynamic> = null): Tea {
+	public function executeCode(?funcToRun:String = null, ?funcArgs:Array<Dynamic> = null):TeaCall {
 		if (funcToRun == null) return null;
 
 		if(!exists(funcToRun)) {
@@ -395,7 +401,7 @@ class HScript extends SScript
 		return callValue;
 	}
 
-	public function executeFunction(funcToRun:String = null, funcArgs:Array<Dynamic>): Tea {
+	public function executeFunction(funcToRun:String = null, funcArgs:Array<Dynamic>):TeaCall {
 		if (funcToRun == null) return null;
 		return call(funcToRun, funcArgs);
 	}
@@ -405,7 +411,7 @@ class HScript extends SScript
 		funk.addLocalCallback("runHaxeCode", function(codeToRun:String, ?varsToBring:Any = null, ?funcToRun:String = null, ?funcArgs:Array<Dynamic> = null):Dynamic {
 			#if SScript
 			initHaxeModuleCode(funk, codeToRun, varsToBring);
-			final retVal: Tea = funk.hscript.executeCode(funcToRun, funcArgs);
+			final retVal:TeaCall = funk.hscript.executeCode(funcToRun, funcArgs);
 			if (retVal != null) {
 				if(retVal.succeeded)
 					return (retVal.returnValue == null || LuaUtils.isOfTypes(retVal.returnValue, [Bool, Int, Float, String, Array])) ? retVal.returnValue : null;

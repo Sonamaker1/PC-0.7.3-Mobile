@@ -34,6 +34,7 @@ import states.TitleState;
 	public var camZooms:Bool = true;
 	public var hideHud:Bool = false;
 	public var noteOffset:Int = 0;
+	public var screenShake:Bool = true;
 	public var arrowRGB:Array<Array<FlxColor>> = [
 		[0xFFC24B99, 0xFFFFFFFF, 0xFF3C1F56],
 		[0xFF00FFFF, 0xFFFFFFFF, 0xFF1542B7],
@@ -98,6 +99,7 @@ class ClientPrefs {
 		'note_left'		=> [A, LEFT],
 		'note_down'		=> [S, DOWN],
 		'note_right'	        => [D, RIGHT],
+		'shoot' => [SPACE],
 		
 		'ui_up'			=> [W, UP],
 		'ui_left'		=> [A, LEFT],
