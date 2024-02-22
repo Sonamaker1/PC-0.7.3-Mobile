@@ -2159,6 +2159,10 @@ class PlayState extends MusicBeatState
 						camFollow.y = flValue2;
 					}
 				}
+			
+			case 'Camera Stuff':
+				FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom + 0.05 }, 0.5, { ease: FlxEase.quadIn });
+				FlxTween.num(defaultCamZoom, defaultCamZoom + 0.05, 0.5, { ease: FlxEase.quadIn }, function(_) { PlayState.instance.defaultCamZoom = _; });
 
 			case 'Alt Idle Animation':
 				var char:Character = dad;

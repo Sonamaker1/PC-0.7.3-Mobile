@@ -17,6 +17,7 @@ class Jenny extends BaseStage
     private var smytus : FlxSprite;
     private var bitch : FlxSprite;
 
+    private var blackScreen: FlxSprite;
 
 	override function create()
         {
@@ -117,6 +118,20 @@ class Jenny extends BaseStage
             killgore.updateHitbox();
             add(killgore);
 
+            blackScreen = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+            blackScreen.cameras = [ PlayState.instance.camHUD ];
+            blackScreen.alpha = 0.001;
+            add(blackScreen);
+
+            if (PlayState.SONG.song.toLowerCase() == 'nanovirus')
+            {
+                addCameraEvent(128, 383, 8, 0.01, 0.01);
+                addCameraEvent(384, 639, 8);
+                addCameraEvent(896, 1407, 4, 0.0075, 0.01);
+
+                PlayState.instance.camZooming = false;
+            }
+
             if (PlayState.SONG.song.toLowerCase() == 'malware') 
             {
                 // camera event shit cuz im lazy
@@ -137,12 +152,16 @@ class Jenny extends BaseStage
                 glen.alpha = 0.001;
                 bitch.alpha = 0.001;
                 smytus.alpha = 0.001;
+
+                blackScreen.alpha = 1;
             }
         }
         
         override function createPost()
         {
-            // Use this function to layer things above characters!
+            if (PlayState.SONG.song == "Nanovirus") {
+                PlayState.instance.camHUD.alpha = 0;
+            }
         }
     
         override function update(elapsed:Float)
@@ -194,6 +213,40 @@ class Jenny extends BaseStage
         override function stepHit()
         {
             _cameraEvent(curStep);
+
+            if (PlayState.SONG.song == "Nanovirus") {
+                switch (curStep) {
+                    case 112: {
+                        @:privateAccess {
+                            PlayState.instance.isCameraOnForcedPos = true;
+
+                            FlxTween.tween(PlayState.instance.camFollow, { x: 868.7, y: 892.6 }, 0.8, { ease: FlxEase.quadInOut });
+                            FlxTween.tween(FlxG.camera, { zoom: 0.75 }, 0.8, { ease: FlxEase.quadInOut });
+                            FlxTween.tween(PlayState.instance.camHUD, { alpha: 1 }, 0.65, { ease: FlxEase.quadInOut });
+                            FlxTween.num(PlayState.instance.defaultCamZoom, 0.75, 0.8, { ease: FlxEase.quadInOut }, function(_) { PlayState.instance.defaultCamZoom = _; });
+                        }
+                    }
+
+                    case 145: {
+                        @:privateAccess
+                            PlayState.instance.isCameraOnForcedPos = false;
+                    }
+
+                    case 1416: {
+                        FlxTween.tween(blackScreen, { alpha: 1 }, 3.25, { ease: FlxEase.quadIn });
+                    }
+                }
+
+            }
+
+            if (PlayState.SONG.song == "Malware") {
+                switch (curStep) {
+                    case 1: 
+                        FlxTween.tween(blackScreen, { alpha: 0 }, 12.8, { ease: FlxEase.quadIn });
+                    case 1728:
+                        blackScreen.alpha = 1;
+                }
+            }
         }
         override function beatHit()
         {
