@@ -23,7 +23,8 @@ class Jenny extends BaseStage
         {
             game.camZooming = true;
 
-            var bg : FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('${curDirectory}/BackBackground2'));
+            var bg: FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('${curDirectory}/BackBackground2'));
+            bg.scale.set(1.9, 2);
             bg.scrollFactor.set(0.95, 0.95);
             bg.updateHitbox();
             add(bg);
@@ -148,7 +149,7 @@ class Jenny extends BaseStage
             add(killgore);
 
             blackScreen = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-            blackScreen.cameras = [ PlayState.instance.camHUD ];
+            blackScreen.cameras = [ game.camHUD ];
             blackScreen.alpha = 0.001;
             add(blackScreen);
 
@@ -158,7 +159,7 @@ class Jenny extends BaseStage
                 addCameraEvent(384, 639, 8);
                 addCameraEvent(896, 1407, 4, 0.0075, 0.01);
 
-                PlayState.instance.camZooming = false;
+                game.camZooming = false;
             }
 
             if (PlayState.SONG.song.toLowerCase() == 'malware') 
@@ -191,6 +192,10 @@ class Jenny extends BaseStage
             if (PlayState.SONG.song == "Nanovirus") {
                 PlayState.instance.camHUD.alpha = 0;
             }
+
+            if (PlayState.SONG.song == "Malware") {
+
+            }
         }
     
         override function update(elapsed:Float)
@@ -212,6 +217,14 @@ class Jenny extends BaseStage
         }
         
         private var cameraEvents: Array<CameraEvent> = [];
+        /**
+         * Helper class to create camera events in an easier fashion.
+         * @param start At what point to start in steps
+         * @param end At what point to end in steps
+         * @param onHit What mod should be hit to start a zoom
+         * @param camAmount What the game camera should bop at, default is 0.015
+         * @param hudAmount What the HUD camera should bop at, default is 0.03
+         */
         private function addCameraEvent(start: Int, end: Int, onHit: Int, ?camAmount: Float, ?hudAmount: Float)
         {
             cameraEvents.push(cast {
@@ -223,6 +236,17 @@ class Jenny extends BaseStage
             });
         }
 
+        private function tweenCam(x: Float, y: Float, time: Float, ?zoom: Float)
+        {
+            @:privateAccess {
+                game.isCameraOnForcedPos = true;
+
+                FlxTween.tween(game.camFollow, { x: x, y: y  }, time, { ease: FlxEase.quadInOut });
+                FlxTween.tween(FlxG.camera, { zoom: zoom }, time, { ease: FlxEase.quadInOut });
+                FlxTween.num(game.defaultCamZoom, zoom, time, { ease: FlxEase.quadInOut }, function(_) { game.defaultCamZoom = _; });
+            }
+        }
+
         @:noCompletion
         private function _cameraEvent(currentStep: Int)
         {
@@ -230,7 +254,7 @@ class Jenny extends BaseStage
                 if (currentStep >= event.start && currentStep <= event.end)
                     if (currentStep % event.onHit == 0) {
                         FlxG.camera.zoom += event.camAmount;
-                        PlayState.instance.camHUD.zoom += event.hudAmount;
+                        game.camHUD.zoom += event.hudAmount;
                         break;
                     }
         }
@@ -246,23 +270,40 @@ class Jenny extends BaseStage
             if (PlayState.SONG.song == "Nanovirus") {
                 switch (curStep) {
                     case 112: {
-                        @:privateAccess {
-                            PlayState.instance.isCameraOnForcedPos = true;
-
-                            FlxTween.tween(PlayState.instance.camFollow, { x: 868.7, y: 892.6 }, 0.8, { ease: FlxEase.quadInOut });
-                            FlxTween.tween(FlxG.camera, { zoom: 0.75 }, 0.8, { ease: FlxEase.quadInOut });
-                            FlxTween.tween(PlayState.instance.camHUD, { alpha: 1 }, 0.65, { ease: FlxEase.quadInOut });
-                            FlxTween.num(PlayState.instance.defaultCamZoom, 0.75, 0.8, { ease: FlxEase.quadInOut }, function(_) { PlayState.instance.defaultCamZoom = _; });
-                        }
+                        tweenCam(868.7, 892.6, 0.8, 0.75);
+                        FlxTween.tween(game.camHUD, { alpha: 1 }, 0.65, { ease: FlxEase.quadInOut });
                     }
 
                     case 145: {
                         @:privateAccess
-                            PlayState.instance.isCameraOnForcedPos = false;
+                            game.isCameraOnForcedPos = false;
+                    }
+
+                    case 635: {
+                        tweenCam(868.7, 892.6, 0.75, 0.9);
+                    }
+                    
+                    case 646: {
+                        @:privateAccess
+                            game.isCameraOnForcedPos = false;
+                    }
+
+                    case 880: {
+                        @:privateAccess
+                            game.isCameraOnForcedPos = true;
+
+                        FlxTween.tween(FlxG.camera, { zoom: 0.75 }, 1.2, { ease: FlxEase.quadInOut });
+                        FlxTween.num(game.defaultCamZoom, 0.75, 1.3, { ease: FlxEase.quadInOut }, function(_) { game.defaultCamZoom = _; });
+                    }
+                    
+                    case 896: {
+                        @:privateAccess
+                            game.isCameraOnForcedPos = false;
                     }
 
                     case 1416: {
-                        FlxTween.tween(blackScreen, { alpha: 1 }, 3.25, { ease: FlxEase.quadIn });
+                        FlxTween.tween(blackScreen, { alpha: 1 }, 2.5, { ease: FlxEase.quadIn });
+                        FlxTween.tween(game.camHUD, { alpha: 0 }, 2, { ease: FlxEase.quadInOut });
                     }
                 }
 
@@ -270,8 +311,29 @@ class Jenny extends BaseStage
 
             if (PlayState.SONG.song == "Malware") {
                 switch (curStep) {
-                    case 1: 
+                    case 1: {
+                        @:privateAccess {
+                            game.isCameraOnForcedPos = true;
+                            game.defaultCamZoom = 1.4;
+                            game.camFollow.setPosition(1350, 250);
+                        }
+
                         FlxTween.tween(blackScreen, { alpha: 0 }, 12.8, { ease: FlxEase.quadIn });
+                    }
+
+                    case 16: {
+                        tweenCam(1250, 600, 10, 0.6);
+                    }
+                       
+                    case 120: {
+                        tweenCam(868.7, 892.6, 1.2, 0.75);
+                    }
+
+                    case 137: {
+                        @:privateAccess
+                            game.isCameraOnForcedPos = false;
+                    }
+
                     case 1728:
                         blackScreen.alpha = 1;
                 }
@@ -292,6 +354,7 @@ class Jenny extends BaseStage
                     case 296: 
                         // i need this so badly so they come out randomly
                         if (ClientPrefs.data.flashing) game.camGame.flash(FlxColor.WHITE, 1);
+                        
                         tiger.alpha = 1;
                         glen.alpha = 1;
                         krakus.alpha = 1;
