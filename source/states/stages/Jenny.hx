@@ -334,8 +334,20 @@ class Jenny extends BaseStage
                             game.isCameraOnForcedPos = false;
                     }
 
-                    case 1728:
+                    case 1142: {
+                        tweenCam(868.7, 892.6, 0.9, 0.9);
+                    }
+
+                    case 1168: {
+                        @:privateAccess
+                            game.isCameraOnForcedPos = false;
+                        FlxTween.tween(FlxG.camera, { zoom: 0.75 }, 1.2, { ease: FlxEase.quadInOut });
+                        FlxTween.num(game.defaultCamZoom, 0.75, 1.3, { ease: FlxEase.quadInOut }, function(_) { game.defaultCamZoom = _; });
+                    }
+
+                    case 1728: {
                         blackScreen.alpha = 1;
+                    }
                 }
             }
         }
