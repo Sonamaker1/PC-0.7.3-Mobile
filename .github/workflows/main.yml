@@ -30,6 +30,7 @@ jobs:
       - name: Extract Files
         run: |
           7z x compile_fix.zip
+          dir
       - name: Install Haxelib
         run: |
           haxelib setup C:/haxelib
