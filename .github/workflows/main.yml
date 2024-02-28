@@ -36,15 +36,15 @@ jobs:
           haxelib setup C:/haxelib
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
-          haxelib set flixel 5.5.0 --quiet
-          haxelib set flixel-addons 3.2.1 --quiet
-          haxelib set flixel-tools 1.5.1 --quiet
-          haxelib set flixel-ui 2.5.0 --quiet
-          haxelib set hxCodec 2.6.1 --quiet
-          haxelib set lime 8.1.1 --quiet
-          haxelib set openfl 9.3.2 --quiet
-          haxelib set SScript 7.7.0 --quiet
-          haxelib set tjson 1.4.0 --quiet
+          haxelib set flixel 5.5.0 --always --quiet
+          haxelib set flixel-addons 3.2.1 --always --quiet
+          haxelib set flixel-tools 1.5.1 --always --quiet
+          haxelib set flixel-ui 2.5.0 --always --quiet
+          haxelib set hxCodec 2.6.1 --always --quiet
+          haxelib install lime --quiet
+          haxelib set openfl 9.3.2 --always --quiet
+          haxelib set SScript 7.7.0 --always --quiet
+          haxelib set tjson 1.4.0 --always --quiet
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev --quiet
           haxelib git hxCodec https://github.com/polybiusproxy/hxCodec.git --quiet
           haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc.git --quiet
