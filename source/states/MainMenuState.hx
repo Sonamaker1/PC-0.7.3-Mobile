@@ -129,45 +129,52 @@ class MainMenuState extends MusicBeatState
 				var secondsDelayed: Float = 0;
 				canSelect = true;
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-	
-				FlxTween.tween(charMenu, { alpha: 0 }, 0.2, {
-					ease: FlxEase.quadOut,
-					onComplete: function(tween: FlxTween)
-						charMenu.kill()
-				});
-
-				menuItems.forEach(function( txt:FlxText )
+				if (optionShit[curSelected] == 'credits')
 				{
-					if (curSelected != txt.ID)
+					CoolUtil.browserLoad('https://sonamaker1.github.io/gb-credits/pibby/');
+				}
+				else
+				{
+		
+					FlxTween.tween(charMenu, { alpha: 0 }, 0.2, {
+						ease: FlxEase.quadOut,
+						onComplete: function(tween: FlxTween)
+							charMenu.kill()
+					});
+
+					menuItems.forEach(function( txt:FlxText )
 					{
-						secondsDelayed += 0.05;
-						FlxTween.tween(txt, { alpha: 0, x: txt.x - 100 }, 0.2, {
-							ease: FlxEase.quadOut,
-							startDelay: secondsDelayed,
-							onComplete: function(twn:FlxTween)
-								txt.kill()
-						});
-					}
-					else
-					{
-						FlxFlicker.flicker( txt, 1, 0.06, false, false, function( flick : FlxFlicker )
+						if (curSelected != txt.ID)
 						{
-							var daChoice: String = optionShit[curSelected];
-	
-							switch (daChoice)
+							secondsDelayed += 0.05;
+							FlxTween.tween(txt, { alpha: 0, x: txt.x - 100 }, 0.2, {
+								ease: FlxEase.quadOut,
+								startDelay: secondsDelayed,
+								onComplete: function(twn:FlxTween)
+									txt.kill()
+							});
+						}
+						else
+						{
+							FlxFlicker.flicker( txt, 1, 0.06, false, false, function( flick : FlxFlicker )
 							{
-								case 'story':
-									MusicBeatState.switchState(new states.PibbyStoryState());
-								case 'freeplay':
-									MusicBeatState.switchState(new FreeplayState());
-								case 'credits':
-									MusicBeatState.switchState(new CreditsState());
-								case 'options':
-									LoadingState.loadAndSwitchState(new options.OptionsState());
-							}
-						});
-					}
-				});
+								var daChoice: String = optionShit[curSelected];
+		
+								switch (daChoice)
+								{
+									case 'story':
+										MusicBeatState.switchState(new states.PibbyStoryState());
+									case 'freeplay':
+										MusicBeatState.switchState(new FreeplayState());
+									case 'credits':
+										//MusicBeatState.switchState(new CreditsState());
+									case 'options':
+										LoadingState.loadAndSwitchState(new options.OptionsState());
+								}
+							});
+						}
+					});
+				}
 			}
 			else if (controls.justPressed('debug_1') || virtualPad.buttonE.justPressed)
 			{
