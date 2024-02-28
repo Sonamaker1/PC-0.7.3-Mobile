@@ -36,7 +36,21 @@ jobs:
           haxelib setup C:/haxelib
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
-          haxelib run hmm install
+          haxelib set flixel 5.5.0 --quiet
+          haxelib set flixel-addons 3.2.1 --quiet
+          haxelib set flixel-tools 1.5.1 --quiet
+          haxelib set flixel-ui 2.5.0 --quiet
+          haxelib set hxCodec 2.6.1 --quiet
+          haxelib set lime 8.1.1 --quiet
+          haxelib set openfl 9.3.2 --quiet
+          haxelib set SScript 7.7.0 --quiet
+          haxelib set tjson 1.4.0 --quiet
+          haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev --quiet
+          haxelib git hxCodec https://github.com/polybiusproxy/hxCodec.git --quiet
+          haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc.git --quiet
+          haxelib git linc_luajit https://github.com/superpowers04/linc_luajit.git --quiet
+          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp --never --quiet
+          haxelib run lime rebuild hxcpp --quiet
         shell: cmd
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
