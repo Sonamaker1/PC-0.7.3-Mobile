@@ -43,7 +43,7 @@ jobs:
           haxelib set hxCodec 2.6.1 --always --quiet
           haxelib install lime --quiet
           haxelib set openfl 9.3.2 --always --quiet
-          haxelib set SScript 7.7.0 --always --quiet
+          haxelib install SScript --always --quiet
           haxelib set tjson 1.4.0 --always --quiet
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev --quiet
           haxelib git hxCodec https://github.com/polybiusproxy/hxCodec.git --quiet
