@@ -75,7 +75,8 @@ class ChartingState extends MusicBeatState
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"],
-		['Camera Stuff', "Yeah no im too lazy to write some stuff for this so hi"]
+		['Camera Stuff', "Yeah no im too lazy to write some stuff for this so hi"],
+		['Pibby Glitch', "The pibby glitch stuff that brave liked but I decided to take a different route to it\ntrue if you want to activate it\nfalse to deactivate it."]
 	];
 
 	var _file:FileReference;

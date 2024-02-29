@@ -282,6 +282,9 @@ class PlayState extends MusicBeatState
 	var allowShoot:Bool = true;
 	var mustShoot:Bool = true;
 
+	// This is for the "Blammed Lights" stuff, that Brave thought looked cool, so I'm adding it back now.
+	private var glitchBack: FlxSprite;
+
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
@@ -407,6 +410,15 @@ class PlayState extends MusicBeatState
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';
 		}
+
+		glitchBack = new FlxSprite(DAD_X - ((DAD_X + BF_X) / 2), DAD_Y - ((DAD_Y + BF_Y) / 2));
+		glitchBack.scale.set(1.1 + (1 - defaultCamZoom), 1.1 + (1 - defaultCamZoom));
+		glitchBack.updateHitbox();
+		glitchBack.frames = Paths.getSparrowAtlas("Glitch_Bg");
+		glitchBack.animation.addByPrefix("glitchStart", "Bg Glitch", 24);
+		glitchBack.antialiasing = ClientPrefs.data.antialiasing;
+		glitchBack.alpha = 0.001;
+		add(glitchBack);
 
 		add(gfGroup);
 		add(dadGroup);
@@ -2196,6 +2208,31 @@ class PlayState extends MusicBeatState
 					FlxG.camera.zoom += flValue1;
 					camHUD.zoom += flValue2;
 				}
+
+			case 'Pibby Glitch': {
+				switch(value1) {
+					case "true": {
+						glitchBack.animation.play("glitchStart");
+						FlxTween.tween(glitchBack, { alpha: 1 }, 1, { ease: FlxEase.quadInOut });
+
+						for (char in [boyfriend, gf, dad]) {
+							FlxTween.tween(char, { alpha: 0.75 }, 0.75);
+							FlxTween.color(char, 0.75, char.color, FlxColor.fromRGB(12, 56, 125));
+						}
+							
+					}
+					case "false": {
+						FlxTween.tween(glitchBack, { alpha: 0.001 }, 1, { ease: FlxEase.quadInOut, onComplete: (twn: FlxTween) -> {
+							glitchBack.animation.finish();
+						}});
+
+						for (char in [boyfriend, gf, dad]) {
+							FlxTween.tween(char, { alpha: 1, color: FlxColor.fromRGB(255, 255, 255) }, 0.75);
+							FlxTween.color(char, 0.75, char.color, FlxColor.fromRGB(255, 255, 255));
+						}
+					}
+				}
+			}
 
 			case 'Play Animation':
 				//trace('Anim to play: ' + value1);
