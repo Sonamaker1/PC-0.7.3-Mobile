@@ -411,15 +411,6 @@ class PlayState extends MusicBeatState
 			introSoundsSuffix = '-pixel';
 		}
 
-		glitchBack = new FlxSprite(DAD_X - ((DAD_X + BF_X) / 2), DAD_Y - ((DAD_Y + BF_Y) / 2));
-		glitchBack.scale.set(1.1 + (1 - defaultCamZoom), 1.1 + (1 - defaultCamZoom));
-		glitchBack.updateHitbox();
-		glitchBack.frames = Paths.getSparrowAtlas("Glitch_Bg");
-		glitchBack.animation.addByPrefix("glitchStart", "Bg Glitch", 24);
-		glitchBack.antialiasing = ClientPrefs.data.antialiasing;
-		glitchBack.alpha = 0.001;
-		add(glitchBack);
-
 		add(gfGroup);
 		add(dadGroup);
 		add(boyfriendGroup);
@@ -455,6 +446,16 @@ class PlayState extends MusicBeatState
 		#if HSCRIPT_ALLOWED
 		startHScriptsNamed('stages/' + curStage + '.hx');
 		#end
+		
+		glitchBack = new FlxSprite(DAD_X - ((BF_X - DAD_X) / 2.5), DAD_Y - ((DAD_Y + BF_Y) / 2));
+		glitchBack.scale.set(1.1 + (1 - defaultCamZoom), 1.1 + (1 - defaultCamZoom));
+		glitchBack.updateHitbox();
+		glitchBack.frames = Paths.getSparrowAtlas("Glitch_Bg");
+		glitchBack.animation.addByPrefix("glitchStart", "Bg Glitch", 24);
+		glitchBack.antialiasing = ClientPrefs.data.antialiasing;
+		glitchBack.alpha = 0.001;
+		addBehindGF(glitchBack);
+		//add(glitchBack);
 
 		if (!stageData.hide_girlfriend)
 		{
@@ -2227,7 +2228,7 @@ class PlayState extends MusicBeatState
 						}});
 
 						for (char in [boyfriend, gf, dad]) {
-							FlxTween.tween(char, { alpha: 1, color: FlxColor.fromRGB(255, 255, 255) }, 0.75);
+							FlxTween.tween(char, { alpha: 1 }, 0.75);
 							FlxTween.color(char, 0.75, char.color, FlxColor.fromRGB(255, 255, 255));
 						}
 					}
