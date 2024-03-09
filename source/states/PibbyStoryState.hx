@@ -21,7 +21,10 @@ class PibbyStoryState extends MusicBeatState
 
     // First index is logo name, second is position it is in, third is any additional values
     private static final logoNames: Array<Array<Dynamic>> = [
-        ['adventure_time', 0, []], 
+        ['adventure_time', 0, [], [
+            1,
+            true
+        ]], 
         ['steven', -1060, [
             1.1,
             true
@@ -135,9 +138,9 @@ class PibbyStoryState extends MusicBeatState
 			if (controls.UI_LEFT) leftArrow.animation.play('press'); else leftArrow.animation.play('idle');
 
 			if (controls.UI_RIGHT) rightArrow.animation.play('press'); else rightArrow.animation.play('idle');
-        }
 
-        if(controls.ACCEPT) selectWorld();
+            if (controls.ACCEPT) selectWorld();
+        }
         
 
         super.update(elapsed);
@@ -177,22 +180,29 @@ class PibbyStoryState extends MusicBeatState
 
     function selectWorld()
     {
+        selectedWeek = true;
+
         select.text = 'GOOD LUCK';
         select.x -= (select.width - curwidth) / 2;
         FlxG.camera.flash(FlxColor.WHITE, 1);
         FlxG.sound.play(Paths.sound('confirmMenu')).pitch = .75;
 
         FlxTween.tween(FlxG.sound.music, {pitch: 0, volume: .2}, 2.3);
-        
+
+        FlxTween.tween(bg, { alpha: 1 }, 1.35, { ease: FlxEase.quadInOut });
+        FlxTween.tween(leftArrow, { alpha: 0 }, 0.75);
+        FlxTween.tween(rightArrow, { alpha: 0 }, 0.75);
+
         var songArray:Array<String> = [];
 		var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[curWorld]).songs;
+
 		for (week in leWeek) 
 			songArray.push(week[0]);
 
 		PlayState.storyPlaylist = songArray;
 		PlayState.isStoryMode = true;
 
-		PlayState.storyDifficulty = 2;
+		PlayState.storyDifficulty = 1;
 
 		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase(), PlayState.storyPlaylist[0].toLowerCase());
         PlayState.storyWeek = curWorld;

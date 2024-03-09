@@ -2217,8 +2217,8 @@ class PlayState extends MusicBeatState
 						FlxTween.tween(glitchBack, { alpha: 1 }, 1, { ease: FlxEase.quadInOut });
 
 						for (char in [boyfriend, gf, dad]) {
-							FlxTween.tween(char, { alpha: 0.75 }, 0.75);
-							FlxTween.color(char, 0.75, char.color, FlxColor.fromRGB(12, 56, 125));
+							FlxTween.tween(char, { alpha: 0.85 }, 0.75);
+							FlxTween.color(char, 0.75, char.color, FlxColor.fromRGB(40, 87, 161));
 						}
 							
 					}
@@ -2595,13 +2595,13 @@ class PlayState extends MusicBeatState
 					var difficulty:String = Difficulty.getFilePath();
 
 					trace('LOADING NEXT SONG');
-					trace(Paths.formatToSongPath(PlayState.storyPlaylist[0]) + difficulty);
+					trace(Paths.formatToSongPath(PlayState.storyPlaylist[0]));
 
 					FlxTransitionableState.skipNextTransIn = true;
 					FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
 
-					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0] + difficulty, PlayState.storyPlaylist[0]);
+					PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0], PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
 
 					LoadingState.prepareToSong();

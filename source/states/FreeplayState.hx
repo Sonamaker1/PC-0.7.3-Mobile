@@ -134,10 +134,10 @@ class FreeplayState extends MusicBeatState
 		
 		scoreText = new FlxText(FlxG.width * 0.6, 25, 0, "", 44);
 		scoreText.x -= 25;
-		scoreText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
+		scoreText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, LEFT);
 		
 		percentText = new FlxText(FlxG.width * 0.6, scoreText.y + 45, 0, "", 44);
-		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, RIGHT);
+		percentText.setFormat(Paths.font("Cartoon.ttf"), 44, FlxColor.WHITE, LEFT);
 
 		pibbyIcons = new FlxSprite(scoreText.x, 5);
 		pibbyIcons.frames = Paths.getSparrowAtlas('menus/freeplay/pibbyIcons');
@@ -147,8 +147,6 @@ class FreeplayState extends MusicBeatState
 		pibbyIcons.animation.addByPrefix('goodAccuracy', 'goodAccuracy', 24);
 		pibbyIcons.animation.addByPrefix('greatAccuracy', 'greatAccuracy', 24);
 		pibbyIcons.antialiasing = ClientPrefs.data.antialiasing;
-
-
 
 		scoreBG = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/freeplay/coolBlackThing'));
 		scoreBG.scale.y = 1.8;
