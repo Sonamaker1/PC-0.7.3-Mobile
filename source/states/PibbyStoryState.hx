@@ -30,19 +30,15 @@ class PibbyStoryState extends MusicBeatState
             true
         ]], 
         ['fnf', -2160, []], 
-        ['regular_show',-3240, [
-            0.65,
-            true
-        ]], 
         ['jenny', -4240, [
             1.1,
             true
         ]], 
-        ['steamboat_willie', -5332, []],
-        ['spongebob', -6450, []]
+        ['steamboat_willie', -5332, []]
     ];
     private var logos: FlxTypedSpriteGroup<FlxSprite>;
-
+	var songMap:Map<String, Dynamic> = new Map();
+		
     override function create()
     {
         Paths.clearStoredMemory();
@@ -50,6 +46,20 @@ class PibbyStoryState extends MusicBeatState
 
         PlayState.isStoryMode = true;
 		WeekData.reloadWeekFiles(true);
+		
+		var leWeeks1 = WeekData.weeksLoaded;
+		var leWeeks2 = WeekData.weeksList;
+		var i = 0;
+		for (week in leWeeks2) 
+		{
+			songMap.set(week, leWeeks1.get(week));
+			i++;
+			trace('2:[ ${week} ]');
+		}
+			
+		trace(songMap);
+		
+        
 		persistentUpdate = persistentDraw = true;
 
         actualBG = new FlxSprite(0, 0);
@@ -178,6 +188,12 @@ class PibbyStoryState extends MusicBeatState
         FlxTween.tween(logos ,{x: logoNames[curWorld][1]}, 0.5, {ease: FlxEase.quadInOut});
     }
 
+    function getWeek(curWorldName:String)
+    {
+		trace(curWorldName);
+		return WeekData.weeksLoaded.get(WeekData.weeksList[curWorld]).songs;
+	}
+	
     function selectWorld()
     {
         selectedWeek = true;
@@ -194,10 +210,10 @@ class PibbyStoryState extends MusicBeatState
         FlxTween.tween(rightArrow, { alpha: 0 }, 0.75);
 
         var songArray:Array<String> = [];
-		var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[curWorld]).songs;
+		var leWeek:Array<Dynamic> = getWeek(logoNames[curWorld][0]);
 
-		for (week in leWeek) 
-			songArray.push(week[0]);
+		for (song in leWeek) 
+			songArray.push(song[0]);
 
 		PlayState.storyPlaylist = songArray;
 		PlayState.isStoryMode = true;
