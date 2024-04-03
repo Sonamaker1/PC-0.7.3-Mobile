@@ -4,7 +4,6 @@
       "name": "lime",
       "type": "git",
       "dir": null,
-      "ref": "main",
       "url": "https://github.com/mcagabe19-stuff/lime"
     },
     {
@@ -48,7 +47,6 @@
       "name": "hxvlc",
       "type": "git",
       "dir": null,
-      "ref": "main",
       "url": "https://github.com/mcagabe19-stuff/hxvlc"
     },
     {
