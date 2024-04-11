@@ -281,7 +281,8 @@ class PlayState extends MusicBeatState
 	// mustShoot is for allow shooting while having bullets, else it wont let you shoot until bullets are reloaded
 	var allowShoot:Bool = true;
 	var mustShoot:Bool = true;
-
+	var middleScrollGlobal:Bool = false;
+	var middleScrollEnabled:Bool = false;
 	// This is for the "Blammed Lights" stuff, that Brave thought looked cool, so I'm adding it back now.
 	private var glitchBack: FlxSprite;
 
@@ -316,7 +317,7 @@ class PlayState extends MusicBeatState
 		practiceMode = ClientPrefs.getGameplaySetting('practice');
 		cpuControlled = ClientPrefs.getGameplaySetting('botplay');
 		guitarHeroSustains = ClientPrefs.data.guitarHeroSustains;
-
+		
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = initPsychCamera();
 		camHUD = new FlxCamera();
@@ -971,7 +972,8 @@ class PlayState extends MusicBeatState
 			callOnScripts('onStartCountdown');
 			return false;
 		}
-
+		middleScrollGlobal = ClientPrefs.data.middleScroll && middleScrollEnabled;
+		
 		seenCutscene = true;
 		inCutscene = false;
 		var ret:Dynamic = callOnScripts('onStartCountdown', null, true);
@@ -987,7 +989,7 @@ class PlayState extends MusicBeatState
 			for (i in 0...opponentStrums.length) {
 				setOnScripts('defaultOpponentStrumX' + i, opponentStrums.members[i].x);
 				setOnScripts('defaultOpponentStrumY' + i, opponentStrums.members[i].y);
-				//if(ClientPrefs.data.middleScroll) opponentStrums.members[i].visible = false;
+				//if(middleScrollGlobal) opponentStrums.members[i].visible = false;
 			}
 
 			startedCountdown = true;
@@ -1050,7 +1052,7 @@ class PlayState extends MusicBeatState
 					{
 						note.copyAlpha = false;
 						note.alpha = note.multAlpha;
-						if(ClientPrefs.data.middleScroll && !note.mustPress)
+						if(middleScrollGlobal && !note.mustPress)
 							note.alpha *= 0.35;
 					}
 				});
@@ -1410,7 +1412,7 @@ class PlayState extends MusicBeatState
 						}
 
 						if (sustainNote.mustPress) sustainNote.x += FlxG.width / 2; // general offset
-						else if(ClientPrefs.data.middleScroll)
+						else if(middleScrollGlobal)
 						{
 							sustainNote.x += 310;
 							if(daNoteData > 1) //Up and Right
@@ -1423,7 +1425,7 @@ class PlayState extends MusicBeatState
 				{
 					swagNote.x += FlxG.width / 2; // general offset
 				}
-				else if(ClientPrefs.data.middleScroll)
+				else if(middleScrollGlobal)
 				{
 					swagNote.x += 310;
 					if(daNoteData > 1) //Up and Right
@@ -1605,7 +1607,7 @@ class PlayState extends MusicBeatState
 	public var skipArrowStartTween:Bool = false; //for lua
 	private function generateStaticArrows(player:Int):Void
 	{
-		var strumLineX:Float = ClientPrefs.data.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X;
+		var strumLineX:Float = middleScrollGlobal ? STRUM_X_MIDDLESCROLL : STRUM_X;
 		var strumLineY:Float = ClientPrefs.data.downScroll ? (FlxG.height - 150) : 50;
 		for (i in 0...4)
 		{
@@ -1614,7 +1616,7 @@ class PlayState extends MusicBeatState
 			if (player < 1)
 			{
 				if(!ClientPrefs.data.opponentStrums) targetAlpha = 0;
-				else if(ClientPrefs.data.middleScroll) targetAlpha = 0.35;
+				else if(middleScrollGlobal) targetAlpha = 0.35;
 			}
 
 			var babyArrow:StrumNote = new StrumNote(strumLineX, strumLineY, i, player);
@@ -1632,7 +1634,7 @@ class PlayState extends MusicBeatState
 				playerStrums.add(babyArrow);
 			else
 			{
-				if(ClientPrefs.data.middleScroll)
+				if(middleScrollGlobal)
 				{
 					babyArrow.x += 310;
 					if(i > 1) { //Up and Right
