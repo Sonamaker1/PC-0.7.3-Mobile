@@ -15,13 +15,15 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'downScroll', //Save data variable name
 			'bool'); //Variable type
 		addOption(option);
-
+		
+		/*
 		var option:Option = new Option('Middlescroll',
 			'If checked, your notes get centered.',
 			'middleScroll',
 			'bool');
 		addOption(option);
-
+		*/
+		
 		var option:Option = new Option('Opponent Notes',
 			'If unchecked, opponent notes get hidden.',
 			'opponentStrums',
